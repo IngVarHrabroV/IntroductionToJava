@@ -13,5 +13,8 @@ public class LinerRunner {
 
         double resultOfTask04 = Task04.swapPartsNumber(123.456);
         System.out.println("Result task 04: " + resultOfTask04);
+
+        String resultOfTask05 = Task05.convertTime(653333);
+        System.out.println("Result task 05: " + resultOfTask05);
     }
 }
