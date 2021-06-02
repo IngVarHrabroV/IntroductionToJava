@@ -4,9 +4,9 @@ public class Task03 {
     /**
      * Find expression value = (sin x + cos y) / (cos x - sin y) * tg x * y;
      *
-     * @param x input variable;
-     * @param y input variable;
-     * @return expression value;
+     * @param x input variable
+     * @param y input variable
+     * @return expression value
      */
 
     public static double calculateTrigonometryExpression(double x, double y) {
