@@ -16,5 +16,8 @@ public class LinerRunner {
 
         String resultOfTask05 = Task05.convertTime(653333);
         System.out.println("Result task 05: " + resultOfTask05);
+
+        boolean resultOfTask06 = Task06.dotInArea(1, 1);
+        System.out.println("Result task 06: " + resultOfTask06);
     }
 }
