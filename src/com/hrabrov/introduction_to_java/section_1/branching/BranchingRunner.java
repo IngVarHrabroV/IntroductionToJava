@@ -7,5 +7,8 @@ public class BranchingRunner {
 
         String resultOfTask02 = Task02.maxMinValue(-86.134, -851343, 34242, 32452.6943);
         System.out.println("Result task 02: " + resultOfTask02);
+
+        String resultOfTask03 = Task03.threeDotsOnOneLine(0, 5, 5, 2, 10, -1);
+        System.out.println("Result task 03: " + resultOfTask03);
     }
 }
