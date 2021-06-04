@@ -10,5 +10,8 @@ public class BranchingRunner {
 
         String resultOfTask03 = Task03.threeDotsOnOneLine(0, 5, 5, 2, 10, -1);
         System.out.println("Result task 03: " + resultOfTask03);
+
+        String resultOfTask04 = Task04.brickCanFit(1.999999999999999, 8.6, 6,2,3);
+        System.out.println("Result task 04: " + resultOfTask04);
     }
 }

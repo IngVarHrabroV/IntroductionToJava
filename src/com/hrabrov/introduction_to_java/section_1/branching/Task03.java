@@ -2,7 +2,7 @@ package com.hrabrov.introduction_to_java.section_1.branching;
 
 public class Task03 {
     /**
-     * Give 3 dot: A(x1,y1), B(x2,y2); C(x3,y3).
+     * Given 3 dot: A(x1,y1), B(x2,y2); C(x3,y3).
      * Do 3 dots belong to one line?
      *
      * @param x1 input value
