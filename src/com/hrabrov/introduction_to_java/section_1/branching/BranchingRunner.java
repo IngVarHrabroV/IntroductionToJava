@@ -13,5 +13,8 @@ public class BranchingRunner {
 
         String resultOfTask04 = Task04.brickCanFit(1.999999999999999, 8.6, 6,2,3);
         System.out.println("Result task 04: " + resultOfTask04);
+
+        double resultOfTask05 = Task05.calculateFinctionValue(4.65);
+        System.out.println("Result task 05: " + resultOfTask05);
     }
 }
