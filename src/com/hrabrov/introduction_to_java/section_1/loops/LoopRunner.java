@@ -10,7 +10,10 @@ public class LoopRunner {
         String resultOfTask02 = Task02.foundFunctionValue(-1, 3,0.5);
         System.out.println("Result task 02: " + resultOfTask02);
 
-        double resultOfTask03 = Task03.squareFirstHundred(1, 1);
+        double resultOfTask03 = Task03.sumSquareHundredNumbers(1, 1);
         System.out.println("Result task 03: " + resultOfTask03);
+
+        BigDecimal resultOfTask4 = Task04.multiplySquareTwoHundredNumbers(1, 1);
+        System.out.println("Result task 04: " + resultOfTask4);
     }
 }
