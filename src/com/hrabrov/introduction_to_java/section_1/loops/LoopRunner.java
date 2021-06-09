@@ -18,5 +18,9 @@ public class LoopRunner {
 
         double resultOfTask05 = Task05.sumMembersOfTheNumberRow(2, 0, 5);
         System.out.println("Result task 05: " + resultOfTask05);
+
+        StringBuilder resultOfTask06 = Task06.numberEquivalentSymbol();
+        System.out.println("Result task 06: " + resultOfTask06);
+
     }
 }
