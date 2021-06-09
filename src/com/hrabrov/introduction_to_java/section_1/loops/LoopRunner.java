@@ -13,7 +13,10 @@ public class LoopRunner {
         double resultOfTask03 = Task03.sumSquareHundredNumbers(1, 1);
         System.out.println("Result task 03: " + resultOfTask03);
 
-        BigDecimal resultOfTask4 = Task04.multiplySquareTwoHundredNumbers(1, 1);
-        System.out.println("Result task 04: " + resultOfTask4);
+        BigDecimal resultOfTask04 = Task04.multiplySquareTwoHundredNumbers(1, 7.7);
+        System.out.println("Result task 04: " + resultOfTask04);
+
+        double resultOfTask05 = Task05.sumMembersOfTheNumberRow(2, 0, 5);
+        System.out.println("Result task 05: " + resultOfTask05);
     }
 }
