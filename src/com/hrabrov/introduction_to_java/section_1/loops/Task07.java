@@ -11,15 +11,9 @@ public class Task07 {
      */
 
     public static StringBuilder findDividerForAllNumbers(long m, long n) {
-        StringBuilder tableWithNumbersAndDivider = new StringBuilder("\n");
+        checkValidityArgument(m, n);
 
-        if (m > n) {
-            throw new IllegalArgumentException("m cannot be large then n");
-        } else if (m == n) {
-            throw new IllegalArgumentException("m cannot be equals n");
-        } else if (m < 0) {
-            throw new IllegalArgumentException("m cannot be less then 0, try again");
-        }
+        StringBuilder tableWithNumbersAndDivider = new StringBuilder("\n");
 
         for (long i = m; i <= n; i++) {
             tableWithNumbersAndDivider.append(findDivider(i));
@@ -31,6 +25,15 @@ public class Task07 {
         return tableWithNumbersAndDivider;
     }
 
+    public static void checkValidityArgument(long m, long n) {
+        if (m > n) {
+            throw new IllegalArgumentException("m cannot be large then n");
+        } else if (m == n) {
+            throw new IllegalArgumentException("m cannot be equals n");
+        } else if (m < 0) {
+            throw new IllegalArgumentException("m cannot be less then 0, try again");
+        }
+    }
 
     public static String findDivider(long a) {
         String lineHeader = a + " has next divider: ";
