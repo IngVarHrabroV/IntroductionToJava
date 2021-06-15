@@ -1,6 +1,8 @@
 package com.hrabrov.introduction_to_java.section_1.loops;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LoopRunner {
@@ -27,6 +29,8 @@ public class LoopRunner {
         StringBuilder resultOfTask07 = Task07.findDividerForAllNumbers(enterLongFromConsole("m"), enterLongFromConsole("n"));
         System.out.println("Result task 07: " + resultOfTask07);
 
+        ArrayList<Integer> resultOfTask08 = Task08.identicalNumeralsForTwoNumbers(1.11111112, 345612.678678567856785645365568);
+        System.out.println("Result task 08: " + Arrays.toString(resultOfTask08.toArray()));
     }
 
     public static long enterLongFromConsole(String x) {
