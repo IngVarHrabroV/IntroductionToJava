@@ -8,14 +8,18 @@ public class Task01 {
      * @return sum of all numbers from 1 to x
      */
 
-    public static long sumNumbersTo(long x) {
+    public static String sumNumbersTo(long x) {
+        if (x < 1) {
+            return "You cannot enter not integer not positive number";
+        }
+
         long sum = 0;
 
         for(int i = 1; i <= x; i++) {
             sum += i;
         }
 
-        return sum;
+        return Long.toString(sum);
 
         //return (long) (Math.pow(x, 2) + x) / 2;
     }
