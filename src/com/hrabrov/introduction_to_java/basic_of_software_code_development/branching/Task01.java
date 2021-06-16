@@ -1,4 +1,4 @@
-package com.hrabrov.introduction_to_java.section_1.branching;
+package com.hrabrov.introduction_to_java.basic_of_software_code_development.branching;
 
 public class Task01 {
     /**

@@ -1,4 +1,4 @@
-package com.hrabrov.introduction_to_java.section_1.branching;
+package com.hrabrov.introduction_to_java.basic_of_software_code_development.branching;
 
 public class BranchingRunner {
     public static void run() {
@@ -14,7 +14,7 @@ public class BranchingRunner {
         String resultOfTask04 = Task04.brickCanFit(1.999999999999999, 8.6, 6,2,3);
         System.out.println("Result task 04: " + resultOfTask04);
 
-        double resultOfTask05 = Task05.calculateFinctionValue(4.65);
+        double resultOfTask05 = Task05.calculateFunctionValue(4.65);
         System.out.println("Result task 05: " + resultOfTask05);
     }
 }
