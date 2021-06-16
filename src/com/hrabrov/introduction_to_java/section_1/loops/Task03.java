@@ -15,6 +15,7 @@ public class Task03 {
         for (int i = 0; i < 100; i++) {
             sumOfSquare += Math.pow(x + i * h, 2);
         }
+
         return sumOfSquare;
     }
 }

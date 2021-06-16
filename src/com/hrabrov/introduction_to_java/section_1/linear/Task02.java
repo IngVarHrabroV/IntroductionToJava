@@ -11,7 +11,9 @@ public class Task02 {
      */
 
     public static double calculateExpression(double a, double b, double c) {
-        double numerator, leftPart, rightPart;
+        double numerator;
+        double leftPart;
+        double rightPart;
 
         numerator = b + Math.sqrt(Math.pow(b, 2) + 4 * a * c);
         leftPart = numerator / (2 * a);

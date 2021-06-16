@@ -14,6 +14,7 @@ public class Task01 {
         for(int i = 1; i <= x; i++) {
             sum += i;
         }
+
         return sum;
 
         //return (long) (Math.pow(x, 2) + x) / 2;

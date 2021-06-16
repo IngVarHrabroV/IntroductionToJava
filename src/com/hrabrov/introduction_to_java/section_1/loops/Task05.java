@@ -25,7 +25,10 @@ public class Task05 {
     }
 
     public static double adsNumberN(int n) {
-        double numberN = 1 / Math.pow(2, n) + 1 / Math.pow(3, n);
+        double numberN;
+
+        numberN = 1 / Math.pow(2, n) + 1 / Math.pow(3, n);
+
         return Math.abs(numberN);
     }
 }

@@ -16,6 +16,7 @@ public class Task02 {
 
     public static String foundFunctionValue(double a, double b, double h) {
         ArrayList<Double> arrayValueFunction = new ArrayList<>();
+
         for (double i = a; i <= b; i += h) {
             if (i == 0) {
                 arrayValueFunction.add(0.0);
@@ -23,6 +24,7 @@ public class Task02 {
                 arrayValueFunction.add(i > 2 ? i : -1 * i);
             }
         }
+
         return Arrays.toString(arrayValueFunction.toArray());
     }
 }

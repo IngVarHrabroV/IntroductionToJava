@@ -1,6 +1,5 @@
 package com.hrabrov.introduction_to_java.section_1.branching;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Task04 {

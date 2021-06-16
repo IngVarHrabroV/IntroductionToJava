@@ -8,7 +8,7 @@ public class Task05 {
      * @return function value
      */
 
-    public static double calculateFinctionValue(double x) {
+    public static double calculateFunctionValue(double x) {
         if (x <= 3) {
             return Math.pow(x, 2) - 3 * x + 9;
         } else {

@@ -11,23 +11,25 @@ public class Task06 {
         StringBuilder charTableEquivalents = new StringBuilder("\n");
 
         for (int i = 32; i <= 127; i++) {
-            char charX = (char) i;
-
+            char charX;
             String enter = "";
-            String spases = "    ";
+            String spaces = "    "; // 4 space
+
+            charX = (char) i;
+
 
             if ((i - 1) % 10 == 0) {
                 enter = "\n";
             }
 
             if (i > 99) {
-                spases = "   ";
+                spaces = "   "; // 3 space
             }
 
             charTableEquivalents.append(i)
                                 .append(" = ")
                                 .append(charX)
-                                .append(spases)
+                                .append(spaces)
                                 .append(enter);
         }
 

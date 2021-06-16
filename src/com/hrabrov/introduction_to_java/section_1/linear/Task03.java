@@ -10,10 +10,12 @@ public class Task03 {
      */
 
     public static double calculateTrigonometryExpression(double x, double y) {
-        double numerator, denominator;
+        double numerator;
+        double denominator;
 
         numerator = Math.sin(x) + Math.cos(y);
         denominator = Math.cos(x) - Math.sin(y);
+
         return numerator / denominator * Math.tan(x * y);
     }
 }

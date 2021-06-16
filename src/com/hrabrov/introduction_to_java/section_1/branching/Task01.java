@@ -10,6 +10,7 @@ public class Task01 {
      */
     public static String triangleISThere(double alpha, double beta) {
         String answer;
+
         if (alpha + beta < 180) {
             answer = (alpha == 90 || beta == 90 || alpha + beta == 90)
                     ? "Yes, triangle exists, it's right triangle"
@@ -17,6 +18,7 @@ public class Task01 {
         } else {
             answer = "No, triangle doesn't exist";
         }
+
         return answer;
     }
 }

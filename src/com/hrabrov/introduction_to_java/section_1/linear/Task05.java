@@ -9,7 +9,10 @@ public class Task05 {
      */
 
     public static String convertTime(long a) {
-        long hours, mins, secs;
+        long hours;
+        long mins;
+        long secs;
+
         hours = a / 3600;
         mins = (a % 3600) / 60;
         secs = (a % 3600) % 60;

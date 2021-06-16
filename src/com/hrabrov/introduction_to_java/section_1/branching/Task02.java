@@ -14,7 +14,10 @@ public class Task02 {
      */
 
     public static String maxMinValue(double a, double b, double c, double d) {
-        double k = Math.max(Math.min(a, b), Math.min(c, d));
+        double k;
+
+        k = Math.max(Math.min(a, b), Math.min(c, d));
+
         if (k > 0) {
             return "Magic number is positive";
         } else {

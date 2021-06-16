@@ -11,8 +11,11 @@ public class Task06 {
      */
 
     public static boolean dotInArea(double x, double y) {
-        boolean dotIntoSquare = (x < 2 && x > -2) && (y < 4 && y > 0);
-        boolean dotIntoRectangle = (x < 4 && x > -4) && (y > -3 && y < 0);
+        boolean dotIntoSquare;
+        boolean dotIntoRectangle;
+
+        dotIntoSquare = (x < 2 && x > -2) && (y < 4 && y > 0);
+        dotIntoRectangle = (x < 4 && x > -4) && (y > -3 && y < 0);
 
         return dotIntoSquare || dotIntoRectangle;
     }

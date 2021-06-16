@@ -37,8 +37,11 @@ public class Task07 {
     }
 
     public static String findDivider(long a) {
-        String lineHeader = a + " has next divider: ";
-        String dividerForNumber = lineHeader;
+        String lineHeader;
+        String dividerForNumber;
+
+        lineHeader = a + " has next divider: ";
+        dividerForNumber = lineHeader;
 
         for (long i = 2; i < a; i++) {
             dividerForNumber += a % i == 0 ? i + " " : "";

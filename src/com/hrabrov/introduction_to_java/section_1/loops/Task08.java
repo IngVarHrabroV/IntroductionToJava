@@ -15,8 +15,11 @@ public class Task08 {
     public static ArrayList<Integer> identicalNumeralsForTwoNumbers(double x, double y) {
         ArrayList<Integer> identicalNumeralsArrayList = new ArrayList<>();
 
-        ArrayList<Integer> firstNumberArrayList = convertNumberToNumeralInArrayList(x);
-        ArrayList<Integer> secondNumberArrayList = convertNumberToNumeralInArrayList(y);
+        ArrayList<Integer> firstNumberArrayList;
+        ArrayList<Integer> secondNumberArrayList;
+
+        firstNumberArrayList = convertNumberToNumeralInArrayList(x);
+        secondNumberArrayList = convertNumberToNumeralInArrayList(y);
 
         for (Integer i : firstNumberArrayList) {
             for (Integer k : secondNumberArrayList) {
@@ -30,9 +33,12 @@ public class Task08 {
     }
 
     public static ArrayList<Integer> convertNumberToNumeralInArrayList(double a) {
-        String numberToString = Double.toString(a).replace(".", "");
+        String numberToString;
+        int numberToStringLength;
 
-        int numberToStringLength = numberToString.length();
+        numberToString = Double.toString(a).replace(".", "");
+        numberToStringLength = numberToString.length();
+
         int[] numeralArray = new int[numberToStringLength];
 
         for (int i = 0; i <= numberToStringLength - 1; i++) {
