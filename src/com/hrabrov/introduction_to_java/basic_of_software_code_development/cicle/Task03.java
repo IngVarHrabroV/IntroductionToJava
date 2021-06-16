@@ -13,7 +13,8 @@ public class Task03 {
         long sumOfSquare = 0;
 
         for (int i = 0; i < 100; i++) {
-            long nextToNum = i * h;
+            long nextToNum;
+            nextToNum = i * h;
 
             sumOfSquare = Math.addExact(sumOfSquare, (long) Math.pow(x + nextToNum, 2));
         }
