@@ -2,9 +2,9 @@ package com.hrabrov.introduction_to_java.section_1.linear;
 
 public class Task05 {
     /**
-     * Given a natural number T, which represents the duration of the elapsed time in seconds.
+     * Given a natural number a, which represents the duration of the elapsed time in seconds.
      *
-     * @param a input value
+     * @param a input time in seconds
      * @return value as HHhMMmSSs
      */
 

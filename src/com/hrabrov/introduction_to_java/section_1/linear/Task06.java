@@ -4,7 +4,10 @@ public class Task06 {
     /**
      * We have area with coordinates:
      * -4, 0; -2, 0; -2, 4; 2, 4; 2, 0; 4, 0; 4, -3; -4, -3.
-     * Return true, if dot with coordinate x, y into this area, else return false.
+     *
+     * @param x input value equals x-coordinate
+     * @param y input value equals y-coordinate
+     * @return true, if dot with coordinate x, y into this area, else return false.
      */
 
     public static boolean dotInArea(double x, double y) {

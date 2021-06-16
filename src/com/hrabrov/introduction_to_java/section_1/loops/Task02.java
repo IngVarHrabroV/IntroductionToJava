@@ -8,9 +8,9 @@ public class Task02 {
      * Found value function on the segment [a,b] with increment h:
      * y = x, x > 2 || y = -x, x <= 2.
      *
-     * @param a input value
-     * @param b input value
-     * @param h input value
+     * @param a input initial value segment
+     * @param b input finish value segment
+     * @param h input increment
      * @return value function
      */
 

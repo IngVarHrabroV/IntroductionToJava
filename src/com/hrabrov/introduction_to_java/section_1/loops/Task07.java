@@ -2,8 +2,9 @@ package com.hrabrov.introduction_to_java.section_1.loops;
 
 public class Task07 {
     /**
-     * Given two natural number: m and n. Find all divider (without 0 and 1) for each other natural number between m and n.
-     * m and n enter with keyboard.
+     * Given two natural number: m and n. Find all divider (without 0 and 1)
+     * for each other natural number between m and n (inclusive).
+     * m and n entering with keyboard.
      *
      * @param m input natural value
      * @param n input natural value

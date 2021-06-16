@@ -1,5 +1,3 @@
-package com.hrabrov.introduction_to_java.section_1;
-
 import com.hrabrov.introduction_to_java.section_1.branching.*;
 import com.hrabrov.introduction_to_java.section_1.linear.*;
 import com.hrabrov.introduction_to_java.section_1.loops.*;

@@ -4,7 +4,7 @@ public class Task05 {
     /**
      * Find function value: x^2 - 3 * x + 9, if x <= 3; 1 / (x^3 + 6), if x > 3
      *
-     * @param x input value
+     * @param x input value function
      * @return function value
      */
 

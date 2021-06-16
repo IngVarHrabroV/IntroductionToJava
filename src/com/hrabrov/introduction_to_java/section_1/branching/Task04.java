@@ -5,13 +5,14 @@ import java.util.Arrays;
 
 public class Task04 {
     /**
-     * Given rectangular hole in wall with sides a, b and given brick with sides x, y, z. Can brick fit rectangular hole?
+     * Given rectangular hole in wall with sides a, b and given brick with sides x, y, z.
+     * Found, can brick fit rectangular hole?
      *
-     * @param a input value
-     * @param b input value
-     * @param x input value
-     * @param y input value
-     * @param z input value
+     * @param a input 1th side rectangular hole
+     * @param b input 2th side rectangular hole
+     * @param x input brick's width
+     * @param y input brick's height
+     * @param z input brick's depth
      * @return String, that ask for question
      */
 

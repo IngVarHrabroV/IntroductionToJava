@@ -5,11 +5,12 @@ public class Task02 {
      * Found max{min(a, b), min(c, d)} and return positive phrase, if it is more that 0,
      * else - negative phrase.
      *
-     * @param a input value
-     * @param b input value
-     * @param c input value
-     * @param d input value
-     * @return max{min(a, b), min(c, d)}
+     * @param a input 1th variable to left-part
+     * @param b input 2th variable to left-part
+     * @param c input 1th variable to right-part
+     * @param d input 2th variable to right-part
+     * @return "Magic number is positive" if max{min(a, b), min(c, d)} more 0,
+     * else - "Magic number is negative"
      */
 
     public static String maxMinValue(double a, double b, double c, double d) {
