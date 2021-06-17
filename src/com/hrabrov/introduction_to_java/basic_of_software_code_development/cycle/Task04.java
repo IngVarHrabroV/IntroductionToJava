@@ -17,7 +17,7 @@ public class Task04 {
 
         int stepToNextNumber;
         for (int i = 0; i < 200; i++) {
-            if (h > 10737418) { 
+            if (h > 10737418) {
                 return "Increment is bigger, enter less increment";
             }
 
