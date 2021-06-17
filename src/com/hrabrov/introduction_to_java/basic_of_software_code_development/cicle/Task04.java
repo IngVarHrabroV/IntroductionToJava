@@ -16,9 +16,8 @@ public class Task04 {
 
         multiplyOfSquare = 1;
 
+        int stepToNextNumber;
         for (int i = 0; i < 200; i++) {
-            int stepToNextNumber;
-
             stepToNextNumber = i * h;
             numberOfSquare = (long) Math.pow(x + stepToNextNumber, 2);
 
