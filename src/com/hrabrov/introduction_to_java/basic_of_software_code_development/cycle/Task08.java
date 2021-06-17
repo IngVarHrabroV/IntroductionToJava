@@ -1,4 +1,4 @@
-package com.hrabrov.introduction_to_java.basic_of_software_code_development.cicle;
+package com.hrabrov.introduction_to_java.basic_of_software_code_development.cycle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
