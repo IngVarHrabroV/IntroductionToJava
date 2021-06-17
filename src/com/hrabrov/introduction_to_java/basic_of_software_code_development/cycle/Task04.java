@@ -28,7 +28,7 @@ public class Task04 {
                return "Variable is overflow, enter any less start value or increment";
             }
             
-            resultMultiplyOfSquare = resultMultiplyOfSquare * nextNumberOfSquare ;
+            resultMultiplyOfSquare = resultMultiplyOfSquare * nextNumberOfSquare;
         }
         
         return Long.toString(resultMultiplyOfSquare);
