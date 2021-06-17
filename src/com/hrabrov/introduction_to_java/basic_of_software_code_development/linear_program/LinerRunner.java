@@ -1,4 +1,4 @@
-package com.hrabrov.introduction_to_java.basic_of_software_code_development.linearing_program;
+package com.hrabrov.introduction_to_java.basic_of_software_code_development.linear_program;
 
 public class LinerRunner {
     public static void run() {
