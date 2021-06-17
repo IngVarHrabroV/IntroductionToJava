@@ -1,24 +1,36 @@
 package com.hrabrov.introduction_to_java.basic_of_software_code_development.cicle;
 
-import java.math.BigDecimal;
-
 public class Task04 {
     /**
-     * Find multiply of square two hundred numbers starting x (include x) with increment h
+     * Find multiply of square two hundred numbers starting x (inclusive x) with increment h
      *
      * @param x input start value
      * @param h input increment value
      * @return multiply of square two hundred number
      */
 
-    public static BigDecimal multiplySquareTwoHundredNumbers(double x, double h) {
-        BigDecimal multiplyOfSquare = BigDecimal.valueOf(1);
+    public static String multiplySquareTwoHundredNumbers(long x, int h) {
+        long multiplyOfSquare;
+        long numberOfSquare;
+        String multiplyOfSquareToString;
+
+        multiplyOfSquare = 1;
 
         for (int i = 0; i < 200; i++) {
-            BigDecimal numberOfSquare = BigDecimal.valueOf(Math.pow(x + i * h, 2));
-            multiplyOfSquare = multiplyOfSquare.multiply(numberOfSquare);
+            int stepToNextNumber;
+
+            stepToNextNumber = i * h;
+            numberOfSquare = (long) Math.pow(x + stepToNextNumber, 2);
+
+            try{
+            multiplyOfSquare = Math.multiplyExact(multiplyOfSquare, numberOfSquare) ;
+            } catch (ArithmeticException e) {
+                return "Variable type long is overflow";
+            }
         }
 
-        return multiplyOfSquare;
+        multiplyOfSquareToString = Long.toString(multiplyOfSquare);
+
+        return multiplyOfSquareToString;
     }
 }
