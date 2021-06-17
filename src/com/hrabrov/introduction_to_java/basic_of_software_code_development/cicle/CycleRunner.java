@@ -1,20 +1,21 @@
 package com.hrabrov.introduction_to_java.basic_of_software_code_development.cicle;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class CicleRunner {
+public class CycleRunner {
     public static void run() {
-        String resultOfTask01 = Task01.sumNumbersTo(4);
+       String resultOfTask01 = Task01.sumNumbersTo(4);
         System.out.println("Result task 01: " + resultOfTask01);
 
-        /*String resultOfTask02 = Task02.foundFunctionValue(-1, 3,0.5);
+        String resultOfTask02 = Task02.foundFunctionValue(-1, 3,0.5);
         System.out.println("Result task 02: " + resultOfTask02);
 
-        long resultOfTask03 = Task03.sumSquareHundredNumbers(368802345234527L, 1);
+        long resultOfTask03 = Task03.sumSquareHundredNumbers(368L, 1);
         System.out.println("Result task 03: " + resultOfTask03);
 
-        BigDecimal resultOfTask04 = Task04.multiplySquareTwoHundredNumbers(1, 7.7);
+        String resultOfTask04 = Task04.multiplySquareTwoHundredNumbers(1, 1);
         System.out.println("Result task 04: " + resultOfTask04);
 
         double resultOfTask05 = Task05.sumMembersOfTheNumberRow(2, 0, 5);
@@ -28,7 +29,7 @@ public class CicleRunner {
         System.out.println("Result task 07: " + resultOfTask07);
 
         ArrayList<Integer> resultOfTask08 = Task08.identicalNumeralsForTwoNumbers(1.111111112, 1234417.6313424645654364563456246345413451);
-        System.out.println("Result task 08: " + Arrays.toString(resultOfTask08.toArray()));*/
+        System.out.println("Result task 08: " + Arrays.toString(resultOfTask08.toArray()));
     }
 
     public static long enterLongFromConsole(String x) {

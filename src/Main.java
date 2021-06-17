@@ -1,6 +1,6 @@
-import com.hrabrov.introduction_to_java.section_1.branching.*;
-import com.hrabrov.introduction_to_java.section_1.linear.*;
-import com.hrabrov.introduction_to_java.section_1.loops.*;
+import com.hrabrov.introduction_to_java.basic_of_software_code_development.branching.BranchingRunner;
+import com.hrabrov.introduction_to_java.basic_of_software_code_development.cicle.CycleRunner;
+import com.hrabrov.introduction_to_java.basic_of_software_code_development.linearing_program.LinerRunner;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Main {
         System.out.println("End 2th block: linear \n");
 
         System.out.println("Start 3th block: loops");
-        LoopRunner.run();
+        CycleRunner.run();
         System.out.println("End 3th block: loops");
     }
 }
