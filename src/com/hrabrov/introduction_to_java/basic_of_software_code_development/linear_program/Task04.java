@@ -9,6 +9,12 @@ public class Task04 {
      */
 
     public static double swapPartsNumber(double a) {
-        return a * 1000 % 1000 + (int) a / 1000.0;
+        double beforeDot;
+        double afterDot;
+
+        afterDot = a * 1000 % 1000;
+        beforeDot = (int) a / 1000.0;
+
+        return afterDot + beforeDot;
     }
 }
