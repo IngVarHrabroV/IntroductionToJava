@@ -13,8 +13,6 @@ public class Task08 {
      */
 
     public static ArrayList<Integer> identicalNumeralsForTwoNumbers(double x, double y) {
-        System.out.println("y = " + y);
-
         ArrayList<Integer> identicalNumeralsArrayList = new ArrayList<>();
 
         ArrayList<Integer> firstNumberArrayList;
@@ -22,8 +20,6 @@ public class Task08 {
 
         firstNumberArrayList = convertNumberToNumeralInArrayList(x);
         secondNumberArrayList = convertNumberToNumeralInArrayList(y);
-
-        System.out.println(Arrays.toString(firstNumberArrayList.toArray()));
 
         for (Integer i : firstNumberArrayList) {
             for (Integer k : secondNumberArrayList) {
