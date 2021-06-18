@@ -1,28 +1,34 @@
 package com.hrabrov.introduction_to_java.basic_of_software_code_development.branching;
 
-import java.util.Arrays;
-
 public class Task04 {
     /**
      * Given rectangular hole in wall with sides a, b and given brick with sides x, y, z.
      * Found, can brick fit rectangular hole?
      *
-     * @param a input 1th side rectangular hole
-     * @param b input 2th side rectangular hole
-     * @param x input brick's width
-     * @param y input brick's height
-     * @param z input brick's depth
+     * @param widthHole input 1th side rectangular hole
+     * @param heightHole input 2th side rectangular hole
+     * @param xSideBrick input brick's width
+     * @param ySideBrick input brick's height
+     * @param zSideBrick input brick's depth
      * @return String, that ask for question
      */
 
-    public static String brickCanFit(double a, double b, double x, double y, double z) {
-        double[] hole = {a, b};
-        double[] brick = {x, y, z};
+    public static String brickCanFit(double widthHole, double heightHole,
+                                     double xSideBrick, double ySideBrick, double zSideBrick) {
+        boolean firstCondition;
+        boolean secondCondition;
+        boolean thirtyCondition;
 
-        Arrays.sort(hole);
-        Arrays.sort(brick);
+        firstCondition = (xSideBrick < widthHole && ySideBrick < heightHole)
+                         || (xSideBrick < heightHole && ySideBrick < widthHole);
 
-        if (hole[0] > brick[0] && hole[1] > brick[1]) {
+        secondCondition = (xSideBrick < widthHole && zSideBrick < heightHole)
+                          || (xSideBrick < heightHole && zSideBrick < widthHole);
+
+        thirtyCondition = (ySideBrick < widthHole && zSideBrick < heightHole)
+                          || (ySideBrick < heightHole && zSideBrick < widthHole);
+
+        if (firstCondition || secondCondition || thirtyCondition) {
             return "Yes, brick can fit in rectangular hole";
         } else {
             return "No, brick can't fit in rectangular hole";
