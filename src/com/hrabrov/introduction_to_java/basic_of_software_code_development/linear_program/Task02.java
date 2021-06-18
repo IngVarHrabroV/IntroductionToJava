@@ -11,11 +11,13 @@ public class Task02 {
      */
 
     public static double calculateExpression(double a, double b, double c) {
+        double radicand;
         double numerator;
         double leftPart;
         double rightPart;
 
-        numerator = b + Math.sqrt(Math.pow(b, 2) + 4 * a * c);
+        radicand = Math.pow(b, 2) + 4 * a * c;
+        numerator = b + Math.sqrt(radicand);
         leftPart = numerator / (2 * a);
         rightPart = Math.pow(a, 3) * c + Math.pow(b, -2);
 
