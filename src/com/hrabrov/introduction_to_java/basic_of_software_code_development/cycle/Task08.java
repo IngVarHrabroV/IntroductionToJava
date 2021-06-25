@@ -1,8 +1,5 @@
 package com.hrabrov.introduction_to_java.basic_of_software_code_development.cycle;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Task08 {
     /**
      * Given two numbers. Found identical numerals for both numbers.
@@ -12,54 +9,41 @@ public class Task08 {
      * @return identical numerals for both numbers
      */
 
-    public static ArrayList<Integer> identicalNumeralsForTwoNumbers(double x, double y) {
-        ArrayList<Integer> identicalNumeralsArrayList = new ArrayList<>();
+    public static String identicalNumeralsForTwoNumbers(double x, double y) {
+        String identicalNumerals = "";
+        String firstNumber;
+        String secondNumber;
 
-        ArrayList<Integer> firstNumberArrayList;
-        ArrayList<Integer> secondNumberArrayList;
+        firstNumber = numberWithoutDuplicate(x);
+        secondNumber = numberWithoutDuplicate(y);
 
-        firstNumberArrayList = convertNumberToNumeralInArrayList(x);
-        secondNumberArrayList = convertNumberToNumeralInArrayList(y);
-
-        for (Integer i : firstNumberArrayList) {
-            for (Integer k : secondNumberArrayList) {
-                if (i.equals(k)) {
-                    identicalNumeralsArrayList.add(i);
-                }
+        char tempChar;
+        for (int i = 0; i < firstNumber.length(); i++) {
+            tempChar = firstNumber.charAt(i);
+            if (secondNumber.indexOf(tempChar) != -1) {
+                identicalNumerals += String.valueOf(tempChar);
             }
         }
 
-        return identicalNumeralsArrayList;
+        return identicalNumerals;
     }
 
-    public static ArrayList<Integer> convertNumberToNumeralInArrayList(double a) {
+    public static String numberWithoutDuplicate(double a) {
         String numberToString;
         int numberToStringLength;
 
         numberToString = Double.toString(a).replace(".", "");
         numberToStringLength = numberToString.length();
 
-        int[] numeralArray = new int[numberToStringLength];
-
-        for (int i = 0; i <= numberToStringLength - 1; i++) {
-            numeralArray[i] = Character.getNumericValue(numberToString.charAt(i));
-        }
-
-        return numeralArrayWithoutDuplicate(numeralArray, numberToStringLength);
-    }
-
-    public static ArrayList<Integer> numeralArrayWithoutDuplicate(int[] numeralArray, int numeralArrayLength) {
-        ArrayList<Integer> numeralArrayListWithoutDuplicate = new ArrayList<>();
-
-        Arrays.sort(numeralArray);
-
-        for (int i = 0; i < numeralArrayLength - 1; i++) {
-            if (numeralArray[i] != numeralArray[i + 1]) {
-                numeralArrayListWithoutDuplicate.add(numeralArray[i]);
+        String numberWithoutDuplicate = "";
+        char tempChar;
+        for (int i = 0; i < numberToStringLength - 1; i++) {
+            tempChar = numberToString.charAt(i);
+            if (numberWithoutDuplicate.indexOf(tempChar) == -1) {
+                numberWithoutDuplicate += String.valueOf(tempChar);
             }
         }
-        numeralArrayListWithoutDuplicate.add(numeralArray[numeralArrayLength - 1]);
 
-        return numeralArrayListWithoutDuplicate;
+        return numberWithoutDuplicate;
     }
 }
