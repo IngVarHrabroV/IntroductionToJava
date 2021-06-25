@@ -5,4 +5,5 @@ There is contained tasks on Basic of software code development:
  - cycle;
  - linear program.
 
-All tasks carried out in one class, without using Objects.
+All tasks carried out in one class, without using Objects (exclusion: wrappers for primitives and String)
+and arrays.
