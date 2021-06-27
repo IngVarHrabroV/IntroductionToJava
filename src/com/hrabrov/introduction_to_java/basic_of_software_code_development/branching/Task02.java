@@ -22,8 +22,9 @@ public class Task02 {
         minSecondPart = c > d ? d : c;
         maxNumber = minFirstPart > minSecondPart ? minFirstPart : minSecondPart;
 
-        //maxNumber = Math.max(Math.min(a, b), Math.min(c, d));
+        String sentence;
+        sentence = maxNumber > 0 ? "positive" : "negative";
 
-        return maxNumber > 0 ? "Magic number is positive" : "Magic number is negative";
+        return "Magic number is " + sentence;
     }
 }
