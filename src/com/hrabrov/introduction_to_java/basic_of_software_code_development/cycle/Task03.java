@@ -18,14 +18,14 @@ public class Task03 {
         int stepToNextNumber;
         for (int i = 0; i < 100; i++) {
             if (h > 21474836) {
-                return "Increment is bigger, enter increment is less";
+                return "Increment is large, enter another number";
             }
 
             stepToNextNumber = i * h;
             nextNumberOfSquare = (long) Math.pow(x + stepToNextNumber, 2);
 
             if (resultSumOfSquare > resultSumOfSquare + nextNumberOfSquare) {
-                return "Variable is overflow, enter any less start value or increment";
+                return "Variable is overflowed, try entering less start value or increment";
             }
 
             resultSumOfSquare += nextNumberOfSquare;
