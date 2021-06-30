@@ -14,14 +14,17 @@ public class Task02 {
      */
 
     public static String maxMinValue(double a, double b, double c, double d) {
-        double k;
+        double maxNumber;
+        double minFirstPart;
+        double minSecondPart;
 
-        k = Math.max(Math.min(a, b), Math.min(c, d));
+        minFirstPart = a > b ? b : a;
+        minSecondPart = c > d ? d : c;
+        maxNumber = minFirstPart > minSecondPart ? minFirstPart : minSecondPart;
 
-        if (k > 0) {
-            return "Magic number is positive";
-        } else {
-            return "Magic number is negative";
-        }
+        String sentence;
+        sentence = maxNumber > 0 ? "positive" : "negative";
+
+        return "Magic number is " + sentence;
     }
 }

@@ -1,7 +1,5 @@
 package com.hrabrov.introduction_to_java.basic_of_software_code_development.cycle;
 
-import java.awt.peer.LabelPeer;
-
 public class Task03 {
     /**
      * Find sum of square hundred numbers starting x (inclusive x) with increment h
@@ -18,14 +16,14 @@ public class Task03 {
         int stepToNextNumber;
         for (int i = 0; i < 100; i++) {
             if (h > 21474836) {
-                return "Increment is bigger, enter less increment";
+                return "Increment is large, enter another number";
             }
 
             stepToNextNumber = i * h;
             nextNumberOfSquare = (long) Math.pow(x + stepToNextNumber, 2);
 
             if (resultSumOfSquare > resultSumOfSquare + nextNumberOfSquare) {
-                return "Variable is overflow, enter any less start value or increment";
+                return "The answer variable is overflowed, try entering less start value or other the increment";
             }
 
             resultSumOfSquare += nextNumberOfSquare;

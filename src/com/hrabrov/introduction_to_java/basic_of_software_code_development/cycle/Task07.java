@@ -11,29 +11,35 @@ public class Task07 {
      * @return all divider for natural number between m and n.
      */
 
-    public static StringBuilder findDividerForAllNumbers(long m, long n) {
-        checkValidityArgument(m, n);
+    public static String findDividerForAllNumbers(long m, long n) {
+        if (checkValidityArgument(m, n)) {
+            String tableWithNumbersAndDivider = "\n";
 
-        StringBuilder tableWithNumbersAndDivider = new StringBuilder("\n");
-
-        for (long i = m; i <= n; i++) {
-            tableWithNumbersAndDivider.append(findDivider(i));
-            if (i != n) {
-                tableWithNumbersAndDivider.append("\n");
+            for (long i = m; i <= n; i++) {
+                tableWithNumbersAndDivider += findDivider(i);
+                if (i != n) {
+                    tableWithNumbersAndDivider += "\n";
+                }
             }
+
+            return tableWithNumbersAndDivider;
         }
 
-        return tableWithNumbersAndDivider;
+        return "Invalid arguments";
     }
 
-    public static void checkValidityArgument(long m, long n) {
+    public static boolean checkValidityArgument(long m, long n) {
         if (m > n) {
-            throw new IllegalArgumentException("m cannot be large then n");
+            System.out.println("m cannot be large then n");
+            return false;
         } else if (m == n) {
-            throw new IllegalArgumentException("m cannot be equals n");
+            System.out.println("m cannot be equals n");
+            return false;
         } else if (m < 0) {
-            throw new IllegalArgumentException("m cannot be less then 0, try again");
+            System.out.println("m cannot be less then 0, try again");
+            return false;
         }
+        return true;
     }
 
     public static String findDivider(long a) {

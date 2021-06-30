@@ -5,7 +5,7 @@ public class Task05 {
      * Given the number row and number e.
      *
      * General term have number row view:
-     * a-n = 1 / 2 ^ n + 1 / 3 ^ n
+     * an = 1 / 2 ^ n + 1 / 3 ^ n
      * Find the sum of the members of the number row, the modulus of which is greater than or equal to e.
      *
      * @param e      input number e

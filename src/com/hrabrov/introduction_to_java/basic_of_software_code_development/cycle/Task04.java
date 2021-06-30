@@ -18,19 +18,19 @@ public class Task04 {
         int stepToNextNumber;
         for (int i = 0; i < 200; i++) {
             if (h > 10737418) {
-                return "Increment is bigger, enter less increment";
+                return "The increment is large, enter another number";
             }
 
             stepToNextNumber = i * h;
             nextNumberOfSquare = (long) Math.pow(x + stepToNextNumber, 2);
 
             if (resultMultiplyOfSquare > resultMultiplyOfSquare * nextNumberOfSquare) {
-               return "Variable is overflow, enter any less start value or increment";
+                return "The answer variable is overflowed, try entering less start value or other the increment";
             }
-            
+
             resultMultiplyOfSquare = resultMultiplyOfSquare * nextNumberOfSquare;
         }
-        
+
         return Long.toString(resultMultiplyOfSquare);
     }
 }

@@ -7,31 +7,30 @@ public class Task06 {
      * @return list with number equivalent
      */
 
-    public static StringBuilder numberEquivalentSymbol() {
-        StringBuilder charTableEquivalents = new StringBuilder("\n");
+    public static String numberEquivalentSymbol() {
+        String charTableEquivalents = "\n";
+        char charX;
+        String spaces = "      "; // 6 space
 
-        for (int i = 32; i <= 127; i++) {
-            char charX;
+        charTableEquivalents +="32 = ESK    ";
+
+        for (int i = 33; i <= 126; i++) {
             String enter = "";
-            String spaces = "    "; // 4 space
 
             charX = (char) i;
 
-
-            if ((i - 1) % 10 == 0) {
+            if (i % 10 == 1) {
                 enter = "\n";
             }
 
             if (i > 99) {
-                spaces = "   "; // 3 space
+                spaces = "     "; // 5 space
             }
 
-            charTableEquivalents.append(i)
-                                .append(" = ")
-                                .append(charX)
-                                .append(spaces)
-                                .append(enter);
+            charTableEquivalents += i + " = " + charX + spaces + enter;
         }
+
+        charTableEquivalents += "127 = DEL";
 
         return charTableEquivalents;
     }
