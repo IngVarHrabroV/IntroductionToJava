@@ -5,11 +5,11 @@ import com.hrabrov.introduction_to_java.basic_of_software_code_development.linea
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("*****    Start basic of software code development module     ***** \n");
-        //basicOFSoftwareCodeDevelopmentRunner();
-        System.out.println("*****    End basic of software code development module    *****");
+        /*System.out.println("*****    Start basic of software code development module     *****");
+        basicOFSoftwareCodeDevelopmentRunner();
+        System.out.println("*****    End basic of software code development module    *****\n");*/
 
-        System.out.println("*****    Start Algoritmization module     ***** \n");
+        System.out.println("*****    Start Algoritmization module     *****");
         algoritmizationRunner();
         System.out.println("*****    End Algoritmization module    *****");
     }
@@ -31,7 +31,7 @@ public class Main {
     public static void algoritmizationRunner() {
         System.out.println("Start 1th block: one-dimensional arrays");
         OneDimensionalArray.run();
-        System.out.println("End 1th block: one-dimensional arrays \n");
+        System.out.println("End 1th block: one-dimensional arrays");
     }
 }
 
