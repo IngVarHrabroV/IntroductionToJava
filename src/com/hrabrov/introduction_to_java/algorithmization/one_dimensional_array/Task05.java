@@ -9,7 +9,7 @@ public class Task05 {
      * @return string with number
      */
 
-    public static String selectElement (int[] array) {
+    public static String selectElement(int[] array) {
         String selectElement = "";
 
         for (int i = 0; i < array.length; i++) {
