@@ -12,8 +12,6 @@ public class Task06 {
      */
 
     public static double sumPrimeNumber(double[] sequenceN) {
-        System.out.println(Arrays.toString(sequenceN));
-
         double sumNumbersWithPrimeOrdinalsNumber = 0;
 
         for (int i = 0; i < sequenceN.length; i++) {
