@@ -1,3 +1,5 @@
+package com.hrabrov.introduction_to_java;
+
 import com.hrabrov.introduction_to_java.algorithmization.one_dimensional_array.OneDimensionalArray;
 import com.hrabrov.introduction_to_java.basic_of_software_code_development.branching.BranchingRunner;
 import com.hrabrov.introduction_to_java.basic_of_software_code_development.cycle.CycleRunner;
