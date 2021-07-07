@@ -46,13 +46,13 @@ public class Task07 {
         String lineHeader;
         String dividerForNumber;
 
-        lineHeader = a + " has next divider: ";
+        lineHeader = "     " + a + " has next divider: ";
         dividerForNumber = lineHeader;
 
         for (long i = 2; i < a; i++) {
             dividerForNumber += a % i == 0 ? i + " " : "";
         }
 
-        return dividerForNumber.equals(lineHeader) ? a + " hasn't divider" : dividerForNumber;
+        return dividerForNumber.equals(lineHeader) ? "     " + a + " hasn't divider" : dividerForNumber;
     }
 }
