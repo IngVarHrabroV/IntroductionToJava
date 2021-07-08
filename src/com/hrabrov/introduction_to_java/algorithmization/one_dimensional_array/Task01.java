@@ -2,7 +2,7 @@ package com.hrabrov.introduction_to_java.algorithmization.one_dimensional_array;
 
 public class Task01 {
     /**
-     * Array a[n] contain natural number. Find sum array's elements, which multiple number k
+     * Array a[n] contain natural number. Find sum of array's elements, which multiple number is k
      *
      * @param a input array with natural number
      * @param k input multiple
