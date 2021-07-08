@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 public class OneDimensionalArray {
     public static void run() {
-        int resultOfTask01 = Task01.sumMultipleNumber(new int[]{3, 4, 5, 6, 8}, 3);
+        int[] arrayForTask01 = new int[]{3, 4, 5, 6, 8};
+        int resultOfTask01 = Task01.sumMultipleNumber(arrayForTask01, 3);
         System.out.println("Result task 01: " + resultOfTask01);
 
-        ArrayWithReplacement resultOfTask02 = Task02.replacementNumber(new double[]{3.54, 3.67, 4.25}, 3.55);
+        double[] arrayForTask02 = new double[]{3.54, 3.67, 4.25};
+        ArrayWithReplacement resultOfTask02 = Task02.replacementNumber(arrayForTask02, 3.55);
         System.out.println(
                 "Result of task 02: "
                 + "replacement array = " + Arrays.toString(resultOfTask02.sequenceOfReal) + ", "
@@ -20,26 +22,33 @@ public class OneDimensionalArray {
                 + "; quantity of positive number = " + resultOfTask03.positiveQuantity
                 + "; quantity of number equals zero = " + resultOfTask03.zeroQuantity);
 
-        double[] resultOfTask04 = Task04.swapElements(new double[]{4.25, 4.26, 4.27, 4.28});
+        double[] arrayForTask04 = new double[]{4.25, 4.26, 4.27, 4.28};
+        double[] resultOfTask04 = Task04.swapElements(arrayForTask04);
         System.out.println("Result of task 04: " + Arrays.toString(resultOfTask04));
 
-        String resultOfTask05 = Task05.selectElement(new int[]{-5, 2, 5, 6, -3, -42});
+        int[] arrayForTask05 = new int[]{-5, 2, 5, 6, -3, -42};
+        String resultOfTask05 = Task05.selectElement(arrayForTask05);
         System.out.println("Result of task 05: " + resultOfTask05);
 
-        double resultOfTask06 = Task06.sumPrimeNumber(new double[]{0.98, 0, -0.61, 0.38, 0.23, 0.51, -0.73, -0.04});
+        double[] arrayForTask06 = new double[]{0.98, 0, -0.61, 0.38, 0.23, 0.51, -0.73, -0.04};
+        double resultOfTask06 = Task06.sumPrimeNumber(arrayForTask06);
         System.out.println("Result of task 06: " + resultOfTask06);
 
-        double resultOfTask07 = Task07.maxValueFromSequence(new double[]{0.049, 0.950, 0.634, 0.374, 0.099, -0.933});
+        double[] arrayForTask07 = new double[]{0.049, 0.950, 0.634, 0.374, 0.099, -0.933};
+        double resultOfTask07 = Task07.maxValueFromSequence(arrayForTask07);
         System.out.println("Result of task 07: "
                 + (resultOfTask07 != 0.0 ? resultOfTask07 : "the number of members in the sequence must be even" ));
 
-        int[] resultOfTask08 = Task08.excludeMinValue(new int[]{-5, -5, -3, -1, 0, 9, 9, 1, 4, 5, -5});
+        int[] arrayForTask08 = new int[]{-5, -5, -3, -1, 0, 9, 9, 1, 4, 5, -5};
+        int[] resultOfTask08 = Task08.excludeMinValue(arrayForTask08);
         System.out.println("Result of task 08: " + Arrays.toString(resultOfTask08));
 
-        int resultOfTask09 = Task09.mostCommonNumber(new int[]{1,1,1,1,2,2,2,2});
+        int[] arrayForTask09 = new int[]{1,1,1,1,2,2,2,2};
+        int resultOfTask09 = Task09.mostCommonNumber(arrayForTask09);
         System.out.println("Result of task 09: " + resultOfTask09);
 
-        int[] resultOfTask10 = Task10.zeroIntoSecondElement(new int[]{719, 303, 853, 745, 196, 895, 175, 292, 611, 893});
+        int[] arrayForTask10 = new int[]{719, 303, 853, 745, 196, 895, 175, 292, 611, 893};
+        int[] resultOfTask10 = Task10.zeroIntoSecondElement(arrayForTask10);
         System.out.println("Result of task 10: " + Arrays.toString(resultOfTask10));
     }
 }
