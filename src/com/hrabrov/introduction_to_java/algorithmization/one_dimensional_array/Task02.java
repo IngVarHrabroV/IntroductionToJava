@@ -24,10 +24,9 @@ public class Task02 {
 
         return arrayWithReplacement;
     }
-}
 
-class ArrayWithReplacement {
-    double[] sequenceOfReal;
-    int replacement;
+    static class ArrayWithReplacement {
+        double[] sequenceOfReal;
+        int replacement;
+    }
 }
-

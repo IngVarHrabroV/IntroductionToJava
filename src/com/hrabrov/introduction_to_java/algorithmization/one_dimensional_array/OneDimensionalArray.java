@@ -9,13 +9,13 @@ public class OneDimensionalArray {
         System.out.println("Result task 01: " + resultOfTask01);
 
         double[] arrayForTask02 = new double[]{3.54, 3.67, 4.25};
-        ArrayWithReplacement resultOfTask02 = Task02.replacementNumber(arrayForTask02, 3.55);
+        Task02.ArrayWithReplacement resultOfTask02 = Task02.replacementNumber(arrayForTask02, 3.55);
         System.out.println(
                 "Result of task 02: "
                 + "replacement array = " + Arrays.toString(resultOfTask02.sequenceOfReal) + ", "
                 + "number of replace = " + resultOfTask02.replacement);
 
-        Quantity resultOfTask03 = Task03.checkArrayElements(10);
+        Task03.Quantity resultOfTask03 = Task03.checkArrayElements(10);
         System.out.println(
                 "Result of task 03:"
                 + " quantity of negative number = " + resultOfTask03.negativeQuantity

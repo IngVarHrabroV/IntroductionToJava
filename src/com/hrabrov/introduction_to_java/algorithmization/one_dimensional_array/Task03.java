@@ -7,7 +7,6 @@ public class Task03 {
      *
      * @param arrayLength input array's length
      * @return object Quantity
-     *
      */
 
     public static Quantity checkArrayElements(int arrayLength) {
@@ -52,12 +51,14 @@ public class Task03 {
 
         return randomNumber;
     }
+
+    static class Quantity {
+        int negativeQuantity;
+        int positiveQuantity;
+        int zeroQuantity;
+    }
 }
 
-class Quantity {
-    int negativeQuantity;
-    int positiveQuantity;
-    int zeroQuantity;
-}
+
 
 
