@@ -16,7 +16,7 @@ public class Main {
         System.out.println("*****    End Algorithmization module    *****");
     }
 
-    public static void basicOFSoftwareCodeDevelopmentRunner() {
+    static void basicOFSoftwareCodeDevelopmentRunner() {
         System.out.println("Start 1th block: linear program");
         LinerRunner.run();
         System.out.println("End 1th block: linear program \n");
@@ -30,7 +30,7 @@ public class Main {
         System.out.println("End 3th block: cycle");
     }
 
-    public static void algorithmizationRunner() {
+    static void algorithmizationRunner() {
         System.out.println("Start 1th block: one-dimensional arrays");
         OneDimensionalArray.run();
         System.out.println("End 1th block: one-dimensional arrays");
