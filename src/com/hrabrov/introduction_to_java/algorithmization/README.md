@@ -1,8 +1,8 @@
 # Task for algorithmization
 
-There is contained tasks on Algorithmization:
+There are contained tasks on Algorithmization:
 - one-dimensional arrays;
 - multidimensional arrays;
-- sorting one-dimensional array;
+- sorting of one-dimensional array;
 - decomposition.
 
