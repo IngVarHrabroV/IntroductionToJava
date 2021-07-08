@@ -9,11 +9,23 @@ public class Task05 {
      * @return string with number
      */
 
-    public static String selectElement(int[] array) {
-        String selectElement = "";
+    public static int[] selectElement(int[] array) {
+        int[] selectElement;
 
+        int lengthArraySelectElement = 0;
         for (int i = 0; i < array.length; i++) {
-            selectElement += array[i] > i + 1 ? array[i] + " " : "";
+           if (array[i] > i) {
+                lengthArraySelectElement++;
+           }
+        }
+
+        selectElement = new int[lengthArraySelectElement];
+        int indexSelectElement = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > i) {
+                selectElement[indexSelectElement] = array[i];
+                indexSelectElement++;
+            }
         }
 
         return selectElement;

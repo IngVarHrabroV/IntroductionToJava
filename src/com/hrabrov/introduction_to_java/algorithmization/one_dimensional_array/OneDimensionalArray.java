@@ -27,8 +27,8 @@ public class OneDimensionalArray {
         System.out.println("Result of task 04: " + Arrays.toString(resultOfTask04));
 
         int[] arrayForTask05 = new int[]{-5, 2, 5, 6, -3, -42};
-        String resultOfTask05 = Task05.selectElement(arrayForTask05);
-        System.out.println("Result of task 05: " + resultOfTask05);
+        int[] resultOfTask05 = Task05.selectElement(arrayForTask05);
+        System.out.println("Result of task 05: " + Arrays.toString(resultOfTask05));
 
         double[] arrayForTask06 = new double[]{0.98, 0, -0.61, 0.38, 0.23, 0.51, -0.73, -0.04};
         double resultOfTask06 = Task06.sumPrimeNumber(arrayForTask06);
