@@ -9,23 +9,23 @@ public class Task04 {
      */
 
     public static double[] swapElements(double[] initialArray) {
-        int maxIndex = 0;
-        int minIndex = 0;
+        int indexMaxNumber = 0;
+        int indexMinNumber = 0;
 
         for (int i = 1; i < initialArray.length; i++) {
-            if (initialArray[i] < initialArray[minIndex]) {
-                minIndex = i;
+            if (initialArray[i] < initialArray[indexMinNumber]) {
+                indexMinNumber = i;
             }
 
-            if (initialArray[i] > initialArray[maxIndex]) {
-                maxIndex = i;
+            if (initialArray[i] > initialArray[indexMaxNumber]) {
+                indexMaxNumber = i;
             }
         }
 
         double temp;
-        temp = initialArray[minIndex];
-        initialArray[minIndex] = initialArray[maxIndex];
-        initialArray[maxIndex] = temp;
+        temp = initialArray[indexMinNumber];
+        initialArray[indexMinNumber] = initialArray[indexMaxNumber];
+        initialArray[indexMaxNumber] = temp;
 
         return initialArray;
     }
