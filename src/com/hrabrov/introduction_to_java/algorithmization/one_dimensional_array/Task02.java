@@ -10,8 +10,8 @@ public class Task02 {
      * @return sequence with replace and number of replace
      */
 
-    public static ArrayWithReplacement replacementNumber(double[] sequenceOfReal, double z) {
-        ArrayWithReplacement arrayWithReplacement = new ArrayWithReplacement();
+    public static ArrayAndCountReplacement replacementNumber(double[] sequenceOfReal, double z) {
+        ArrayAndCountReplacement arrayAndCountReplacement = new ArrayAndCountReplacement();
         int replacement = 0;
 
         for (int i = 0; i < sequenceOfReal.length; i++) {
@@ -19,13 +19,13 @@ public class Task02 {
             replacement += sequenceOfReal[i] < z ? 0 : 1;
         }
 
-        arrayWithReplacement.sequenceOfReal = sequenceOfReal;
-        arrayWithReplacement.replacement = replacement;
+        arrayAndCountReplacement.sequenceOfReal = sequenceOfReal;
+        arrayAndCountReplacement.replacement = replacement;
 
-        return arrayWithReplacement;
+        return arrayAndCountReplacement;
     }
 
-    static class ArrayWithReplacement {
+    static class ArrayAndCountReplacement {
         double[] sequenceOfReal;
         int replacement;
     }

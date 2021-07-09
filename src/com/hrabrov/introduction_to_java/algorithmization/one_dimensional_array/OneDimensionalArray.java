@@ -9,7 +9,7 @@ public class OneDimensionalArray {
         System.out.println("Result task 01: " + resultOfTask01);
 
         double[] arrayForTask02 = new double[]{3.54, 3.67, 4.25};
-        Task02.ArrayWithReplacement resultOfTask02 = Task02.replacementNumber(arrayForTask02, 3.55);
+        Task02.ArrayAndCountReplacement resultOfTask02 = Task02.replacementNumber(arrayForTask02, 3.55);
         System.out.println(
                 "Result of task 02: "
                 + "replacement array = " + Arrays.toString(resultOfTask02.sequenceOfReal) + ", "
