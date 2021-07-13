@@ -31,7 +31,7 @@ public class CycleRunner {
         System.out.println("Result task 08: " + resultOfTask08);
     }
 
-    public static long enterLongFromConsole(String x) {
+    private static long enterLongFromConsole(String x) {
         Scanner sc = new Scanner(System.in);
         long a;
 
