@@ -28,7 +28,7 @@ public class Task07 {
         return "Invalid arguments";
     }
 
-    public static boolean checkValidityArgument(long m, long n) {
+    private static boolean checkValidityArgument(long m, long n) {
         if (m > n) {
             System.out.println("m cannot be large then n");
             return false;
@@ -42,7 +42,7 @@ public class Task07 {
         return true;
     }
 
-    public static String findDivider(long a) {
+    private static String findDivider(long a) {
         String lineHeader;
         String dividerForNumber;
 
