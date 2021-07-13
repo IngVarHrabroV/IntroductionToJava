@@ -23,7 +23,7 @@ public class Task06 {
         return sumNumbersWithPrimeOrdinalsNumber;
     }
 
-    public static boolean checkNumberForPrime(int numberForCheck) {
+    private static boolean checkNumberForPrime(int numberForCheck) {
         if (numberForCheck == 1) {
             return false;
         }

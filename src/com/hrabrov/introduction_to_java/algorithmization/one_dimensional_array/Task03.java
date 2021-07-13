@@ -35,7 +35,7 @@ public class Task03 {
         return quantity;
     }
 
-    public static int numberForArray() {
+    private static int numberForArray() {
         int randomNumberForToken;
         int randomToken;
 
