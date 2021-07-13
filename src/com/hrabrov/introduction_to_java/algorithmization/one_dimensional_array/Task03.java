@@ -58,7 +58,3 @@ public class Task03 {
         int zeroQuantity;
     }
 }
-
-
-
-
