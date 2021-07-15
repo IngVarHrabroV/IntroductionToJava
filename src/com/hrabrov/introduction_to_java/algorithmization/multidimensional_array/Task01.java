@@ -6,7 +6,7 @@ public class Task01 {
      * больше последнего.
      * Given a matrix. Display all odd columns with the first item greater than last.
      *
-     * @param originalMatrix input matrix array
+     * @param originalMatrix input multidimensional array
      * @return matrix include odd columns with the first item greater than last
      */
 
