@@ -18,7 +18,10 @@ public class Task05 {
      */
 
     public static int[][] createMatrixForTask05(int n) {
-        if (checkValidationArgument(n)) {
+        CheckValidationArgumentOnEvenAndSize checkValidateArgument =
+                new CheckValidationArgumentOnEvenAndSize();
+
+        if (checkValidateArgument.check(n)) {
             int[][] matrix = new int[n][n];
 
             for (int i = 0; i < n; i++) {
@@ -35,19 +38,5 @@ public class Task05 {
         }
 
         return new int[0][0];
-    }
-
-    private static boolean checkValidationArgument(int n) {
-        if (n % 2 != 0) {
-            System.out.println("n can't be odd");
-            return false;
-        }
-
-        if (n < 1) {
-            System.out.println("n can't be small, then 1");
-            return false;
-        }
-
-        return true;
     }
 }
