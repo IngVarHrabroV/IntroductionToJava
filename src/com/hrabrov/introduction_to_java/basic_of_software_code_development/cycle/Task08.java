@@ -28,7 +28,7 @@ public class Task08 {
         return identicalNumerals;
     }
 
-    public static String numberWithoutDuplicate(double a) {
+    private static String numberWithoutDuplicate(double a) {
         String numberToString;
         int numberToStringLength;
 
