@@ -5,12 +5,13 @@ public class Task04 {
      * Сформировать квадратную матрицу порядка n по заданному образцу(n - четное)
      * Create a square matrix of order n according to a given patter (n is even)
      * {
-     * {1, 2, 3, ..., n}
-     * {n, n-1, n-2, ..., 1}
-     * {1, 2, 3, ..., n}
-     * {n, n-1, n-2, ..., 1}
-     * |    |    |     \ |
-     * {n, n-1, n-2, ..., 1}
+     * {1, 2,    3,   ..., n}
+     * {n, n-1,  n-2, ..., 1}
+     * {1, 2,    3,   ..., n}
+     * {n, n-1,  n-2, ..., 1}
+     * |   |     |     \  |
+     * {n, n-1,  n-2, ..., 1}
+     * }
      *
      * @param n input order for matrix
      * @return matrix
