@@ -1,6 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MultidimensionalArray {
     public static void run() {
@@ -47,13 +48,34 @@ public class MultidimensionalArray {
 
         System.out.println("Result of task 06: ");
         int[][] resultOfTask06 = Task06.createMatrixForTask06(4);
-        System.out.println(matrixToString(resultOfTask06));*/
+        System.out.println(matrixToString(resultOfTask06));
 
         System.out.println("Result of task 07: ");
         Task07.MatrixAndYourPositiveElements resultOfTask07;
         resultOfTask07 = Task07.createMatrixForTask07(6);
         System.out.println(matrixToString(resultOfTask07.matrix));
-        System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements);
+        System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements); */
+
+        int[][] matrixForTask08 = new int[][]{
+                {0, 1, 2, 3, 4, 5, 6, 7 ,8, 9},
+                {0, 1, 2, 3, 4, 5, 6, 7 ,8, 9},
+                {0, 1, 2, 3, 4, 5, 6, 7 ,8, 9},
+                {0, 1, 2, 3, 4, 5, 6, 7 ,8, 9}
+        };
+        System.out.println("Result of task 08: ");
+        System.out.println("Original matrix: ");
+        System.out.println(matrixToString(matrixForTask08));
+        System.out.println("Starting replace column");
+
+        int firstNumber;
+        int secondNumber;
+        System.out.print("Enter number of first column for replace: ");
+        firstNumber = inputNumber();
+        System.out.print("Enter number of second column for replace: ");
+        secondNumber = inputNumber();
+        int[][] resultOfTask08 = Task08.replacedTwoColumn(matrixForTask08, firstNumber, secondNumber);
+        System.out.println("Matrix with replaced columns: ");
+        System.out.println(matrixToString(resultOfTask08));
     }
 
     private static String matrixToString(int[][] matrix) {
@@ -82,5 +104,21 @@ public class MultidimensionalArray {
             matrixToString += (i == matrix.length - 1) ? "" : "\n";
         }
         return matrixToString;
+    }
+
+    private static int inputNumber() {
+        Scanner sc = new Scanner(System.in);
+        int a;
+
+        System.out.print(">> ");
+
+        while (!sc.hasNextInt()) {
+            System.out.println("You can't enter " + sc.next());
+            System.out.print("Try again >> ");
+        }
+
+        a = sc.nextInt();
+
+        return a;
     }
 }
