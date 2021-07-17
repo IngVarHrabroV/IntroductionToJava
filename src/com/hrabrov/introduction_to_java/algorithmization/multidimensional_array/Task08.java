@@ -17,14 +17,36 @@ public class Task08 {
      */
 
     public static int[][] replacedTwoColumn(int[][] originalMatrix, int firstColumn, int secondColumn) {
+        int matrixVerticalSize = originalMatrix.length;
+        int matrixHorizontalSize = originalMatrix[0].length;
 
-        int temp;
-        for (int i = 0; i < originalMatrix.length; i++) {
-            temp = originalMatrix[i][firstColumn - 1];
-            originalMatrix[i][firstColumn - 1] = originalMatrix[i][secondColumn - 1];
-            originalMatrix[i][secondColumn - 1] = temp;
+
+        if (checkValidationArgument(matrixHorizontalSize, firstColumn, secondColumn)) {
+            int temp;
+            for (int i = 0; i < matrixVerticalSize; i++) {
+                temp = originalMatrix[i][firstColumn - 1];
+                originalMatrix[i][firstColumn - 1] = originalMatrix[i][secondColumn - 1];
+                originalMatrix[i][secondColumn - 1] = temp;
+            }
+
+            return originalMatrix;
         }
 
-        return originalMatrix;
+        return new int[0][0];
+    }
+
+    private static boolean checkValidationArgument(int matrixHorizontalSize, int firstColumn, int secondColumn){
+        if (secondColumn > matrixHorizontalSize || firstColumn > matrixHorizontalSize) {
+            System.out.println("Number of column can't be larger than horizontal size matrix");
+            System.out.println("Horizontal matrix size is " + matrixHorizontalSize);
+            return false;
+        }
+
+        if (firstColumn < 1 || secondColumn < 1) {
+            System.out.println("Number of column can't be less 1");
+            return false;
+        }
+
+        return true;
     }
 }
