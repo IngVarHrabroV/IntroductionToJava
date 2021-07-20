@@ -45,7 +45,7 @@ public class Task14 {
         return new int[0][0];
     }
 
-    public static boolean checkValidateArgument(int m, int n) {
+    private static boolean checkValidateArgument(int m, int n) {
         if (m < 2 || n < 2) {
             System.out.println("Parameters m and n are must be larger than 1");
             return false;

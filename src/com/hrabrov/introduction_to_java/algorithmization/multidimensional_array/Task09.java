@@ -48,7 +48,7 @@ public class Task09 {
         return returnedObject;
     }
 
-    public static boolean checkValidateMatrixElement(int a) {
+    private static boolean checkValidateMatrixElement(int a) {
         if (a < 0) {
             System.out.println("Matrix must contain non-negative numbers.\n" +
                     a + " can't be place in matrix");
