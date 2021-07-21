@@ -26,7 +26,7 @@ public class Task12 {
         return originalMatrix;
     }
 
-    private static int[][] descendingSortMatrix(int[][] originalMatrix) {
+    public static int[][] descendingSortMatrix(int[][] originalMatrix) {
         for (int i = 0; i < originalMatrix.length; i++) {
             for (int j = 0; j < originalMatrix[i].length; j++) {
                 for (int k = j + 1; k < originalMatrix[i].length; k++) {
