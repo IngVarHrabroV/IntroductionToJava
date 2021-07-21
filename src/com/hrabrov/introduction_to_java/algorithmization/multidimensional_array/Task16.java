@@ -30,7 +30,7 @@ public class Task16 {
         //fill in diagonal rows
         int midRowOrColumnForBigMatrix;
         midRowOrColumnForBigMatrix = midRowOrColumn(sizeBigMatrix);
-        int numberForFillBigMatrix = 1;
+        int numberForFillBigMatrix = 28;
         int tempJ = 0;
         for (int i = midRowOrColumnForBigMatrix - 1; i < sizeBigMatrix; i++) {
             int tempI = i;
@@ -86,6 +86,67 @@ public class Task16 {
 
         return magicSquare;
     }
+
+    public static int[][] generateMagicSquareForEvenEvenSize(int n) {
+        int[][] auxiliaryMatrixOne;
+        int[][] auxiliaryMatrixTwo;
+
+        auxiliaryMatrixOne = new int[n][n];
+        auxiliaryMatrixTwo = new int[n][n];
+
+        int numberForFillAuxiliaryMatrixOne = 1;
+        int numberForFillAuxiliaryMatrixTwo = (int) Math.pow(n, 2);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                auxiliaryMatrixOne[i][j] = numberForFillAuxiliaryMatrixOne;
+                numberForFillAuxiliaryMatrixOne++;
+                auxiliaryMatrixTwo[i][j] = numberForFillAuxiliaryMatrixTwo;
+                numberForFillAuxiliaryMatrixTwo--;
+            }
+        }
+
+        //fill zeros on diagonal lines of 4 on 4 squares (small squares)
+        int amountSmallSquaresInRow;
+        amountSmallSquaresInRow = n / 4;
+
+        int amountSmallSquaresInMatrix;
+        amountSmallSquaresInMatrix = (int) Math.pow(amountSmallSquaresInRow, 2);
+
+        int numberRowWithSmallSquares = 0;
+        int columnNumberForFirstDiagonalInRowOfSmallSquares = 0; // this is need for left-right diagonal
+        int columnNumberForSecondDiagonalInRowOfSmallSquares = 1;
+        for (int k = 1; k <= amountSmallSquaresInMatrix; k++) {
+            int tempA = 1;
+            for (int i = numberRowWithSmallSquares; i < numberRowWithSmallSquares + 4; i++) {
+                auxiliaryMatrixOne[i][columnNumberForFirstDiagonalInRowOfSmallSquares] = 0;
+                columnNumberForFirstDiagonalInRowOfSmallSquares++;
+                auxiliaryMatrixOne[i][columnNumberForSecondDiagonalInRowOfSmallSquares * 4 - tempA] = 0;
+                tempA++;
+            }
+            columnNumberForSecondDiagonalInRowOfSmallSquares++;
+
+            if (k % amountSmallSquaresInRow == 0) {
+                numberRowWithSmallSquares += 4;
+                columnNumberForFirstDiagonalInRowOfSmallSquares = 0;
+                columnNumberForSecondDiagonalInRowOfSmallSquares = 1;
+            }
+        }
+
+        //matrix alignment
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int temp;
+                temp = auxiliaryMatrixOne[i][j] + auxiliaryMatrixTwo[i][j];
+                if (temp == auxiliaryMatrixTwo[i][j]) {
+                    auxiliaryMatrixOne[i][j] = auxiliaryMatrixTwo[i][j];
+                }
+            }
+        }
+
+        return auxiliaryMatrixOne;
+    }
+
 
     private static int midRowOrColumn(int n) {
         return (int) Math.ceil((double) n / 2);
