@@ -9,16 +9,31 @@ public class Task02 {
      * @return array with diagonal elements
      */
 
-    public static int[] chooseDiagonalElement(int[][] originalMatrix) {
-        int[] arrayWithMatrixDiagonalElements;
-        arrayWithMatrixDiagonalElements = new int[originalMatrix.length];
+    public static arrayWithDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
+        arrayWithDiagonalElements arrayWithDiagonalElements = new arrayWithDiagonalElements();
+
+        int sizeMatrix = originalMatrix.length;
+
+        arrayWithDiagonalElements.firstDiagonal = new int[sizeMatrix];
+        arrayWithDiagonalElements.secondDiagonal = new int[sizeMatrix];
 
         int tempIndex = 0;
         for (int i = 0; i < originalMatrix.length; i++) {
-            arrayWithMatrixDiagonalElements[tempIndex] = originalMatrix[i][i];
+            arrayWithDiagonalElements.firstDiagonal[tempIndex] = originalMatrix[i][i];
             tempIndex++;
         }
 
-        return arrayWithMatrixDiagonalElements;
+        tempIndex = 0;
+        for (int i = 0; i < originalMatrix.length; i++) {
+            arrayWithDiagonalElements.secondDiagonal[tempIndex] = originalMatrix[i][sizeMatrix - i - 1];
+            tempIndex++;
+        }
+
+        return arrayWithDiagonalElements;
+    }
+
+    static class arrayWithDiagonalElements {
+        int[] firstDiagonal;
+        int[] secondDiagonal;
     }
 }
