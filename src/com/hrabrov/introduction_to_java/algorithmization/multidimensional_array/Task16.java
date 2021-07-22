@@ -9,9 +9,20 @@ public class Task16 {
      * @return multidimensional array like magic square
      */
 
-    public static int[][] generateMagicSquareForOddSize(int n) {
+    public static int[][] generateMagicSquare(int n) {
+        if (n % 2 != 0) {
+            return generateMagicSquareForOddSize(n);
+        } else if (n % 4 == 0) {
+            return generateMagicSquareForEvenEvenSize(n);
+        }
+
+        return generateMagicSquareForEvenOddSize(n);
+    }
+
+    //n = 2k + 1, k = 1, 2, 3, ...
+    private static int[][] generateMagicSquareForOddSize(int n) {
         int midRowOrColumnForMagicSquare;
-        midRowOrColumnForMagicSquare = midRowOrColumn(n);
+        midRowOrColumnForMagicSquare = findMidRowOrColumn(n);
 
         //create auxiliary matrix (bigMatrix)
         int howManyCellToAdd;
@@ -29,8 +40,8 @@ public class Task16 {
 
         //fill in diagonal rows
         int midRowOrColumnForBigMatrix;
-        midRowOrColumnForBigMatrix = midRowOrColumn(sizeBigMatrix);
-        int numberForFillBigMatrix = 28;
+        midRowOrColumnForBigMatrix = findMidRowOrColumn(sizeBigMatrix);
+        int numberForFillBigMatrix = 1;
         int tempJ = 0;
         for (int i = midRowOrColumnForBigMatrix - 1; i < sizeBigMatrix; i++) {
             int tempI = i;
@@ -87,7 +98,8 @@ public class Task16 {
         return magicSquare;
     }
 
-    public static int[][] generateMagicSquareForEvenEvenSize(int n) {
+    //n = 4k, k = 1, 2, 3, ...
+    private static int[][] generateMagicSquareForEvenEvenSize(int n) {
         int[][] auxiliaryMatrixOne;
         int[][] auxiliaryMatrixTwo;
 
@@ -147,8 +159,69 @@ public class Task16 {
         return auxiliaryMatrixOne;
     }
 
+    //n = 4k + 2, k = 1, 2, 3, ...
+    private static int[][] generateMagicSquareForEvenOddSize(int n) {
+        int[][] magicSquare = new int[n][n];
 
-    private static int midRowOrColumn(int n) {
+        int sizeSmallSquare;
+        sizeSmallSquare = findMidRowOrColumn(n);
+
+        int[][] numbersForFirstSmallSquare;
+        numbersForFirstSmallSquare = generateMagicSquareForOddSize(sizeSmallSquare);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i < sizeSmallSquare && j < sizeSmallSquare) {
+                    magicSquare[i][j] = numbersForFirstSmallSquare[i][j];
+                }
+
+                int smallSquareArea;
+                smallSquareArea = (int) Math.pow(sizeSmallSquare, 2);
+                if (i < sizeSmallSquare && j >= sizeSmallSquare) {
+                    magicSquare[i][j]
+                            = numbersForFirstSmallSquare[i][j - sizeSmallSquare] + 2 * smallSquareArea;
+                }
+
+                if (i >= sizeSmallSquare && j < sizeSmallSquare) {
+                    magicSquare[i][j]
+                            = numbersForFirstSmallSquare[i - sizeSmallSquare][j] + 3 * smallSquareArea;
+                }
+
+                if (i >= sizeSmallSquare && j >= sizeSmallSquare) {
+                    magicSquare[i][j]
+                            = numbersForFirstSmallSquare[i - sizeSmallSquare][j - sizeSmallSquare] + smallSquareArea;
+                }
+            }
+        }
+
+        int tempStorageForRearrangingNumber;
+
+        for (int i = 0; i < sizeSmallSquare; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (((i == 0 || i == sizeSmallSquare - 1) && j == 0)
+                        || (i != 0 && i != sizeSmallSquare - 1 && j == 1)) {
+                    tempStorageForRearrangingNumber = magicSquare[i][j];
+                    magicSquare[i][j] = magicSquare[i + sizeSmallSquare][j];
+                    magicSquare[i + sizeSmallSquare][j] = tempStorageForRearrangingNumber;
+                }
+            }
+        }
+
+        int halfQuantityCenterColumnForReplace = (sizeSmallSquare - 3) / 2;
+
+        for (int k = halfQuantityCenterColumnForReplace * (-1); k < halfQuantityCenterColumnForReplace; k++) {
+            for (int i = 0; i < sizeSmallSquare; i++) {
+                tempStorageForRearrangingNumber = magicSquare[i][sizeSmallSquare + k];
+                magicSquare[i][sizeSmallSquare + k] =
+                        magicSquare[i + sizeSmallSquare][sizeSmallSquare + k];
+                magicSquare[i + sizeSmallSquare][sizeSmallSquare + k] = tempStorageForRearrangingNumber;
+            }
+        }
+
+        return magicSquare;
+    }
+
+    private static int findMidRowOrColumn(int n) {
         return (int) Math.ceil((double) n / 2);
     }
 }
