@@ -50,7 +50,7 @@ public class Task09 {
 
     private static boolean checkValidateMatrixElement(int a) {
         if (a < 0) {
-            System.out.println("Matrix must contain non-negative numbers.\n" +
+            System.out.println("Matrix must non contain non-negative numbers.\n" +
                     a + " can't be place in matrix");
             return true;
         }
