@@ -1,7 +1,5 @@
 package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array;
 
-import java.util.Arrays;
-
 public class Task11 {
     /**
      * Матрицу 10x20 заполнить случайными числами от 0 до 15.
@@ -41,8 +39,6 @@ public class Task11 {
 
             tempIndex++;
         }
-
-        System.out.println(Arrays.toString(checkRowOnQuantityFive));
 
         int arraySize = 0;
         for (int i = 0; i < 10; i++) {
