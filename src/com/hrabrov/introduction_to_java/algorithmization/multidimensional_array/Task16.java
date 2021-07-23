@@ -21,77 +21,79 @@ public class Task16 {
 
     //n = 2k + 1, k = 1, 2, 3, ...
     private static int[][] generateMagicSquareForOddSize(int n) {
-        int midRowOrColumnForMagicSquare;
-        midRowOrColumnForMagicSquare = findMidRowOrColumn(n);
+        int middleOfSideOfMagicSquare;
+        middleOfSideOfMagicSquare = findMiddleOfSideOfMatrix(n);
 
         //create auxiliary matrix (bigMatrix)
         int howManyCellToAdd;
-        howManyCellToAdd = (n - midRowOrColumnForMagicSquare) * 2;
-        int[][] bigMatrix;
-        int sizeBigMatrix;
-        sizeBigMatrix = n + howManyCellToAdd;
-        bigMatrix = new int[sizeBigMatrix][sizeBigMatrix];
+        howManyCellToAdd = (n - middleOfSideOfMagicSquare) * 2;
+        int[][] auxiliaryBigMatrix;
+        int sizeOfAuxiliaryBigMatrix;
+        sizeOfAuxiliaryBigMatrix = n + howManyCellToAdd;
+        auxiliaryBigMatrix = new int[sizeOfAuxiliaryBigMatrix][sizeOfAuxiliaryBigMatrix];
 
-        for (int i = 0; i < sizeBigMatrix; i++) {
-            for (int j = 0; j < sizeBigMatrix; j++) {
-                bigMatrix[i][j] = 0;
+        for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
+            for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
+                auxiliaryBigMatrix[i][j] = 0;
             }
         }
 
         //fill in diagonal rows
-        int midRowOrColumnForBigMatrix;
-        midRowOrColumnForBigMatrix = findMidRowOrColumn(sizeBigMatrix);
-        int numberForFillBigMatrix = 1;
+        int middleOfSideOfAuxiliaryBigMatrix;
+        middleOfSideOfAuxiliaryBigMatrix = findMiddleOfSideOfMatrix(sizeOfAuxiliaryBigMatrix);
+        int numberForFillAuxiliaryBigMatrix = 1;
         int tempJ = 0;
-        for (int i = midRowOrColumnForBigMatrix - 1; i < sizeBigMatrix; i++) {
+        for (int i = middleOfSideOfAuxiliaryBigMatrix - 1; i < sizeOfAuxiliaryBigMatrix; i++) {
             int tempI = i;
             for (int j = tempJ; j <= i; j++) {
-                bigMatrix[tempI][j] = numberForFillBigMatrix;
-                numberForFillBigMatrix++;
+                auxiliaryBigMatrix[tempI][j] = numberForFillAuxiliaryBigMatrix;
+                numberForFillAuxiliaryBigMatrix++;
                 tempI -= 1;
             }
             tempJ++;
         }
 
         //transfer number from the terrace to the magic square
-        for (int i = 0; i < sizeBigMatrix; i++) {
-            for (int j = 0; j < sizeBigMatrix; j++) {
+        int halfOfAddedCells;
+        halfOfAddedCells = howManyCellToAdd / 2;
+        for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
+            for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
                 //top terrace
-                if (i < howManyCellToAdd / 2) {
-                    if (bigMatrix[i][j] != 0) {
-                        bigMatrix[i + n][j] = bigMatrix[i][j];
-                        bigMatrix[i][j] = 0;
+                if (i < halfOfAddedCells) {
+                    if (auxiliaryBigMatrix[i][j] != 0) {
+                        auxiliaryBigMatrix[i + n][j] = auxiliaryBigMatrix[i][j];
+                        auxiliaryBigMatrix[i][j] = 0;
                     }
                 }
                 //bottom terrace
-                if (i + 1 > n + (howManyCellToAdd / 2)) {
-                    if (bigMatrix[i][j] != 0) {
-                        bigMatrix[i - n][j] = bigMatrix[i][j];
-                        bigMatrix[i][j] = 0;
+                if (i + 1 > n + (halfOfAddedCells)) {
+                    if (auxiliaryBigMatrix[i][j] != 0) {
+                        auxiliaryBigMatrix[i - n][j] = auxiliaryBigMatrix[i][j];
+                        auxiliaryBigMatrix[i][j] = 0;
                     }
                 }
                 //left terrace
-                if (j < howManyCellToAdd / 2) {
-                    if (bigMatrix[i][j] != 0) {
-                        bigMatrix[i][j + n] = bigMatrix[i][j];
-                        bigMatrix[i][j] = 0;
+                if (j < halfOfAddedCells) {
+                    if (auxiliaryBigMatrix[i][j] != 0) {
+                        auxiliaryBigMatrix[i][j + n] = auxiliaryBigMatrix[i][j];
+                        auxiliaryBigMatrix[i][j] = 0;
                     }
                 }
                 //right terrace
-                if (j + 1 > n + (howManyCellToAdd / 2)) {
-                    if (bigMatrix[i][j] != 0) {
-                        bigMatrix[i][j - n] = bigMatrix[i][j];
-                        bigMatrix[i][j] = 0;
+                if (j + 1 > n + halfOfAddedCells) {
+                    if (auxiliaryBigMatrix[i][j] != 0) {
+                        auxiliaryBigMatrix[i][j - n] = auxiliaryBigMatrix[i][j];
+                        auxiliaryBigMatrix[i][j] = 0;
                     }
                 }
             }
         }
 
-        //cut magic square from auxiliary matrix
+        //cut magic square from auxiliary big matrix
         int[][] magicSquare = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                magicSquare[i][j] = bigMatrix[i + howManyCellToAdd / 2][j + howManyCellToAdd / 2];
+                magicSquare[i][j] = auxiliaryBigMatrix[i + halfOfAddedCells][j + halfOfAddedCells];
             }
         }
 
@@ -100,128 +102,128 @@ public class Task16 {
 
     //n = 4k, k = 1, 2, 3, ...
     private static int[][] generateMagicSquareForEvenEvenSize(int n) {
-        int[][] auxiliaryMatrixOne;
-        int[][] auxiliaryMatrixTwo;
+        int[][] firstAuxiliaryMatrix;
+        int[][] secondAuxiliaryMatrix;
 
-        auxiliaryMatrixOne = new int[n][n];
-        auxiliaryMatrixTwo = new int[n][n];
+        firstAuxiliaryMatrix = new int[n][n];
+        secondAuxiliaryMatrix = new int[n][n];
 
-        int numberForFillAuxiliaryMatrixOne = 1;
-        int numberForFillAuxiliaryMatrixTwo = (int) Math.pow(n, 2);
+        int numberForFillFirstAuxiliaryMatrix = 1;
+        int numberForFillSecondAuxiliaryMatrix = (int) Math.pow(n, 2);
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                auxiliaryMatrixOne[i][j] = numberForFillAuxiliaryMatrixOne;
-                numberForFillAuxiliaryMatrixOne++;
-                auxiliaryMatrixTwo[i][j] = numberForFillAuxiliaryMatrixTwo;
-                numberForFillAuxiliaryMatrixTwo--;
+                firstAuxiliaryMatrix[i][j] = numberForFillFirstAuxiliaryMatrix;
+                numberForFillFirstAuxiliaryMatrix++;
+
+                secondAuxiliaryMatrix[i][j] = numberForFillSecondAuxiliaryMatrix;
+                numberForFillSecondAuxiliaryMatrix--;
             }
         }
 
         //fill zeros on diagonal lines of 4 on 4 squares (small squares)
-        int amountSmallSquaresInRow;
-        amountSmallSquaresInRow = n / 4;
+        int numberOfSubMatricesInRow;
+        numberOfSubMatricesInRow = n / 4;
 
-        int amountSmallSquaresInMatrix;
-        amountSmallSquaresInMatrix = (int) Math.pow(amountSmallSquaresInRow, 2);
+        int amountOfSubMatricesInMatrix;
+        amountOfSubMatricesInMatrix = (int) Math.pow(numberOfSubMatricesInRow, 2);
 
-        int numberRowWithSmallSquares = 0;
-        int columnNumberForFirstDiagonalInRowOfSmallSquares = 0; // this is need for left-right diagonal
-        int columnNumberForSecondDiagonalInRowOfSmallSquares = 1;
-        for (int k = 1; k <= amountSmallSquaresInMatrix; k++) {
+        int subMatrixRowNumber = 0;
+        int subMatrixColumnNumberForChoiceDiagonalFromLeftToRight = 0;
+        int subMatrixColumnNumberForChoiceDiagonalFromRightToLeft = 1;
+        for (int k = 1; k <= amountOfSubMatricesInMatrix; k++) {
             int tempA = 1;
-            for (int i = numberRowWithSmallSquares; i < numberRowWithSmallSquares + 4; i++) {
-                auxiliaryMatrixOne[i][columnNumberForFirstDiagonalInRowOfSmallSquares] = 0;
-                columnNumberForFirstDiagonalInRowOfSmallSquares++;
-                auxiliaryMatrixOne[i][columnNumberForSecondDiagonalInRowOfSmallSquares * 4 - tempA] = 0;
+            for (int i = subMatrixRowNumber; i < subMatrixRowNumber + 4; i++) {
+                firstAuxiliaryMatrix[i][subMatrixColumnNumberForChoiceDiagonalFromLeftToRight] = 0;
+                subMatrixColumnNumberForChoiceDiagonalFromLeftToRight++;
+                firstAuxiliaryMatrix[i][subMatrixColumnNumberForChoiceDiagonalFromRightToLeft * 4 - tempA] = 0;
                 tempA++;
             }
-            columnNumberForSecondDiagonalInRowOfSmallSquares++;
+            subMatrixColumnNumberForChoiceDiagonalFromRightToLeft++;
 
-            if (k % amountSmallSquaresInRow == 0) {
-                numberRowWithSmallSquares += 4;
-                columnNumberForFirstDiagonalInRowOfSmallSquares = 0;
-                columnNumberForSecondDiagonalInRowOfSmallSquares = 1;
+            if (k % numberOfSubMatricesInRow == 0) {
+                subMatrixRowNumber += 4;
+                subMatrixColumnNumberForChoiceDiagonalFromLeftToRight = 0;
+                subMatrixColumnNumberForChoiceDiagonalFromRightToLeft = 1;
             }
         }
 
-        //matrix alignment
+        //union of matrix
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 int temp;
-                temp = auxiliaryMatrixOne[i][j] + auxiliaryMatrixTwo[i][j];
-                if (temp == auxiliaryMatrixTwo[i][j]) {
-                    auxiliaryMatrixOne[i][j] = auxiliaryMatrixTwo[i][j];
+                temp = firstAuxiliaryMatrix[i][j] + secondAuxiliaryMatrix[i][j];
+                if (temp == secondAuxiliaryMatrix[i][j]) {
+                    firstAuxiliaryMatrix[i][j] = secondAuxiliaryMatrix[i][j];
                 }
             }
         }
 
-        return auxiliaryMatrixOne;
+        return firstAuxiliaryMatrix;
     }
 
     //n = 4k + 2, k = 1, 2, 3, ...
     private static int[][] generateMagicSquareForEvenOddSize(int n) {
         int[][] magicSquare = new int[n][n];
 
-        int sizeSmallSquare;
-        sizeSmallSquare = findMidRowOrColumn(n);
+        int sizeOfSubMatrix;
+        sizeOfSubMatrix = findMiddleOfSideOfMatrix(n);
 
-        int[][] numbersForFirstSmallSquare;
-        numbersForFirstSmallSquare = generateMagicSquareForOddSize(sizeSmallSquare);
+        int[][] numbersForFillSubMatrices;
+        numbersForFillSubMatrices = generateMagicSquareForOddSize(sizeOfSubMatrix);
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (i < sizeSmallSquare && j < sizeSmallSquare) {
-                    magicSquare[i][j] = numbersForFirstSmallSquare[i][j];
+                if (i < sizeOfSubMatrix && j < sizeOfSubMatrix) {
+                    magicSquare[i][j] = numbersForFillSubMatrices[i][j];
                 }
 
-                int smallSquareArea;
-                smallSquareArea = (int) Math.pow(sizeSmallSquare, 2);
-                if (i < sizeSmallSquare && j >= sizeSmallSquare) {
-                    magicSquare[i][j]
-                            = numbersForFirstSmallSquare[i][j - sizeSmallSquare] + 2 * smallSquareArea;
+                int areaOfSubMatrix;
+                areaOfSubMatrix = (int) Math.pow(sizeOfSubMatrix, 2);
+                if (i < sizeOfSubMatrix && j >= sizeOfSubMatrix) {
+                    magicSquare[i][j] = numbersForFillSubMatrices[i][j - sizeOfSubMatrix]
+                            + 2 * areaOfSubMatrix;
                 }
 
-                if (i >= sizeSmallSquare && j < sizeSmallSquare) {
-                    magicSquare[i][j]
-                            = numbersForFirstSmallSquare[i - sizeSmallSquare][j] + 3 * smallSquareArea;
+                if (i >= sizeOfSubMatrix && j < sizeOfSubMatrix) {
+                    magicSquare[i][j] = numbersForFillSubMatrices[i - sizeOfSubMatrix][j]
+                            + 3 * areaOfSubMatrix;
                 }
 
-                if (i >= sizeSmallSquare && j >= sizeSmallSquare) {
-                    magicSquare[i][j]
-                            = numbersForFirstSmallSquare[i - sizeSmallSquare][j - sizeSmallSquare] + smallSquareArea;
+                if (i >= sizeOfSubMatrix && j >= sizeOfSubMatrix) {
+                    magicSquare[i][j] = numbersForFillSubMatrices[i - sizeOfSubMatrix][j - sizeOfSubMatrix]
+                            + areaOfSubMatrix;
                 }
             }
         }
 
         int tempStorageForRearrangingNumber;
-
-        for (int i = 0; i < sizeSmallSquare; i++) {
+        for (int i = 0; i < sizeOfSubMatrix; i++) {
             for (int j = 0; j < 3; j++) {
-                if (((i == 0 || i == sizeSmallSquare - 1) && j == 0)
-                        || (i != 0 && i != sizeSmallSquare - 1 && j == 1)) {
+                if ((j == 0 && (i == 0 || i == sizeOfSubMatrix - 1))
+                        || (j == 1 && i != 0 && i != sizeOfSubMatrix - 1)) {
                     tempStorageForRearrangingNumber = magicSquare[i][j];
-                    magicSquare[i][j] = magicSquare[i + sizeSmallSquare][j];
-                    magicSquare[i + sizeSmallSquare][j] = tempStorageForRearrangingNumber;
+                    magicSquare[i][j] = magicSquare[i + sizeOfSubMatrix][j];
+                    magicSquare[i + sizeOfSubMatrix][j] = tempStorageForRearrangingNumber;
                 }
             }
         }
 
-        int halfQuantityCenterColumnForReplace = (sizeSmallSquare - 3) / 2;
+        int halfOfQuantityColumnsForReplace = (sizeOfSubMatrix - 3) / 2;
 
-        for (int k = halfQuantityCenterColumnForReplace * (-1); k < halfQuantityCenterColumnForReplace; k++) {
-            for (int i = 0; i < sizeSmallSquare; i++) {
-                tempStorageForRearrangingNumber = magicSquare[i][sizeSmallSquare + k];
-                magicSquare[i][sizeSmallSquare + k] =
-                        magicSquare[i + sizeSmallSquare][sizeSmallSquare + k];
-                magicSquare[i + sizeSmallSquare][sizeSmallSquare + k] = tempStorageForRearrangingNumber;
+        for (int k = halfOfQuantityColumnsForReplace * (-1); k < halfOfQuantityColumnsForReplace; k++) {
+            for (int i = 0; i < sizeOfSubMatrix; i++) {
+                tempStorageForRearrangingNumber = magicSquare[i][sizeOfSubMatrix + k];
+                magicSquare[i][sizeOfSubMatrix + k] =
+                        magicSquare[i + sizeOfSubMatrix][sizeOfSubMatrix + k];
+                magicSquare[i + sizeOfSubMatrix][sizeOfSubMatrix + k] = tempStorageForRearrangingNumber;
             }
         }
 
         return magicSquare;
     }
 
-    private static int findMidRowOrColumn(int n) {
+    private static int findMiddleOfSideOfMatrix(int n) {
         return (int) Math.ceil((double) n / 2);
     }
 }
