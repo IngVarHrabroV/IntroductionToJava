@@ -6,50 +6,50 @@ public class Task01 {
      * больше последнего.
      * Given a matrix. Display all odd columns with the first item greater than last.
      *
-     * @param originalMatrix input multidimensional array
+     * @param matrix input multidimensional array
      * @return matrix include odd columns with the first item greater than last
      */
 
-    public static int[][] foundOddColumnsWithGreaterFirstItem(int[][] originalMatrix) {
-        int[] firstArrayOfSecondLevel;
-        firstArrayOfSecondLevel = originalMatrix[0];
-        int[] lastArrayOfSecondLevel;
-        lastArrayOfSecondLevel = originalMatrix[originalMatrix.length - 1];
+    public static int[][] foundOddColumnsWhereFirstItemGreatest(int[][] matrix) {
+        int[] numbersFromFirstRowOfMatrix;
+        numbersFromFirstRowOfMatrix = matrix[0];
+        int[] numbersFromLastRowOfMatrix;
+        numbersFromLastRowOfMatrix = matrix[matrix.length - 1];
 
-        int minLengthArrayOfSecondLevel = originalMatrix[0].length;
-        for (int i = 0; i < originalMatrix.length; i++) {
-            minLengthArrayOfSecondLevel = Math.min(minLengthArrayOfSecondLevel, originalMatrix[i].length);
+        int maxLengthOfRow;
+        maxLengthOfRow = matrix[0].length;
+        for (int i = 0; i < matrix.length; i++) {
+            maxLengthOfRow = Math.min(maxLengthOfRow, matrix[i].length);
         }
 
-        int countColumnsWithGreaterFirstItem = 0;
-        for (int j = 0; j < minLengthArrayOfSecondLevel; j++) {
-            if (firstArrayOfSecondLevel[j] > lastArrayOfSecondLevel[j]
+        int quantityOfColumnsWhereFirstItemGreatest = 0;
+        for (int j = 0; j < maxLengthOfRow; j++) {
+            if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                countColumnsWithGreaterFirstItem++;
+                quantityOfColumnsWhereFirstItemGreatest++;
             }
         }
 
-        int[] arrayWithSuitableIndexes = new int[countColumnsWithGreaterFirstItem];
-        int tempIndexForArrayWithSuitableIndexes = 0;
+        int[] arrayWithIndexesOfColumnsWhereFirstItemGreatest;
+        arrayWithIndexesOfColumnsWhereFirstItemGreatest = new int[quantityOfColumnsWhereFirstItemGreatest];
 
-        for (int j = 0; j < minLengthArrayOfSecondLevel; j++) {
-            if (firstArrayOfSecondLevel[j] > lastArrayOfSecondLevel[j]
+        for (int j = 0, itemSelected = 0; j < maxLengthOfRow; j++) {
+            if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                arrayWithSuitableIndexes[tempIndexForArrayWithSuitableIndexes] = j;
-                tempIndexForArrayWithSuitableIndexes++;
+                arrayWithIndexesOfColumnsWhereFirstItemGreatest[itemSelected] = j;
+                itemSelected++;
             }
         }
 
-        int[][] returnedMatrix = new int[originalMatrix.length][countColumnsWithGreaterFirstItem];
+        int[][] matrixWhereFirstItemGreatest;
+        matrixWhereFirstItemGreatest = new int[matrix.length][quantityOfColumnsWhereFirstItemGreatest];
 
-        for (int i = 0; i < originalMatrix.length; i++) {
-            int temp = 0;
-            for (int j = 0; j < countColumnsWithGreaterFirstItem; j++) {
-                returnedMatrix[i][j] = originalMatrix[i][arrayWithSuitableIndexes[temp]];
-                temp++;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < quantityOfColumnsWhereFirstItemGreatest; j++) {
+                matrixWhereFirstItemGreatest[i][j] = matrix[i][arrayWithIndexesOfColumnsWhereFirstItemGreatest[j]];
             }
         }
 
-        return returnedMatrix;
+        return matrixWhereFirstItemGreatest;
     }
 }
