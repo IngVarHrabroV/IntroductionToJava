@@ -1,5 +1,6 @@
 package com.hrabrov.introduction_to_java;
 
+import com.hrabrov.introduction_to_java.algorithmization.multidimensional_array.MultidimensionalArray;
 import com.hrabrov.introduction_to_java.algorithmization.one_dimensional_array.OneDimensionalArray;
 import com.hrabrov.introduction_to_java.basic_of_software_code_development.branching.BranchingRunner;
 import com.hrabrov.introduction_to_java.basic_of_software_code_development.cycle.CycleRunner;
@@ -33,6 +34,10 @@ public class Main {
     private static void algorithmizationRunner() {
         System.out.println("Start 1th block: one-dimensional arrays");
         OneDimensionalArray.run();
-        System.out.println("End 1th block: one-dimensional arrays");
+        System.out.println("End 1th block: one-dimensional arrays\n");
+
+        System.out.println("Start 2th block: multidimensional arrays");
+        MultidimensionalArray.run();
+        System.out.println("End 2th block: multidimensional arrays\n");
     }
 }
