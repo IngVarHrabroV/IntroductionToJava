@@ -1,6 +1,6 @@
 package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array;
 
-public class CheckValidationArgumentOnEvenAndSize {
+public class CheckValidationArgumentAtEvenAndSize {
     public boolean check(int n) {
         if (n < 2) {
             System.out.println("n can't be less, then 2");

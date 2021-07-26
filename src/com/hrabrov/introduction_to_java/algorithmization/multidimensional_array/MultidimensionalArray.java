@@ -9,7 +9,7 @@ public class MultidimensionalArray {
                 {8, 7, 6, 6, 7},
                 {23, 6, 5, 11, 2, 1, 1, 1}
         };
-        int[][] resultOfTask01 = Task01.foundOddColumnsWithGreaterFirstItem(matrixForTask01);
+        int[][] resultOfTask01 = Task01.foundOddColumnsWhereFirstItemGreatest(matrixForTask01);
         System.out.println("Result of task 01:");
         System.out.println("Original matrix:\n" + matrixToString(matrixForTask01));
         System.out.println("Transformed matrix:\n" + matrixToString(resultOfTask01));
@@ -21,7 +21,7 @@ public class MultidimensionalArray {
                 {16, 17, 18, 19, 20},
                 {21, 22, 23, 24, 25}
         };
-        Task02.arrayWithDiagonalElements resultOfTask02;
+        Task02.arrayOfDiagonalElements resultOfTask02;
         resultOfTask02 = Task02.chooseDiagonalElement(matrixForTask02);
         System.out.println("Result of task 02:");
         System.out.println("Original matrix:\n" + matrixToString(matrixForTask02));
@@ -33,7 +33,7 @@ public class MultidimensionalArray {
                 {6, 7, 8, 9, 10},
                 {11, 12, 13, 14, 15}
         };
-        int[][] resultOfTask03 = Task03.displayLineAndColumn(matrixForTask03, 1, 4);
+        int[][] resultOfTask03 = Task03.displaySelectedLineAndColumn(matrixForTask03, 1, 4);
         System.out.println("Result of task 03:");
         System.out.println("Original matrix:\n" + matrixToString(matrixForTask03));
         System.out.println("Selected row: " + arrayToString(resultOfTask03[0]));
@@ -41,10 +41,12 @@ public class MultidimensionalArray {
 
         System.out.println("Result of task 04: ");
         int[][] resultOfTask04 = Task04.createMatrixForTask04(8);
-        System.out.println(matrixToString(resultOfTask04));
+        if (resultOfTask04.length != 0) {
+            System.out.println(matrixToString(resultOfTask04));
+        }
 
         System.out.println("Result of task 05: ");
-        int[][] resultOfTask05 = Task05.createMatrixForTask05(3);
+        int[][] resultOfTask05 = Task05.createMatrixForTask05(4);
         if (resultOfTask05.length != 0) {
             System.out.println(matrixToString(resultOfTask05));
         }
@@ -56,12 +58,12 @@ public class MultidimensionalArray {
         }
 
         System.out.println("Result of task 07: ");
-        Task07.MatrixAndYourPositiveElements resultOfTask07;
+        Task07.MatrixAndHerPositiveElements resultOfTask07;
         resultOfTask07 = Task07.createMatrixForTask07(6);
         System.out.println(matrixToString(resultOfTask07.matrix));
         System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements);
 
-        int[][] matrixForTask08 = new int[][]{
+        /*int[][] matrixForTask08 = new int[][]{
                 {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
                 {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
                 {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
@@ -78,22 +80,27 @@ public class MultidimensionalArray {
         System.out.print("Enter number of second column for replace: ");
         secondNumber = inputIntNumber();
         int[][] resultOfTask08 = Task08.replacedTwoColumn(matrixForTask08, firstNumber, secondNumber);
-        System.out.println("Matrix with replaced columns: ");
-        System.out.println(matrixToString(resultOfTask08));
+        if (resultOfTask08.length != 0) {
+            System.out.println("Matrix with replaced columns: ");
+            System.out.println(matrixToString(resultOfTask08));
+        }*/
 
         int[][] matrixForTask09 = new int[][]{
-                {1, 25, 3, 4},
-                {2, 3, 4, 5},
-                {3, 4, 5, 6},
-                {4, 5, 6, 7}
+                {1, 25, 3, 4, 1},
+                {2, 3, 4, 5, 2},
+                {3, 4, 5, 6, 3},
+                {4, 5, 6, 7, 4}
         };
         Task09.SumElementsAndNumberColumn resultOfTask09;
         System.out.println("Result of task 09: ");
-        System.out.println("Original matrix:");
         resultOfTask09 = Task09.findSumAndColumn(matrixForTask09);
+        System.out.println("Original matrix:");
         System.out.println(matrixToString(matrixForTask09));
-        System.out.println("sum  of elements in  columns: " + arrayToString(resultOfTask09.sumElements));
-        System.out.println("Column №" + resultOfTask09.numberColumn + " has max sum elements");
+        if (resultOfTask09.sumElements.length !=0) {
+            System.out.println("sum  of elements in  columns: " + arrayToString(resultOfTask09.sumElements));
+            System.out.println("Column №" + resultOfTask09.numberColumn + " has max sum elements");
+        }
+
 
         int[][] matrixForTask10 = new int[][]{
                 {12, 2, 3, -5},

@@ -12,17 +12,17 @@ public class Task07 {
      * @return matrix and quantity positive elements
      */
 
-    public static MatrixAndYourPositiveElements createMatrixForTask07(int n) {
-        MatrixAndYourPositiveElements returnedObject = new MatrixAndYourPositiveElements();
+    public static MatrixAndHerPositiveElements createMatrixForTask07(int n) {
+        MatrixAndHerPositiveElements returnedObject = new MatrixAndHerPositiveElements();
 
         double[][] matrix = new double[n][n];
         int quantityPositiveElements = 0;
 
-        double tempVariable;
+        double expressionValue;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                tempVariable = (Math.pow(i, 2) - Math.pow(j, 2)) / n;
-                matrix[i][j] = Math.sin(tempVariable);
+                expressionValue = (Math.pow(i, 2) - Math.pow(j, 2)) / n;
+                matrix[i][j] = Math.sin(expressionValue);
 
                 if (matrix[i][j] > 0) {
                     quantityPositiveElements++;
@@ -37,7 +37,7 @@ public class Task07 {
         return returnedObject;
     }
 
-      static class MatrixAndYourPositiveElements {
+      static class MatrixAndHerPositiveElements {
         double[][] matrix;
         int quantityPositiveElements;
     }

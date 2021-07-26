@@ -16,30 +16,33 @@ public class Task09 {
     public static SumElementsAndNumberColumn findSumAndColumn(int[][] matrix) {
         SumElementsAndNumberColumn returnedObject = new SumElementsAndNumberColumn();
 
-        int horizontalMatrixSize = matrix[0].length;
-        int[] sumElements = new int[horizontalMatrixSize];
-        int indexForArrayWithSumElements = 0;
+        int horizontalSizeOfMatrix = matrix[0].length;
+        int[] sumElements = new int[horizontalSizeOfMatrix];
         int maxSum = -1;
         int numberColumnWithMaxSum = 0;
 
-        for (int j = 0; j < horizontalMatrixSize; j++) {
-            int tempForSum = 0;
+        for (int j = 0; j < horizontalSizeOfMatrix; j++) {
+            int tempStorageForSum = 0;
 
             for (int i = 0; i < matrix.length; i++) {
                 if (checkValidateMatrixElement(matrix[i][j])) {
                     return returnedObject;
                 }
-                tempForSum += matrix[i][j];
+
+                tempStorageForSum += matrix[i][j];
             }
 
-            sumElements[indexForArrayWithSumElements] = tempForSum;
+            sumElements[j] = tempStorageForSum;
 
-            if (tempForSum > maxSum) {
-                maxSum = tempForSum;
-                numberColumnWithMaxSum = indexForArrayWithSumElements + 1;
+            if (tempStorageForSum == maxSum) {
+                System.out.println("Multiple columns have a maximum sum. Rewrite matrix");
+                return returnedObject;
             }
 
-            indexForArrayWithSumElements++;
+            if (tempStorageForSum > maxSum) {
+                maxSum = tempStorageForSum;
+                numberColumnWithMaxSum = j + 1;
+            }
         }
 
         returnedObject.numberColumn = numberColumnWithMaxSum;
@@ -54,11 +57,12 @@ public class Task09 {
                     a + " can't be place in matrix");
             return true;
         }
+
         return false;
     }
 
     static class SumElementsAndNumberColumn {
-        int[] sumElements;
+        int[] sumElements = new int[0];
         int numberColumn;
     }
 }

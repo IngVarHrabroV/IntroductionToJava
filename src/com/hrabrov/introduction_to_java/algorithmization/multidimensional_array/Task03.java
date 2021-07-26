@@ -11,22 +11,23 @@ public class Task03 {
      * @return multidimensional array, where first index - row; second index - column
      */
 
-    public static int[][] displayLineAndColumn(int[][] originalMatrix, int k, int p) {
+    public static int[][] displaySelectedLineAndColumn(int[][] originalMatrix, int k, int p) {
         int[][] rowAndColumn = new int[2][];
 
         rowAndColumn[0] = new int[originalMatrix[k].length];
         rowAndColumn[1] = new int[originalMatrix.length];
 
-        int tempIndexForRow = 0;
-        for (int j = 0; j < originalMatrix[k].length; j++) {
-            rowAndColumn[0][tempIndexForRow] = originalMatrix[k - 1][j];
-            tempIndexForRow++;
+        for (int j = 0, tempIndexForSaveOfNumberRow = 0;
+             j < originalMatrix[k].length;
+             j++, tempIndexForSaveOfNumberRow++) {
+            rowAndColumn[0][tempIndexForSaveOfNumberRow] = originalMatrix[k - 1][j];
         }
 
-        int tempIndexForColumn = 0;
-        for (int i = 0; i < originalMatrix.length; i++) {
-            rowAndColumn[1][tempIndexForColumn] = originalMatrix[i][p - 1];
-            tempIndexForColumn++;
+
+        for (int i = 0, tempIndexForSaveOfNumberColumn = 0;
+             i < originalMatrix.length;
+             i++, tempIndexForSaveOfNumberColumn++) {
+            rowAndColumn[1][tempIndexForSaveOfNumberColumn] = originalMatrix[i][p - 1];
         }
 
         return rowAndColumn;

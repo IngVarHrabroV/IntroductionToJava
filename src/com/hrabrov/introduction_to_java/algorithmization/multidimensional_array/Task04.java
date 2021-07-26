@@ -18,8 +18,8 @@ public class Task04 {
      */
 
     public static int[][] createMatrixForTask04(int n) {
-        CheckValidationArgumentOnEvenAndSize checkValidateArgument =
-                new CheckValidationArgumentOnEvenAndSize();
+        CheckValidationArgumentAtEvenAndSize checkValidateArgument =
+                new CheckValidationArgumentAtEvenAndSize();
 
         if (checkValidateArgument.check(n)) {
             int[][] matrix = new int[n][n];
@@ -36,6 +36,7 @@ public class Task04 {
 
             return matrix;
         }
+
         return new int[0][0];
     }
 }

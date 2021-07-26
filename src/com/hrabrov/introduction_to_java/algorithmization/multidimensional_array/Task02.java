@@ -9,30 +9,26 @@ public class Task02 {
      * @return array with diagonal elements
      */
 
-    public static arrayWithDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
-        arrayWithDiagonalElements arrayWithDiagonalElements = new arrayWithDiagonalElements();
+    public static arrayOfDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
+        arrayOfDiagonalElements arrayOfDiagonalElements = new arrayOfDiagonalElements();
 
         int sizeMatrix = originalMatrix.length;
 
-        arrayWithDiagonalElements.firstDiagonal = new int[sizeMatrix];
-        arrayWithDiagonalElements.secondDiagonal = new int[sizeMatrix];
+        arrayOfDiagonalElements.firstDiagonal = new int[sizeMatrix];
+        arrayOfDiagonalElements.secondDiagonal = new int[sizeMatrix];
 
-        int tempIndex = 0;
-        for (int i = 0; i < originalMatrix.length; i++) {
-            arrayWithDiagonalElements.firstDiagonal[tempIndex] = originalMatrix[i][i];
-            tempIndex++;
+        for (int i = 0, tempIndex = 0; i < originalMatrix.length; i++, tempIndex++) {
+            arrayOfDiagonalElements.firstDiagonal[tempIndex] = originalMatrix[i][i];
         }
 
-        tempIndex = 0;
-        for (int i = 0; i < originalMatrix.length; i++) {
-            arrayWithDiagonalElements.secondDiagonal[tempIndex] = originalMatrix[i][sizeMatrix - i - 1];
-            tempIndex++;
+        for (int i = 0, tempIndex = 0; i < originalMatrix.length; i++, tempIndex++) {
+            arrayOfDiagonalElements.secondDiagonal[tempIndex] = originalMatrix[i][sizeMatrix - i - 1];
         }
 
-        return arrayWithDiagonalElements;
+        return arrayOfDiagonalElements;
     }
 
-    static class arrayWithDiagonalElements {
+    static class arrayOfDiagonalElements {
         int[] firstDiagonal;
         int[] secondDiagonal;
     }
