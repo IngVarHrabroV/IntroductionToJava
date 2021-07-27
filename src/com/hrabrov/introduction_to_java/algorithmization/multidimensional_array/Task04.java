@@ -26,11 +26,7 @@ public class Task04 {
 
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
-                    if (i % 2 == 0) {
-                        matrix[i][j] = j + 1;
-                    } else {
-                        matrix[i][j] = n - j;
-                    }
+                    matrix[i][j] = i % 2 == 0 ? j + 1 : n - j;
                 }
             }
 
