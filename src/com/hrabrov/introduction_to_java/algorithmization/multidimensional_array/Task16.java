@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task16 {
     /**
-     * Построить магический квадрат для матрицы размера n.
      * Generate magic square for matrix of size n.
      *
      * @param n input size of magic square

@@ -2,9 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task09 {
     /**
-     * Задана матрица неотрицательных чисел.
-     * Посчитать сумму элементов в каждом столбце.
-     * Определить, какой столбец содержит максимальную сумму.
      * Given matrix with non-negative number.
      * Count sum elements in each column.
      * Find column with max sum.

@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task15 {
     /**
-     * Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
      * Find the largest element of matrix and replace all odd elements with it.
      *
      * @param originalMatrix input multidimensional array like matrix

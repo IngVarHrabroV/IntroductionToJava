@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task02 {
     /**
-     * Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали.
      * Given square matrix. Display diagonal elements of the matrix on the screen.
      *
      * @param originalMatrix input multidimensional array like square matrix

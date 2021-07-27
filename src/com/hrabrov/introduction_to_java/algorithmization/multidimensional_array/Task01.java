@@ -2,8 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task01 {
     /**
-     * Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент
-     * больше последнего.
      * Given a matrix. Display all odd columns with the first item greater than last.
      *
      * @param matrix input multidimensional array

@@ -2,10 +2,7 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task07 {
     /**
-     * Сформировать квадратную матрицу порядка N по правилу
-     * и подсчитать количество положительных элементов в ней.
      * Create square matrix of order N by the rule and count positive elements.
-     *
      * a[i, j] = sin[(i * i - j * j) / n]
      *
      * @param n input order for matrix
@@ -37,7 +34,7 @@ public class Task07 {
         return returnedObject;
     }
 
-      static class MatrixAndHerPositiveElements {
+    static class MatrixAndHerPositiveElements {
         double[][] matrix;
         int quantityPositiveElements;
     }

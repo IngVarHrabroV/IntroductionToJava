@@ -2,8 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task11 {
     /**
-     * Матрицу 10x20 заполнить случайными числами от 0 до 15.
-     * Вывести на экран саму матрицу и номера строк, в которых число 5 встречается три и более раз.
      * Fill the matrix 10 on 20 with random numbers from 0 to 15.
      * Display the matrix and row numbers in which the number 5 occurs three and more times.
      *

@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task04 {
     /**
-     * Сформировать квадратную матрицу порядка n по заданному образцу(n - четное)
      * Create a square matrix of order n according to a given patter (n is even)
      * {
      * {1, 2,    3,   ..., n}

@@ -2,8 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task14 {
     /**
-     * Сформировать случайную матрицу m x n, состоящую из нулей и единиц,
-     * причем в каждом столбце число единиц равно номеру столбца.
      * Generate a random m on n matrix, containing of zeros and ones.
      * The number of ones in each columns is equals the column number.
      *

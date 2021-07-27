@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task03 {
     /**
-     * Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
      * Given matrix. Display row k and column p
      *
      * @param originalMatrix input multidimensional array

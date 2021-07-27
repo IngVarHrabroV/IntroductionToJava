@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task10 {
     /**
-     * Найти положительные элементы главной диагонали квадратной матрицы.
      * Given positive elements of the main diagonal of a square matrix
      *
      * @param matrix input multidimensional array like matrix

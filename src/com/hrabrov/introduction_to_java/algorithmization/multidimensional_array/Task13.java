@@ -2,7 +2,6 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task13 {
     /**
-     * Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
      * Sort matrix column in ascending or descending order of elements value.
      *
      * @param originalMatrix input multidimensional array like matrix
