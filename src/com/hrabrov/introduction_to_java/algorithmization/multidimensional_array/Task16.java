@@ -57,32 +57,22 @@ public class Task16 {
         halfOfAddedCells = howManyCellToAdd / 2;
         for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
             for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
-                //top terrace
-                if (i < halfOfAddedCells) {
-                    if (auxiliaryBigMatrix[i][j] != 0) {
+                if ( auxiliaryBigMatrix[i][j] != 0) {
+                    //top terrace
+                    if (i < halfOfAddedCells) {
                         auxiliaryBigMatrix[i + n][j] = auxiliaryBigMatrix[i][j];
-                        auxiliaryBigMatrix[i][j] = 0;
                     }
-                }
-                //bottom terrace
-                if (i + 1 > n + (halfOfAddedCells)) {
-                    if (auxiliaryBigMatrix[i][j] != 0) {
-                        auxiliaryBigMatrix[i - n][j] = auxiliaryBigMatrix[i][j];
-                        auxiliaryBigMatrix[i][j] = 0;
-                    }
-                }
-                //left terrace
-                if (j < halfOfAddedCells) {
-                    if (auxiliaryBigMatrix[i][j] != 0) {
+                    //left terrace
+                    if (j < halfOfAddedCells) {
                         auxiliaryBigMatrix[i][j + n] = auxiliaryBigMatrix[i][j];
-                        auxiliaryBigMatrix[i][j] = 0;
                     }
-                }
-                //right terrace
-                if (j + 1 > n + halfOfAddedCells) {
-                    if (auxiliaryBigMatrix[i][j] != 0) {
+                    //bottom terrace
+                    if (i + 1 > n + halfOfAddedCells) {
+                        auxiliaryBigMatrix[i - n][j] = auxiliaryBigMatrix[i][j];
+                    }
+                    //right terrace
+                    if (j + 1 > n + halfOfAddedCells) {
                         auxiliaryBigMatrix[i][j - n] = auxiliaryBigMatrix[i][j];
-                        auxiliaryBigMatrix[i][j] = 0;
                     }
                 }
             }
