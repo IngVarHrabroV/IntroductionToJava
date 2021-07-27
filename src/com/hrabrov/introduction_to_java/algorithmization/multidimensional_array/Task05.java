@@ -17,10 +17,9 @@ public class Task05 {
      */
 
     public static int[][] createMatrixForTask05(int n) {
-        CheckValidationArgumentAtEvenAndSize checkValidateArgument =
-                new CheckValidationArgumentAtEvenAndSize();
+        ValidateNumber validateNumber = new ValidateNumber();
 
-        if (checkValidateArgument.check(n)) {
+        if (validateNumber.toBeEvenAndGreaterThen(n)) {
             int[][] matrix = new int[n][n];
 
             for (int i = 0; i < n; i++) {
