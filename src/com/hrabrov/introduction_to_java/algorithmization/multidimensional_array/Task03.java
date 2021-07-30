@@ -11,24 +11,22 @@ public class Task03 {
      */
 
     public static int[][] displaySelectedLineAndColumn(int[][] originalMatrix, int k, int p) {
-        int[][] rowAndColumn = new int[2][];
-
-        rowAndColumn[0] = new int[originalMatrix[k].length];
-        rowAndColumn[1] = new int[originalMatrix.length];
+        int[] selectedRow = new int[originalMatrix[k].length];
+        int[] selectedColumn = new int[originalMatrix.length];
 
         for (int j = 0, tempIndexForSaveOfNumberRow = 0;
              j < originalMatrix[k].length;
              j++, tempIndexForSaveOfNumberRow++) {
-            rowAndColumn[0][tempIndexForSaveOfNumberRow] = originalMatrix[k - 1][j];
+            selectedRow[tempIndexForSaveOfNumberRow] = originalMatrix[k - 1][j];
         }
 
 
         for (int i = 0, tempIndexForSaveOfNumberColumn = 0;
              i < originalMatrix.length;
              i++, tempIndexForSaveOfNumberColumn++) {
-            rowAndColumn[1][tempIndexForSaveOfNumberColumn] = originalMatrix[i][p - 1];
+            selectedColumn[tempIndexForSaveOfNumberColumn] = originalMatrix[i][p - 1];
         }
 
-        return rowAndColumn;
+        return new int[][]{selectedRow, selectedColumn};
     }
 }
