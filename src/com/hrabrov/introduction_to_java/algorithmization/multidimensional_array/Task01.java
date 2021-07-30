@@ -25,13 +25,13 @@ public class Task01 {
             }
         }
 
-        int[] arrayWithIndexesOfColumnsWhereFirstItemMoreGreaterThanLast
+        int[] indexesOfColumnsWhereFirstItemMoreGreaterThanLast
                 = new int[quantityOfColumnsWhereFirstItemGreatest];
 
         for (int j = 0, itemSelected = 0; j < maxLengthOfRow; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                arrayWithIndexesOfColumnsWhereFirstItemMoreGreaterThanLast[itemSelected] = j;
+                indexesOfColumnsWhereFirstItemMoreGreaterThanLast[itemSelected] = j;
                 itemSelected++;
             }
         }
@@ -42,7 +42,7 @@ public class Task01 {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < quantityOfColumnsWhereFirstItemGreatest; j++) {
                 matrixWhereFirstItemGreatest[i][j] =
-                        matrix[i][arrayWithIndexesOfColumnsWhereFirstItemMoreGreaterThanLast[j]];
+                        matrix[i][indexesOfColumnsWhereFirstItemMoreGreaterThanLast[j]];
             }
         }
 
