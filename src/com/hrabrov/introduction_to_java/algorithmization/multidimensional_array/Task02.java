@@ -11,17 +11,17 @@ public class Task02 {
     public static arrayOfDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
         arrayOfDiagonalElements arrayOfDiagonalElements = new arrayOfDiagonalElements();
 
-        int sizeMatrix = originalMatrix.length;
+        int sizeOfMatrix = originalMatrix.length;
 
-        arrayOfDiagonalElements.firstDiagonal = new int[sizeMatrix];
-        arrayOfDiagonalElements.secondDiagonal = new int[sizeMatrix];
+        arrayOfDiagonalElements.firstDiagonal = new int[sizeOfMatrix];
+        arrayOfDiagonalElements.secondDiagonal = new int[sizeOfMatrix];
 
         for (int i = 0, tempIndex = 0; i < originalMatrix.length; i++, tempIndex++) {
             arrayOfDiagonalElements.firstDiagonal[tempIndex] = originalMatrix[i][i];
         }
 
         for (int i = 0, tempIndex = 0; i < originalMatrix.length; i++, tempIndex++) {
-            arrayOfDiagonalElements.secondDiagonal[tempIndex] = originalMatrix[i][sizeMatrix - i - 1];
+            arrayOfDiagonalElements.secondDiagonal[tempIndex] = originalMatrix[i][sizeOfMatrix - i - 1];
         }
 
         return arrayOfDiagonalElements;
