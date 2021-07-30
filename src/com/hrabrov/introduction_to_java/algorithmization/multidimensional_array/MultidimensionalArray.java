@@ -42,20 +42,20 @@ public class MultidimensionalArray {
         System.out.println("Selected column: " + stringHelper.arrayToString(resultOfTask03[1]));
 
         System.out.println("Result of task 04: ");
-        int[][] resultOfTask04 = Task04.createMatrixForTask04(8);
-        if (resultOfTask04.length != 0) {
+        int[][] resultOfTask04 = Task04.createMatrixForTask04(4);
+        if (resultOfTask04 != null) {
             System.out.println(stringHelper.matrixToString(resultOfTask04));
         }
 
         System.out.println("Result of task 05: ");
         int[][] resultOfTask05 = Task05.createMatrixForTask05(4);
-        if (resultOfTask05.length != 0) {
+        if (resultOfTask05 != null) {
             System.out.println(stringHelper.matrixToString(resultOfTask05));
         }
 
         System.out.println("Result of task 06: ");
         int[][] resultOfTask06 = Task06.createMatrixForTask06(4);
-        if (resultOfTask06.length != 0) {
+        if (resultOfTask06 != null) {
             System.out.println(stringHelper.matrixToString(resultOfTask06));
         }
 
@@ -82,7 +82,7 @@ public class MultidimensionalArray {
         System.out.print("Enter number of second column for replace: ");
         secondNumber = inputIntNumber();
         int[][] resultOfTask08 = Task08.replacedTwoColumn(matrixForTask08, firstNumber, secondNumber);
-        if (resultOfTask08.length != 0) {
+        if (resultOfTask08 != null) {
             System.out.println("Matrix with replaced columns: ");
             System.out.println(stringHelper.matrixToString(resultOfTask08));
         }

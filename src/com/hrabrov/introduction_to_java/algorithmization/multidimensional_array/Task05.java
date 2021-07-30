@@ -35,6 +35,6 @@ public class Task05 {
             return matrix;
         }
 
-        return new int[0][0];
+        return null;
     }
 }

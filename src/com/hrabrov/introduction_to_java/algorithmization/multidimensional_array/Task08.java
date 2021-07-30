@@ -26,7 +26,7 @@ public class Task08 {
             return originalMatrix;
         }
 
-        return new int[0][0];
+        return null;
     }
 
     private static boolean checkValidationArgument(int matrixHorizontalSize, int firstColumn, int secondColumn) {
