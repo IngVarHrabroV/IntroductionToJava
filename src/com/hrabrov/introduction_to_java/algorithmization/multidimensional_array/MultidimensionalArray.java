@@ -11,7 +11,7 @@ public class MultidimensionalArray {
                 {8, 7, 6, 6, 7},
                 {23, 6, 5, 11, 2, 1, 1, 1}
         };
-        int[][] resultOfTask01 = Task01.foundOddColumnsWhereFirstItemGreatest(matrixForTask01);
+        int[][] resultOfTask01 = Task01.findOddColumnsWhereFirstItemGreatest(matrixForTask01);
         System.out.println("Result of task 01:");
         System.out.println("Original matrix:\n" + stringHelper.matrixToString(matrixForTask01));
         System.out.println("Transformed matrix:\n" + stringHelper.matrixToString(resultOfTask01));
@@ -190,7 +190,6 @@ public class MultidimensionalArray {
 
     private static int inputIntNumber() {
         Scanner sc = new Scanner(System.in);
-        int a;
 
         System.out.print(">> ");
 
@@ -199,8 +198,6 @@ public class MultidimensionalArray {
             System.out.print("Try again >> ");
         }
 
-        a = sc.nextInt();
-
-        return a;
+        return sc.nextInt();
     }
 }
