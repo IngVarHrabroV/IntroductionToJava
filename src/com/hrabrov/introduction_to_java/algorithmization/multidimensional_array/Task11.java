@@ -11,7 +11,10 @@ public class Task11 {
     public static MatrixAndRowNumber createMatrixForTask11() {
         MatrixAndRowNumber returnedObject = new MatrixAndRowNumber();
 
-        int[][] matrix = new int[10][20];
+        int verticalSizeOfMatrix = 10;
+        int horizontalSizeOfMatrix = 20;
+
+        int[][] matrix = new int[verticalSizeOfMatrix][horizontalSizeOfMatrix];
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 20; j++) {
