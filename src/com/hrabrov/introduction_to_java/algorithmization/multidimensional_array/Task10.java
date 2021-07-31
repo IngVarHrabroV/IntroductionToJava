@@ -10,29 +10,29 @@ public class Task10 {
 
     public static int[] findPositiveElementOfTheMainDiagonal(int[][] matrix) {
         int horizontalSizeOfMatrix = matrix.length;
-        int[] arrayWithMainDiagonalElements = new int[horizontalSizeOfMatrix * 2];
+        int[] elementsFromMainDiagonals = new int[horizontalSizeOfMatrix * 2];
 
         for (int i = 0, tempIndex = 0; i < horizontalSizeOfMatrix; i++) {
-            arrayWithMainDiagonalElements[tempIndex] = matrix[i][i];
+            elementsFromMainDiagonals[tempIndex] = matrix[i][i];
             tempIndex++;
-            arrayWithMainDiagonalElements[tempIndex] = matrix[i][horizontalSizeOfMatrix - i - 1];
+            elementsFromMainDiagonals[tempIndex] = matrix[i][horizontalSizeOfMatrix - i - 1];
             tempIndex++;
         }
 
-        int sizeOfReturnedArray = 0;
-        for (int i = 0; i < arrayWithMainDiagonalElements.length; i++) {
-            sizeOfReturnedArray += arrayWithMainDiagonalElements[i] > 0 ? 1 : 0;
+        int sizeOfArrayWithPositiveElements = 0;
+        for (int i = 0; i < elementsFromMainDiagonals.length; i++) {
+            sizeOfArrayWithPositiveElements += elementsFromMainDiagonals[i] > 0 ? 1 : 0;
         }
 
-        int[] returnedArray = new int[sizeOfReturnedArray];
-        int tempIndexForReturnedArray = 0;
-        for (int i = 0; i < arrayWithMainDiagonalElements.length; i++) {
-            if (arrayWithMainDiagonalElements[i] > 0) {
-                returnedArray[tempIndexForReturnedArray] = arrayWithMainDiagonalElements[i];
-                tempIndexForReturnedArray++;
+        int[] positiveElementsFromMainDiagonals = new int[sizeOfArrayWithPositiveElements];
+        int tempIndex = 0;
+        for (int i = 0; i < elementsFromMainDiagonals.length; i++) {
+            if (elementsFromMainDiagonals[i] > 0) {
+                positiveElementsFromMainDiagonals[tempIndex] = elementsFromMainDiagonals[i];
+                tempIndex++;
             }
         }
 
-        return returnedArray;
+        return positiveElementsFromMainDiagonals;
     }
 }
