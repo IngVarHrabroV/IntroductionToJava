@@ -10,7 +10,7 @@ public class Task07 {
      */
 
     public static MatrixAndHerPositiveElements createMatrixForTask07(int n) {
-        MatrixAndHerPositiveElements returnedObject = new MatrixAndHerPositiveElements();
+        MatrixAndHerPositiveElements matrixAndHerPositiveElements = new MatrixAndHerPositiveElements();
 
         double[][] matrix = new double[n][n];
         int quantityPositiveElements = 0;
@@ -25,13 +25,12 @@ public class Task07 {
                     quantityPositiveElements++;
                 }
             }
-
         }
 
-        returnedObject.matrix = matrix;
-        returnedObject.quantityPositiveElements = quantityPositiveElements;
+        matrixAndHerPositiveElements.matrix = matrix;
+        matrixAndHerPositiveElements.quantityPositiveElements = quantityPositiveElements;
 
-        return returnedObject;
+        return matrixAndHerPositiveElements;
     }
 
     static class MatrixAndHerPositiveElements {
