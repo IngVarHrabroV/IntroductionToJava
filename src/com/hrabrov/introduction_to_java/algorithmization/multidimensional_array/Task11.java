@@ -8,8 +8,8 @@ public class Task11 {
      * @return matrix and array with row number
      */
 
-    public static MatrixAndRowNumber createMatrixForTask11() {
-        MatrixAndRowNumber returnedObject = new MatrixAndRowNumber();
+    public static MatrixAndRowsNumbers createMatrixForTask11() {
+        MatrixAndRowsNumbers matrixAndRowsNumbers = new MatrixAndRowsNumbers();
 
         int verticalSizeOfMatrix = 10;
         int horizontalSizeOfMatrix = 20;
@@ -22,7 +22,7 @@ public class Task11 {
             }
         }
 
-        int[] checkRowOnQuantityFive = new int[10]; //
+        int[] checkRowOnQuantityFive = new int[10];
         int tempIndex = 0;
         for (int i = 0; i < 10; i++) {
             int quantityFiveInRow = 0;
@@ -58,14 +58,14 @@ public class Task11 {
             }
         }
 
-        returnedObject.createdMatrix = matrix;
-        returnedObject.rowNumber = arrayWithRowNumbersOccursFiveThreePlusTime;
+        matrixAndRowsNumbers.createdMatrix = matrix;
+        matrixAndRowsNumbers.rowsNumbersWithFive = arrayWithRowNumbersOccursFiveThreePlusTime;
 
-        return returnedObject;
+        return matrixAndRowsNumbers;
     }
 
-    static class MatrixAndRowNumber {
+    static class MatrixAndRowsNumbers {
         int[][] createdMatrix;
-        int[] rowNumber;
+        int[] rowsNumbersWithFive;
     }
 }
