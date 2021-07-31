@@ -14,8 +14,7 @@ public class Task13 {
             for (int i = 0; i < originalMatrix.length; i++) {
                 for (int k = i + 1; k < originalMatrix.length; k++) {
                     if (originalMatrix[i][j] > originalMatrix[k][j]) {
-                        int temp;
-                        temp = originalMatrix[i][j];
+                        int temp = originalMatrix[i][j];
                         originalMatrix[i][j] = originalMatrix[k][j];
                         originalMatrix[k][j] = temp;
                     }
@@ -31,8 +30,7 @@ public class Task13 {
             for (int i = 0; i < originalMatrix.length; i++) {
                 for (int k = i + 1; k < originalMatrix.length; k++) {
                     if (originalMatrix[i][j] < originalMatrix[k][j]) {
-                        int temp;
-                        temp = originalMatrix[i][j];
+                        int temp = originalMatrix[i][j];
                         originalMatrix[i][j] = originalMatrix[k][j];
                         originalMatrix[k][j] = temp;
                     }
