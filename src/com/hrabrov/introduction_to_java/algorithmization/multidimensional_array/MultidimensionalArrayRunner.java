@@ -2,7 +2,7 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 import java.util.Scanner;
 
-public class MultidimensionalArray {
+public class MultidimensionalArrayRunner {
     static StringHelper stringHelper = new StringHelper();
 
     public static void run() {
@@ -61,7 +61,7 @@ public class MultidimensionalArray {
 
         System.out.println("Result of task 07: ");
         Task07.MatrixAndHerPositiveElements resultOfTask07;
-        resultOfTask07 = Task07.createMatrixForTask07(6);
+        resultOfTask07 = Task07.createMatrixForTask07(8);
         System.out.println(stringHelper.matrixToString(resultOfTask07.matrix));
         System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements);
 

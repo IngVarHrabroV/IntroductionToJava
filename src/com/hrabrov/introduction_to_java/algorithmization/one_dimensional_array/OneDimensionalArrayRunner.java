@@ -1,6 +1,6 @@
 package com.hrabrov.introduction_to_java.algorithmization.one_dimensional_array;
 
-public class OneDimensionalArray {
+public class OneDimensionalArrayRunner {
     public static void run() {
         int[] arrayForTask01 = new int[]{3, 4, 5, 6, 8};
         int resultOfTask01 = Task01.sumMultipleNumber(arrayForTask01, 3);
