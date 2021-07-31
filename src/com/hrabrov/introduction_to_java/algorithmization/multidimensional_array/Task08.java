@@ -5,22 +5,22 @@ public class Task08 {
      * Given numeral matrix. Replace the position of any two columns.
      * User enter is column numbers from keyboard
      *
-     * @param originalMatrix input numeral matrix
-     * @param firstColumn    input number of the first column to replace
-     * @param secondColumn   input number of the second column to replace
+     * @param originalMatrix      input numeral matrix
+     * @param indexOfFirstColumn  input number of the first column to replace
+     * @param indexOfSecondColumn input number of the second column to replace
      * @return matrix with replaced columns
      */
 
-    public static int[][] replacedTwoColumn(int[][] originalMatrix, int firstColumn, int secondColumn) {
+    public static int[][] replaceTwoColumn(int[][] originalMatrix, int indexOfFirstColumn, int indexOfSecondColumn) {
         int matrixVerticalSize = originalMatrix.length;
         int matrixHorizontalSize = originalMatrix[0].length;
 
-        if (checkValidationArgument(matrixHorizontalSize, firstColumn, secondColumn)) {
+        if (checkValidationArgument(matrixHorizontalSize, indexOfFirstColumn, indexOfSecondColumn)) {
             int temp;
             for (int i = 0; i < matrixVerticalSize; i++) {
-                temp = originalMatrix[i][firstColumn - 1];
-                originalMatrix[i][firstColumn - 1] = originalMatrix[i][secondColumn - 1];
-                originalMatrix[i][secondColumn - 1] = temp;
+                temp = originalMatrix[i][indexOfFirstColumn - 1];
+                originalMatrix[i][indexOfFirstColumn - 1] = originalMatrix[i][indexOfSecondColumn - 1];
+                originalMatrix[i][indexOfSecondColumn - 1] = temp;
             }
 
             return originalMatrix;
