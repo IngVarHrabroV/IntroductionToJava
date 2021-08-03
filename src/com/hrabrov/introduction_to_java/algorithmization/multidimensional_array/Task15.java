@@ -8,7 +8,7 @@ public class Task15 {
      * @return matrix with replaced elements
      */
 
-    public static int[][] replacedElementsOfMatrix(int[][] originalMatrix) {
+    private static int[][] replacedElementsOfMatrix(int[][] originalMatrix) {
         int largestElement;
         largestElement = originalMatrix[0][0];
 
@@ -27,5 +27,15 @@ public class Task15 {
         }
 
         return originalMatrix;
+    }
+
+    public static void run(int[][] originalMatrix) {
+        System.out.println("Result of task 15:");
+        System.out.println("Original matrix:");
+        System.out.println(StringHelper.matrixToString(originalMatrix));
+
+        System.out.println("Matrix with replaced elements:");
+        int[][] resultOfTask15 = Task15.replacedElementsOfMatrix(originalMatrix);
+        System.out.println(StringHelper.matrixToString(resultOfTask15));
     }
 }

@@ -5,20 +5,20 @@ public class Task07 {
      * Create square matrix of order N by the rule and count positive elements.
      * a[i, j] = sin[(i * i - j * j) / n]
      *
-     * @param n input order for matrix
+     * @param sizeOfMatrix input order for matrix
      * @return matrix and quantity positive elements
      */
 
-    public static MatrixAndHerPositiveElements createMatrixForTask07(int n) {
+    private static MatrixAndHerPositiveElements createMatrixForTask07(int sizeOfMatrix) {
         MatrixAndHerPositiveElements matrixAndHerPositiveElements = new MatrixAndHerPositiveElements();
 
-        double[][] matrix = new double[n][n];
+        double[][] matrix = new double[sizeOfMatrix][sizeOfMatrix];
         int quantityPositiveElements = 0;
 
         double expressionValue;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                expressionValue = (Math.pow(i, 2) - Math.pow(j, 2)) / n;
+        for (int i = 0; i < sizeOfMatrix; i++) {
+            for (int j = 0; j < sizeOfMatrix; j++) {
+                expressionValue = (Math.pow(i, 2) - Math.pow(j, 2)) / sizeOfMatrix;
                 matrix[i][j] = Math.sin(expressionValue);
 
                 if (matrix[i][j] > 0) {
@@ -36,5 +36,15 @@ public class Task07 {
     static class MatrixAndHerPositiveElements {
         double[][] matrix;
         int quantityPositiveElements;
+    }
+
+    /**
+     * See {@link #createMatrixForTask07(int)} docs for more details
+     */
+    public static void run(int matrixOfSize) {
+        System.out.println("Result of task 07: ");
+        Task07.MatrixAndHerPositiveElements resultOfTask07 = Task07.createMatrixForTask07(matrixOfSize);
+        System.out.println(StringHelper.matrixToString(resultOfTask07.matrix));
+        System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements);
     }
 }

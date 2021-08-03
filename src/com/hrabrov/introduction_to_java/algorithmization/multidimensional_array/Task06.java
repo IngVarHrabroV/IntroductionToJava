@@ -12,26 +12,26 @@ public class Task06 {
      * {1, 1, 1, ..., 1, 1, 1}
      * }
      *
-     * @param n input order for matrix
+     * @param sizeOfMatrix input order for matrix
      * @return matrix
      */
 
-    public static int[][] createMatrixForTask06(int n) {
+    private static int[][] createMatrixForTask06(int sizeOfMatrix) {
         ValidateMatrixSize validateMatrixSize = new ValidateMatrixSize();
 
-        if (validateMatrixSize.toBeEvenAndValid(n)) {
-            int[][] matrix = new int[n][n];
+        if (validateMatrixSize.toBeEvenAndValid(sizeOfMatrix)) {
+            int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
             int indexMiddleOfMatrix;
-            indexMiddleOfMatrix = n / 2 - 1;
+            indexMiddleOfMatrix = sizeOfMatrix / 2 - 1;
 
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
+            for (int i = 0; i < sizeOfMatrix; i++) {
+                for (int j = 0; j < sizeOfMatrix; j++) {
                     matrix[i][j] = 0;
 
-                    if (i <= indexMiddleOfMatrix && j >= i && j < n - i) {
+                    if (i <= indexMiddleOfMatrix && j >= i && j < sizeOfMatrix - i) {
                         matrix[i][j] = 1;
-                    } else if (j >= n - i - 1 && j <= i) {
+                    } else if (j >= sizeOfMatrix - i - 1 && j <= i) {
                         matrix[i][j] = 1;
                     }
                 }
@@ -41,5 +41,17 @@ public class Task06 {
         }
 
         return null;
+    }
+
+    /**
+     * See {@link #createMatrixForTask06(int)} docs for more details
+     */
+    public static void run(int sizeOfMatrix) {
+        System.out.println("Result of task 06: ");
+        int[][] resultOfTask06 = Task06.createMatrixForTask06(sizeOfMatrix);
+        if (resultOfTask06 == null) {
+            return;
+        }
+        System.out.println(StringHelper.matrixToString(resultOfTask06));
     }
 }

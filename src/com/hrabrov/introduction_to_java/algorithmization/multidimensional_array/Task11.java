@@ -8,25 +8,25 @@ public class Task11 {
      * @return matrix and array with row number
      */
 
-    public static MatrixAndRowsNumbers createMatrixForTask11() {
+    private static MatrixAndRowsNumbers createMatrixForTask11() {
         MatrixAndRowsNumbers matrixAndRowsNumbers = new MatrixAndRowsNumbers();
 
-        int verticalSizeOfMatrix = 10;
-        int horizontalSizeOfMatrix = 20;
+        int verticalSizeOfMatrix = 20;
+        int horizontalSizeOfMatrix = 10;
 
         int[][] matrix = new int[verticalSizeOfMatrix][horizontalSizeOfMatrix];
 
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < verticalSizeOfMatrix; i++) {
+            for (int j = 0; j < horizontalSizeOfMatrix; j++) {
                 matrix[i][j] = (int) (Math.random() * 16);
             }
         }
 
-        int[] checkRowOnQuantityFive = new int[10];
+        int[] checkRowOnQuantityFive = new int[verticalSizeOfMatrix];
         int tempIndex = 0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < verticalSizeOfMatrix; i++) {
             int quantityFiveInRow = 0;
-            for (int j = 0; j < 20; j++) {
+            for (int j = 0; j < horizontalSizeOfMatrix; j++) {
                 if (matrix[i][j] == 5) {
                     quantityFiveInRow++;
                 }
@@ -42,7 +42,7 @@ public class Task11 {
         }
 
         int arraySize = 0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < verticalSizeOfMatrix; i++) {
             if (checkRowOnQuantityFive[i] > -1) {
                 arraySize++;
             }
@@ -50,7 +50,7 @@ public class Task11 {
 
         int tempIndexForArrayWithRowNumbers = 0;
         int[] arrayWithRowNumbersOccursFiveThreePlusTime = new int[arraySize];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < verticalSizeOfMatrix; i++) {
             if (checkRowOnQuantityFive[i] > -1) {
                 arrayWithRowNumbersOccursFiveThreePlusTime[tempIndexForArrayWithRowNumbers] =
                         checkRowOnQuantityFive[i];
@@ -67,5 +67,17 @@ public class Task11 {
     static class MatrixAndRowsNumbers {
         int[][] createdMatrix;
         int[] rowsNumbersWithFive;
+    }
+
+    public static void run() {
+        System.out.println("Result of task 11:");
+        MatrixAndRowsNumbers resultOfTask11 = Task11.createMatrixForTask11();
+        System.out.println(StringHelper.matrixToString(resultOfTask11.createdMatrix));
+        if (resultOfTask11.rowsNumbersWithFive.length == 0) {
+            System.out.println("**!!No row which the number 5 occurs three and more times!!**");
+        } else {
+            System.out.println("Numbers row in which the number 5 occurs three and more times: "
+                    + StringHelper.arrayToString(resultOfTask11.rowsNumbersWithFive));
+        }
     }
 }

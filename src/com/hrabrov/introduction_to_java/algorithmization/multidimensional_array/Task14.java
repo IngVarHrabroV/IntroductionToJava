@@ -5,14 +5,14 @@ public class Task14 {
      * Generate a random m on n matrix, containing of zeros and ones.
      * The number of ones in each columns is equals the column number.
      *
-     * @param m input vertical size matrix (quantity column)
-     * @param n input horizontal size matrix (quantity row)
+     * @param verticalSizeOfMatrix input vertical size matrix (quantity column)
+     * @param horizontalSizeOfMatrix input horizontal size matrix (quantity row)
      * @return multidimensional array like matrix
      */
 
-    public static int[][] generateMatrixForTask14(int m, int n) {
-        if (checkValidateArgument(m, n)) {
-            int[][] matrix = new int[m][n];
+    private static int[][] generateMatrixForTask14(int verticalSizeOfMatrix, int horizontalSizeOfMatrix) {
+        if (checkValidateArgument(verticalSizeOfMatrix, horizontalSizeOfMatrix)) {
+            int[][] matrix = new int[verticalSizeOfMatrix][horizontalSizeOfMatrix];
 
             for (int j = 0; j < matrix[0].length; j++) {
                 int countOne = 0;
@@ -45,15 +45,23 @@ public class Task14 {
 
     private static boolean checkValidateArgument(int m, int n) {
         if (m < 2 || n < 2) {
-            System.out.println("Parameters m and n are must be larger than 1");
+            System.out.println("Parameters verticalSizeOfMatrix and " +
+                    "horizontalSizeOfMatrix are must be larger than 1");
             return false;
         }
 
         if (m < n) {
-            System.out.println("Quantity row (m) are must be larger or equals than quantity column (n)");
+            System.out.println("Quantity row (verticalSizeOfMatrix)" +
+                    " are must be larger or equals than quantity column (horizontalSizeOfMatrix)");
             return false;
         }
 
         return true;
+    }
+
+    public static void run(int verticalSizeOfMatrix, int horizontalSizeOfMatrix) {
+        System.out.println("Result of task 14:");
+        int[][] resultOfTask14 = Task14.generateMatrixForTask14(verticalSizeOfMatrix, horizontalSizeOfMatrix);
+        System.out.println(StringHelper.matrixToString(resultOfTask14));
     }
 }

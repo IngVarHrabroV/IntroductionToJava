@@ -5,10 +5,10 @@ public class ValidateMatrixSize {
         final int MIN_SIZE_OF_MATRIX = 2;
 
         if (n < MIN_SIZE_OF_MATRIX) {
-            System.out.println("n can't be less, then " + MIN_SIZE_OF_MATRIX);
+            System.out.println("n can't be less, then " + MIN_SIZE_OF_MATRIX + ". Try again");
             return false;
         } else if (n % 2 != 0) {
-            System.out.println("n can't be odd");
+            System.out.println("n can't be odd. Try again");
             return false;
         }
 

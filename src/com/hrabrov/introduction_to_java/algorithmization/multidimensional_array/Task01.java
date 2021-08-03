@@ -2,50 +2,67 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task01 {
     /**
-     * Given a matrix. Display all odd columns with the first item greater than last.
+     * Given a matrix. Display all odd columns with first item more greater than last.
      *
      * @param matrix input multidimensional array
      * @return matrix include odd columns with the first item greater than last
      */
 
-    public static int[][] findOddColumnsWhereFirstItemGreatest(int[][] matrix) {
+    private static int[][] findOddColumnsWhereFirstItemGreatest(int[][] matrix) {
         int[] numbersFromFirstRowOfMatrix = matrix[0];
         int[] numbersFromLastRowOfMatrix = matrix[matrix.length - 1];
 
-        int maxLengthOfRow = matrix[0].length;
-        for (int i = 0; i < matrix.length; i++) {
-            maxLengthOfRow = Math.min(maxLengthOfRow, matrix[i].length);
-        }
+        int horizontalSizeOfMatrix = matrix[0].length;
 
-        int quantityOfColumnsWhereFirstItemGreatest = 0;
-        for (int j = 0; j < maxLengthOfRow; j++) {
+        int quantityOfColumnsWhereFirstItemMoreGreaterThenLast = 0;
+        for (int j = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                quantityOfColumnsWhereFirstItemGreatest++;
+                quantityOfColumnsWhereFirstItemMoreGreaterThenLast++;
             }
         }
 
-        int[] indexesOfColumnsWhereFirstItemMoreGreaterThanLast
-                = new int[quantityOfColumnsWhereFirstItemGreatest];
+        if (quantityOfColumnsWhereFirstItemMoreGreaterThenLast == 0) {
+            return null;
+        }
 
-        for (int j = 0, itemSelected = 0; j < maxLengthOfRow; j++) {
+        int[] indexesOfColumnsWhereFirstItemMoreGreaterThenLast
+                = new int[quantityOfColumnsWhereFirstItemMoreGreaterThenLast];
+
+        for (int j = 0, itemSelected = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                indexesOfColumnsWhereFirstItemMoreGreaterThanLast[itemSelected] = j;
+                indexesOfColumnsWhereFirstItemMoreGreaterThenLast[itemSelected] = j;
                 itemSelected++;
             }
         }
 
-        int[][] matrixWhereFirstItemGreatest;
-        matrixWhereFirstItemGreatest = new int[matrix.length][quantityOfColumnsWhereFirstItemGreatest];
+        int[][] matrixWhereFirstItemMoreGreaterThenLast;
+        matrixWhereFirstItemMoreGreaterThenLast
+                = new int[matrix.length][quantityOfColumnsWhereFirstItemMoreGreaterThenLast];
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < quantityOfColumnsWhereFirstItemGreatest; j++) {
-                matrixWhereFirstItemGreatest[i][j] =
-                        matrix[i][indexesOfColumnsWhereFirstItemMoreGreaterThanLast[j]];
+            for (int j = 0; j < quantityOfColumnsWhereFirstItemMoreGreaterThenLast; j++) {
+                matrixWhereFirstItemMoreGreaterThenLast[i][j]
+                        = matrix[i][indexesOfColumnsWhereFirstItemMoreGreaterThenLast[j]];
             }
         }
 
-        return matrixWhereFirstItemGreatest;
+        return matrixWhereFirstItemMoreGreaterThenLast;
+    }
+
+    /**
+     * See {@link #findOddColumnsWhereFirstItemGreatest(int[][])} docs for more details
+     */
+    public static void run(int[][] matrix) {
+        int[][] resultOfTask01 = findOddColumnsWhereFirstItemGreatest(matrix);
+        System.out.println("Result of task 01:");
+        System.out.println("Original matrix:\n" + StringHelper.matrixToString(matrix));
+
+        if (resultOfTask01 == null) {
+            System.out.println("Matrix hasn't odd column, where first item more greater than last ");
+            return;
+        }
+        System.out.println("Transformed matrix:\n" + StringHelper.matrixToString(resultOfTask01));
     }
 }

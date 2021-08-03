@@ -10,8 +10,9 @@ public class Task09 {
      * @return array wit  sum elements in each column and number for column with max sum
      */
 
-    public static SumElementsAndNumberColumn findSumAndColumn(int[][] matrix) {
-        SumElementsAndNumberColumn returnedObject = new SumElementsAndNumberColumn();
+    private static SumOfColumnElementsAndNumberColumnWithTheMostGreaterSum findSumAndColumn(int[][] matrix) {
+        SumOfColumnElementsAndNumberColumnWithTheMostGreaterSum sumsAndNumberColumn
+                = new SumOfColumnElementsAndNumberColumnWithTheMostGreaterSum();
 
         int horizontalSizeOfMatrix = matrix[0].length;
         int[] sumElements = new int[horizontalSizeOfMatrix];
@@ -23,7 +24,7 @@ public class Task09 {
 
             for (int i = 0; i < matrix.length; i++) {
                 if (checkValidateMatrixElement(matrix[i][j])) {
-                    return returnedObject;
+                    return null;
                 }
 
                 tempStorageForSum += matrix[i][j];
@@ -33,7 +34,7 @@ public class Task09 {
 
             if (tempStorageForSum == maxSum) {
                 System.out.println("Multiple columns have a maximum sum. Rewrite matrix");
-                return returnedObject;
+                return sumsAndNumberColumn;
             }
 
             if (tempStorageForSum > maxSum) {
@@ -42,10 +43,10 @@ public class Task09 {
             }
         }
 
-        returnedObject.numberColumn = numberColumnWithMaxSum;
-        returnedObject.sumElements = sumElements;
+        sumsAndNumberColumn.numberColumn = numberColumnWithMaxSum;
+        sumsAndNumberColumn.sumElements = sumElements;
 
-        return returnedObject;
+        return sumsAndNumberColumn;
     }
 
     private static boolean checkValidateMatrixElement(int a) {
@@ -58,8 +59,27 @@ public class Task09 {
         return false;
     }
 
-    static class SumElementsAndNumberColumn {
-        int[] sumElements = new int[0];
+    static class SumOfColumnElementsAndNumberColumnWithTheMostGreaterSum {
+        int[] sumElements;
         int numberColumn;
+    }
+
+    /**
+     * See {@link #findSumAndColumn(int[][])} docs for more details
+     */
+    public static void run(int[][] matrix) {
+        System.out.println("Result of task 09: ");
+        System.out.println("Original matrix:");
+        System.out.println(StringHelper.matrixToString(matrix));
+
+        SumOfColumnElementsAndNumberColumnWithTheMostGreaterSum resultOfTask09 = Task09.findSumAndColumn(matrix);
+
+        if (resultOfTask09  == null) {
+            return;
+        }
+
+        System.out.println("sum  of elements in  columns: "
+                + StringHelper.arrayToString(resultOfTask09.sumElements));
+        System.out.println("Column number " + resultOfTask09.numberColumn + " has max sum elements");
     }
 }

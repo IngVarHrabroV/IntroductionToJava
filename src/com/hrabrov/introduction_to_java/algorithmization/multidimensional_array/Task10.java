@@ -2,13 +2,13 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task10 {
     /**
-     * Given positive elements of the main diagonal of a square matrix
+     * Find positive elements of the main diagonal of a square matrix
      *
      * @param matrix input multidimensional array like matrix
      * @return array with positive elements
      */
 
-    public static int[] findPositiveElementOfTheMainDiagonal(int[][] matrix) {
+    private static int[] findPositiveElementOfTheMainDiagonal(int[][] matrix) {
         int horizontalSizeOfMatrix = matrix.length;
         int[] elementsFromMainDiagonals = new int[horizontalSizeOfMatrix * 2];
 
@@ -34,5 +34,15 @@ public class Task10 {
         }
 
         return positiveElementsFromMainDiagonals;
+    }
+
+    public static void run(int[][] matrix) {
+        System.out.println("Result of task 10:");
+        System.out.println("Original matrix:");
+        System.out.println(StringHelper.matrixToString(matrix));
+
+        int[] resultOfTask10 = Task10.findPositiveElementOfTheMainDiagonal(matrix);
+        System.out.println("Positive elements of the main diagonal: "
+                + StringHelper.arrayToString(resultOfTask10));
     }
 }

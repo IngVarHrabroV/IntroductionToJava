@@ -8,7 +8,7 @@ public class Task12 {
      * @return sorted matrices in ascending or descending order
      */
 
-    public static int[][] ascendingSortMatrix(int[][] originalMatrix) {
+    private static int[][] ascendingSortMatrix(int[][] originalMatrix) {
         for (int i = 0; i < originalMatrix.length; i++) {
             for (int j = 0; j < originalMatrix[i].length; j++) {
                 for (int k = j + 1; k < originalMatrix[i].length; k++) {
@@ -25,7 +25,7 @@ public class Task12 {
         return originalMatrix;
     }
 
-    public static int[][] descendingSortMatrix(int[][] originalMatrix) {
+    private static int[][] descendingSortMatrix(int[][] originalMatrix) {
         for (int i = 0; i < originalMatrix.length; i++) {
             for (int j = 0; j < originalMatrix[i].length; j++) {
                 for (int k = j + 1; k < originalMatrix[i].length; k++) {
@@ -40,5 +40,19 @@ public class Task12 {
         }
 
         return originalMatrix;
+    }
+
+    public static void run(int[][] originalMatrix) {
+        System.out.println("Result of task 12:");
+        System.out.println("Original matrix:");
+        System.out.println(StringHelper.matrixToString(originalMatrix));
+
+        int[][] resultOfTask12WithAscendingSort = Task12.ascendingSortMatrix(originalMatrix);
+        System.out.println("Rows with ascending sort:");
+        System.out.println(StringHelper.matrixToString(resultOfTask12WithAscendingSort));
+
+        int[][] resultOfTask12WithDescendingSort = Task12.descendingSortMatrix(originalMatrix);
+        System.out.println("Rows with descending sort:");
+        System.out.println(StringHelper.matrixToString(resultOfTask12WithDescendingSort));
     }
 }

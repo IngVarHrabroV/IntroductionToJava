@@ -1,7 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array;
 
 public class StringHelper {
-    public String matrixToString(int[][] matrix) {
+    public static String matrixToString(int[][] matrix) {
         String stringForStorageOfMatrixValues = "";
 
         for (int i = 0; i < matrix.length; i++) {
@@ -16,7 +16,7 @@ public class StringHelper {
         return stringForStorageOfMatrixValues;
     }
 
-    public String matrixToString(double[][] matrix) {
+    public static String matrixToString(double[][] matrix) {
         String stringForStorageOfMatrixValues = "";
 
         for (int i = 0; i < matrix.length; i++) {
@@ -32,7 +32,7 @@ public class StringHelper {
         return stringForStorageOfMatrixValues;
     }
 
-    public String arrayToString(int[] array) {
+    public static String arrayToString(int[] array) {
         String stringForStorageOfArrayValues = "";
 
         for (int i = 0; i < array.length; i++) {

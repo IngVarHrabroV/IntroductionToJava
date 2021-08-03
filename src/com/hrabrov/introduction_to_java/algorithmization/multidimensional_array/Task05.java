@@ -12,19 +12,19 @@ public class Task05 {
      * {n,   0,   0, ..., 0, 0, 0}
      * }
      *
-     * @param n input order for matrix
+     * @param sizeOfMatrix input order for matrix
      * @return matrix
      */
 
-    public static int[][] createMatrixForTask05(int n) {
+    private static int[][] createMatrixForTask05(int sizeOfMatrix) {
         ValidateMatrixSize validateMatrixSize = new ValidateMatrixSize();
 
-        if (validateMatrixSize.toBeEvenAndValid(n)) {
-            int[][] matrix = new int[n][n];
+        if (validateMatrixSize.toBeEvenAndValid(sizeOfMatrix)) {
+            int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (j > n - 1 - i) {
+            for (int i = 0; i < sizeOfMatrix; i++) {
+                for (int j = 0; j < sizeOfMatrix; j++) {
+                    if (j > sizeOfMatrix - 1 - i) {
                         matrix[i][j] = 0;
                     } else {
                         matrix[i][j] = i + 1;
@@ -36,5 +36,17 @@ public class Task05 {
         }
 
         return null;
+    }
+
+    /**
+     * See {@link #createMatrixForTask05(int)} docs for more details
+     */
+    public static void run(int sizeOfMatrix) {
+        System.out.println("Result of task 05: ");
+        int[][] resultOfTask05 = Task05.createMatrixForTask05(sizeOfMatrix);
+        if (resultOfTask05 == null) {
+            return;
+        }
+        System.out.println(StringHelper.matrixToString(resultOfTask05));
     }
 }
