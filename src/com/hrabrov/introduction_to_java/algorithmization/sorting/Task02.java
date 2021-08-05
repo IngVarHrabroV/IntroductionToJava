@@ -13,9 +13,8 @@ public class Task02 {
     public static int[] createNonDecreasingSequenceFromTwo(int[] firstSequence, int[] secondSequence) {
         int sizeOfFirstSequence = firstSequence.length;
         int sizeOfSecondSequence = secondSequence.length;
-        int[] newSequence;
         int sizeOfNewSequence = sizeOfFirstSequence + sizeOfSecondSequence;
-        newSequence = new int[sizeOfNewSequence];
+        int[] newSequence = new int[sizeOfNewSequence];
 
         for (int i = 0; i < sizeOfFirstSequence; i++) {
             newSequence[i] = firstSequence[i];
@@ -25,11 +24,10 @@ public class Task02 {
             newSequence[i + sizeOfFirstSequence] = secondSequence[i];
         }
 
-        int temp;
         for (int i = 0; i < sizeOfNewSequence; i++) {
             for (int j = i + 1; j < sizeOfNewSequence; j++) {
                 if (newSequence[i] > newSequence[j]) {
-                    temp = newSequence[i];
+                    int temp = newSequence[i];
                     newSequence[i] = newSequence[j];
                     newSequence[j] = temp;
                 }
