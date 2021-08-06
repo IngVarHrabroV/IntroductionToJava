@@ -2,13 +2,14 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class StringHelper {
     public static String matrixToString(int[][] matrix) {
+        final int FIRST_THREE_DIGIT_NUMBER = 100;
         String stringForStorageOfMatrixValues = "";
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 stringForStorageOfMatrixValues += matrix[i][j] >= 0 ? " " : "";
                 stringForStorageOfMatrixValues += matrix[i][j];
-                stringForStorageOfMatrixValues += matrix[i][j] < 100 ? "\t" : "";
+                stringForStorageOfMatrixValues += matrix[i][j] < FIRST_THREE_DIGIT_NUMBER ? "\t" : "";
             }
             stringForStorageOfMatrixValues += (i == matrix.length - 1) ? "" : "\n";
         }
