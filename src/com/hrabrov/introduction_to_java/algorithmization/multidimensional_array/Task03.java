@@ -19,11 +19,11 @@ public class Task03 {
             return null;
         }
 
-        int[] selectedRow = new int[originalMatrix[rowNumberForDisplaying].length];
+        int[] selectedRow = new int[originalMatrix[0].length];
         int[] selectedColumn = new int[originalMatrix.length];
 
         for (int j = 0, tempIndexForSaveOfNumberRow = 0;
-             j < originalMatrix[rowNumberForDisplaying].length;
+             j < originalMatrix[0].length;
              j++, tempIndexForSaveOfNumberRow++) {
             selectedRow[tempIndexForSaveOfNumberRow] = originalMatrix[rowNumberForDisplaying - 1][j];
         }
@@ -41,16 +41,19 @@ public class Task03 {
      * See {@link #displaySelectedLineAndColumn(int[][], int, int)} docs for more details
      */
     public static void run(int[][] originalMatrix, int rowNumberForDisplaying, int columnNumberForDisplaying) {
+        System.out.println("Result of task 03:");
+        System.out.println("Original matrix:\n" + StringHelper.matrixToString(originalMatrix));
+
         int[][] resultOfTask03 = Task03.displaySelectedLineAndColumn(
                 originalMatrix,
                 rowNumberForDisplaying,
                 columnNumberForDisplaying);
-        System.out.println("Result of task 03:");
-        System.out.println("Original matrix:\n" + StringHelper.matrixToString(originalMatrix));
+
         if (resultOfTask03 == null) {
             System.out.println("Matrix has no selected row or column");
             return;
         }
+
         System.out.println("Selected row: " + StringHelper.arrayToString(resultOfTask03[0]));
         System.out.println("Selected column: " + StringHelper.arrayToString(resultOfTask03[1]));
     }
