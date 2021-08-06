@@ -19,13 +19,17 @@ public class Task15 {
 
         for (int i = 0; i < originalMatrix.length; i++) {
             for (int j = 0; j < originalMatrix[i].length; j++) {
-                if (originalMatrix[i][j] % 2 != 0 && originalMatrix[i][j] != 0) {
+                if (isOdd(originalMatrix[i][j]) && originalMatrix[i][j] != 0) {
                     originalMatrix[i][j] = largestElement;
                 }
             }
         }
 
         return originalMatrix;
+    }
+
+    private static boolean isOdd(int valueForCheck) {
+        return valueForCheck % 2 != 0;
     }
 
     public static void run(int[][] originalMatrix) {
