@@ -14,41 +14,41 @@ public class Task01 {
 
         int horizontalSizeOfMatrix = matrix[0].length;
 
-        int quantityOfColumnsWhereFirstItemMoreGreaterThenLast = 0;
+        int quantityOfColumnsWhereFirstItemGreaterThenLast = 0;
         for (int j = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                quantityOfColumnsWhereFirstItemMoreGreaterThenLast++;
+                quantityOfColumnsWhereFirstItemGreaterThenLast++;
             }
         }
 
-        if (quantityOfColumnsWhereFirstItemMoreGreaterThenLast == 0) {
+        if (quantityOfColumnsWhereFirstItemGreaterThenLast == 0) {
             return null;
         }
 
-        int[] indexesOfColumnsWhereFirstItemMoreGreaterThenLast
-                = new int[quantityOfColumnsWhereFirstItemMoreGreaterThenLast];
+        int[] indexesOfColumnsWhereFirstItemGreaterThenLast
+                = new int[quantityOfColumnsWhereFirstItemGreaterThenLast];
 
         for (int j = 0, itemSelected = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && j % 2 == 0) {
-                indexesOfColumnsWhereFirstItemMoreGreaterThenLast[itemSelected] = j;
+                indexesOfColumnsWhereFirstItemGreaterThenLast[itemSelected] = j;
                 itemSelected++;
             }
         }
 
-        int[][] matrixWhereFirstItemMoreGreaterThenLast;
-        matrixWhereFirstItemMoreGreaterThenLast
-                = new int[matrix.length][quantityOfColumnsWhereFirstItemMoreGreaterThenLast];
+        int[][] matrixWhereFirstItemGreaterThenLast;
+        matrixWhereFirstItemGreaterThenLast
+                = new int[matrix.length][quantityOfColumnsWhereFirstItemGreaterThenLast];
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < quantityOfColumnsWhereFirstItemMoreGreaterThenLast; j++) {
-                matrixWhereFirstItemMoreGreaterThenLast[i][j]
-                        = matrix[i][indexesOfColumnsWhereFirstItemMoreGreaterThenLast[j]];
+            for (int j = 0; j < quantityOfColumnsWhereFirstItemGreaterThenLast; j++) {
+                matrixWhereFirstItemGreaterThenLast[i][j]
+                        = matrix[i][indexesOfColumnsWhereFirstItemGreaterThenLast[j]];
             }
         }
 
-        return matrixWhereFirstItemMoreGreaterThenLast;
+        return matrixWhereFirstItemGreaterThenLast;
     }
 
     /**
