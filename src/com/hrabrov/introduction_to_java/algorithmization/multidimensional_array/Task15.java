@@ -9,8 +9,7 @@ public class Task15 {
      */
 
     private static int[][] replacedElementsOfMatrix(int[][] originalMatrix) {
-        int largestElement;
-        largestElement = originalMatrix[0][0];
+        int largestElement = originalMatrix[0][0];
 
         for (int i = 0; i < originalMatrix.length; i++) {
             for (int j = 0; j < originalMatrix[i].length; j++) {
