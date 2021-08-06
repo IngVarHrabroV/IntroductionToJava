@@ -10,7 +10,7 @@ public class Task07 {
      */
 
     private static MatrixAndHerPositiveElements createMatrixForTask07(int sizeOfMatrix) {
-        final int DEGREE = 2;
+        final int degree = 2;
 
         MatrixAndHerPositiveElements matrixAndHerPositiveElements = new MatrixAndHerPositiveElements();
 
@@ -20,7 +20,7 @@ public class Task07 {
         double expressionValue;
         for (int i = 0; i < sizeOfMatrix; i++) {
             for (int j = 0; j < sizeOfMatrix; j++) {
-                expressionValue = (Math.pow(i, DEGREE) - Math.pow(j, DEGREE)) / sizeOfMatrix;
+                expressionValue = (Math.pow(i, degree) - Math.pow(j, degree)) / sizeOfMatrix;
                 matrix[i][j] = Math.sin(expressionValue);
 
                 if (matrix[i][j] > 0) {

@@ -14,25 +14,25 @@ public class Task03 {
                                                         int rowNumberForDisplaying,
                                                         int columnNumberForDisplaying) {
 
-        final int VERTICAL_SIZE_OF_MATRIX = originalMatrix.length;
-        final int HORIZONTAL_SIZE_OF_MATRIX = originalMatrix[0].length;
+        final int verticalSizeOfMatrix = originalMatrix.length;
+        final int horizontalSizeOfMatrix = originalMatrix[0].length;
 
-        if (rowNumberForDisplaying > VERTICAL_SIZE_OF_MATRIX
-                || columnNumberForDisplaying > HORIZONTAL_SIZE_OF_MATRIX) {
+        if (rowNumberForDisplaying > verticalSizeOfMatrix
+                || columnNumberForDisplaying > horizontalSizeOfMatrix) {
             return null;
         }
 
-        int[] selectedRow = new int[HORIZONTAL_SIZE_OF_MATRIX];
-        int[] selectedColumn = new int[VERTICAL_SIZE_OF_MATRIX];
+        int[] selectedRow = new int[horizontalSizeOfMatrix];
+        int[] selectedColumn = new int[verticalSizeOfMatrix];
 
         for (int j = 0, tempIndexForSaveOfNumberRow = 0;
-             j < HORIZONTAL_SIZE_OF_MATRIX;
+             j < horizontalSizeOfMatrix;
              j++, tempIndexForSaveOfNumberRow++) {
             selectedRow[tempIndexForSaveOfNumberRow] = originalMatrix[rowNumberForDisplaying - 1][j];
         }
 
         for (int i = 0, tempIndexForSaveOfNumberColumn = 0;
-             i < VERTICAL_SIZE_OF_MATRIX;
+             i < verticalSizeOfMatrix;
              i++, tempIndexForSaveOfNumberColumn++) {
             selectedColumn[tempIndexForSaveOfNumberColumn] = originalMatrix[i][columnNumberForDisplaying - 1];
         }

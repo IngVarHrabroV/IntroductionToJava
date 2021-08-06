@@ -18,7 +18,7 @@ public class Task05 {
 
     private static int[][] createMatrixForTask05(int sizeOfMatrix) {
         ValidateMatrixSize validateMatrixSize = new ValidateMatrixSize();
-        final int NUMBER_FOR_FILLING = 0;
+        final int numberForFilling = 0;
 
         if (validateMatrixSize.toBeEvenAndValid(sizeOfMatrix)) {
             int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
@@ -26,7 +26,7 @@ public class Task05 {
             for (int i = 0; i < sizeOfMatrix; i++) {
                 for (int j = 0; j < sizeOfMatrix; j++) {
                     if (j > sizeOfMatrix - 1 - i) {
-                        matrix[i][j] = NUMBER_FOR_FILLING;
+                        matrix[i][j] = numberForFilling;
                     } else {
                         matrix[i][j] = i + 1;
                     }

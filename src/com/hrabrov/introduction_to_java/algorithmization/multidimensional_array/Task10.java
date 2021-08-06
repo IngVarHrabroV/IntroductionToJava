@@ -9,13 +9,13 @@ public class Task10 {
      */
 
     private static int[] findPositiveElementOfTheMainDiagonal(int[][] matrix) {
-        final int HORIZONTAL_SIZE_OF_MATRIX = matrix.length;
-        int[] elementsFromMainDiagonals = new int[HORIZONTAL_SIZE_OF_MATRIX * 2];
+        final int horizontalSizeOfMatrix = matrix.length;
+        int[] elementsFromMainDiagonals = new int[horizontalSizeOfMatrix * 2];
 
-        for (int i = 0, tempIndex = 0; i < HORIZONTAL_SIZE_OF_MATRIX; i++) {
+        for (int i = 0, tempIndex = 0; i < horizontalSizeOfMatrix; i++) {
             elementsFromMainDiagonals[tempIndex] = matrix[i][i];
             tempIndex++;
-            elementsFromMainDiagonals[tempIndex] = matrix[i][HORIZONTAL_SIZE_OF_MATRIX - i - 1];
+            elementsFromMainDiagonals[tempIndex] = matrix[i][horizontalSizeOfMatrix - i - 1];
             tempIndex++;
         }
 

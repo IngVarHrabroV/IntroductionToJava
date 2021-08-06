@@ -9,7 +9,7 @@ public class Task11 {
      *
      * @return matrix and array with row number
      */
-    
+
     private static MatrixAndRowsNumbers createMatrixForTask11() {
         MatrixAndRowsNumbers matrixAndRowsNumbers = new MatrixAndRowsNumbers();
 

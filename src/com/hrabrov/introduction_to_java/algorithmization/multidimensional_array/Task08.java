@@ -13,19 +13,19 @@ public class Task08 {
      */
 
     private static int[][] replaceTwoColumn(int[][] originalMatrix) {
-        final int VERTICAL_SIZE_OF_MATRIX = originalMatrix.length;
-        final int HORIZONTAL_SIZE_OF_MATRIX = originalMatrix[0].length;
+        final int verticalSizeOfMatrix = originalMatrix.length;
+        final int horizontalSizeOfMatrix = originalMatrix[0].length;
 
         System.out.print("Enter number of first column for replace: ");
-        final int NUMBER_FIRST_COLUMN = inputIntNumber();
+        final int numberFirstColumn = inputIntNumber();
         System.out.print("Enter number of second column for replace: ");
-        final int NUMBER_SECOND_COLUMN = inputIntNumber();
+        final int numberSecondColumn = inputIntNumber();
 
-        if (checkValidationArgument(HORIZONTAL_SIZE_OF_MATRIX, NUMBER_FIRST_COLUMN, NUMBER_SECOND_COLUMN)) {
-            for (int i = 0; i < VERTICAL_SIZE_OF_MATRIX; i++) {
-                int temp = originalMatrix[i][NUMBER_FIRST_COLUMN - 1];
-                originalMatrix[i][NUMBER_FIRST_COLUMN - 1] = originalMatrix[i][NUMBER_SECOND_COLUMN - 1];
-                originalMatrix[i][NUMBER_SECOND_COLUMN - 1] = temp;
+        if (checkValidationArgument(horizontalSizeOfMatrix, numberFirstColumn, numberSecondColumn)) {
+            for (int i = 0; i < verticalSizeOfMatrix; i++) {
+                int temp = originalMatrix[i][numberFirstColumn - 1];
+                originalMatrix[i][numberFirstColumn - 1] = originalMatrix[i][numberSecondColumn - 1];
+                originalMatrix[i][numberSecondColumn - 1] = temp;
             }
 
             return originalMatrix;
@@ -41,7 +41,8 @@ public class Task08 {
             return false;
         }
 
-        if (firstColumn < 1 || secondColumn < 1) {
+        final int minNumberColumn = 1;
+        if (firstColumn < minNumberColumn || secondColumn < minNumberColumn) {
             System.out.println("Number of column can't be less than 1");
             return false;
         }

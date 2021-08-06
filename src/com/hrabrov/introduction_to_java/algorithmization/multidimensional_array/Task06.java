@@ -17,24 +17,24 @@ public class Task06 {
      */
 
     private static int[][] createMatrixForTask06(int sizeOfMatrix) {
-        final int SYMBOL_FOR_UNSELECTED_ELEMENT = 0;
-        final int SYMBOL_FOR_SELECTED_ELEMENT = 1;
+        final int symbolForUnselectedElement = 0;
+        final int symbolForSelectedElement = 1;
 
         ValidateMatrixSize validateMatrixSize = new ValidateMatrixSize();
 
         if (validateMatrixSize.toBeEvenAndValid(sizeOfMatrix)) {
             int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
-            final int INDEX_MIDDLE_FOR_MATRIX = sizeOfMatrix / 2 - 1;
+            final int indexMiddleForMatrix = sizeOfMatrix / 2 - 1;
 
             for (int i = 0; i < sizeOfMatrix; i++) {
                 for (int j = 0; j < sizeOfMatrix; j++) {
-                    matrix[i][j] = SYMBOL_FOR_UNSELECTED_ELEMENT;
+                    matrix[i][j] = symbolForUnselectedElement;
 
-                    if (i <= INDEX_MIDDLE_FOR_MATRIX && j >= i && j < sizeOfMatrix - i) {
-                        matrix[i][j] = SYMBOL_FOR_SELECTED_ELEMENT;
+                    if (i <= indexMiddleForMatrix && j >= i && j < sizeOfMatrix - i) {
+                        matrix[i][j] = symbolForSelectedElement;
                     } else if (j >= sizeOfMatrix - i - 1 && j <= i) {
-                        matrix[i][j] = SYMBOL_FOR_SELECTED_ELEMENT;
+                        matrix[i][j] = symbolForSelectedElement;
                     }
                 }
             }

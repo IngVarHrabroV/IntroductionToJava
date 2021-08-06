@@ -9,29 +9,29 @@ public class Task01 {
      */
 
     private static int[][] findOddColumnsWhereFirstItemGreatest(int[][] matrix) {
-        final int MIN_NECESSARY_QUANTITY_COLUMNS = 1;
+        final int minNecessaryQuantityColumns = 1;
 
         int[] numbersFromFirstRowOfMatrix = matrix[0];
         int[] numbersFromLastRowOfMatrix = matrix[matrix.length - 1];
 
-        final int HORIZONTAL_SIZE_OF_MATRIX = matrix[0].length;
+        final int horizontalSizeOfMatrix = matrix[0].length;
 
         int quantityOfColumnsWhereFirstItemGreaterThenLast = 0;
-        for (int j = 0; j < HORIZONTAL_SIZE_OF_MATRIX; j++) {
+        for (int j = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && isEvenIndex(j)) {
                 quantityOfColumnsWhereFirstItemGreaterThenLast++;
             }
         }
 
-        if (quantityOfColumnsWhereFirstItemGreaterThenLast < MIN_NECESSARY_QUANTITY_COLUMNS) {
+        if (quantityOfColumnsWhereFirstItemGreaterThenLast < minNecessaryQuantityColumns) {
             return null;
         }
 
         int[] indexesOfColumnsWhereFirstItemGreaterThenLast
                 = new int[quantityOfColumnsWhereFirstItemGreaterThenLast];
 
-        for (int j = 0, itemSelected = 0; j < HORIZONTAL_SIZE_OF_MATRIX; j++) {
+        for (int j = 0, itemSelected = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
                     && isEvenIndex(j)) {
                 indexesOfColumnsWhereFirstItemGreaterThenLast[itemSelected] = j;

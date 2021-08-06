@@ -14,12 +14,12 @@ public class Task09 {
         SumOfColumnElementsAndNumberColumnWithTheGreatestSum sumsAndNumberColumn
                 = new SumOfColumnElementsAndNumberColumnWithTheGreatestSum();
 
-        final int HORIZONTAL_SIZE_OF_MATRIX = matrix[0].length;
-        int[] sumElements = new int[HORIZONTAL_SIZE_OF_MATRIX];
+        final int horizontalSizeOfMatrix = matrix[0].length;
+        int[] sumElements = new int[horizontalSizeOfMatrix];
         int maxSum = -1;
         int numberColumnWithMaxSum = 0;
 
-        for (int j = 0; j < HORIZONTAL_SIZE_OF_MATRIX; j++) {
+        for (int j = 0; j < horizontalSizeOfMatrix; j++) {
             int tempStorageForSum = 0;
 
             for (int i = 0; i < matrix.length; i++) {
