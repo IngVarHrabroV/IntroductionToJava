@@ -17,22 +17,24 @@ public class Task06 {
      */
 
     private static int[][] createMatrixForTask06(int sizeOfMatrix) {
+        final int SYMBOL_FOR_UNSELECTED_ELEMENT = 0;
+        final int SYMBOL_FOR_SELECTED_ELEMENT = 1;
+
         ValidateMatrixSize validateMatrixSize = new ValidateMatrixSize();
 
         if (validateMatrixSize.toBeEvenAndValid(sizeOfMatrix)) {
             int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
-            int indexMiddleOfMatrix;
-            indexMiddleOfMatrix = sizeOfMatrix / 2 - 1;
+            final int INDEX_MIDDLE_FOR_MATRIX = sizeOfMatrix / 2 - 1;
 
             for (int i = 0; i < sizeOfMatrix; i++) {
                 for (int j = 0; j < sizeOfMatrix; j++) {
-                    matrix[i][j] = 0;
+                    matrix[i][j] = SYMBOL_FOR_UNSELECTED_ELEMENT;
 
-                    if (i <= indexMiddleOfMatrix && j >= i && j < sizeOfMatrix - i) {
-                        matrix[i][j] = 1;
+                    if (i <= INDEX_MIDDLE_FOR_MATRIX && j >= i && j < sizeOfMatrix - i) {
+                        matrix[i][j] = SYMBOL_FOR_SELECTED_ELEMENT;
                     } else if (j >= sizeOfMatrix - i - 1 && j <= i) {
-                        matrix[i][j] = 1;
+                        matrix[i][j] = SYMBOL_FOR_SELECTED_ELEMENT;
                     }
                 }
             }
@@ -49,9 +51,11 @@ public class Task06 {
     public static void run(int sizeOfMatrix) {
         System.out.println("Result of task 06: ");
         int[][] resultOfTask06 = Task06.createMatrixForTask06(sizeOfMatrix);
+
         if (resultOfTask06 == null) {
             return;
         }
+
         System.out.println(StringHelper.matrixToString(resultOfTask06));
     }
 }
