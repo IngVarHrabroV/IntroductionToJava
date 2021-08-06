@@ -2,13 +2,15 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 
 public class Task01 {
     /**
-     * Given a matrix. Display all odd columns with first item more greater than last.
+     * Given a matrix. Display all odd columns with first item greater than last.
      *
      * @param matrix input multidimensional array
      * @return matrix include odd columns with the first item greater than last
      */
 
     private static int[][] findOddColumnsWhereFirstItemGreatest(int[][] matrix) {
+        final int MIN_NECESSARY_QUANTITY_COLUMNS = 1;
+
         int[] numbersFromFirstRowOfMatrix = matrix[0];
         int[] numbersFromLastRowOfMatrix = matrix[matrix.length - 1];
 
@@ -17,12 +19,12 @@ public class Task01 {
         int quantityOfColumnsWhereFirstItemGreaterThenLast = 0;
         for (int j = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
-                    && j % 2 == 0) {
+                    && isOddColumn(j)) {
                 quantityOfColumnsWhereFirstItemGreaterThenLast++;
             }
         }
 
-        if (quantityOfColumnsWhereFirstItemGreaterThenLast == 0) {
+        if (quantityOfColumnsWhereFirstItemGreaterThenLast < MIN_NECESSARY_QUANTITY_COLUMNS) {
             return null;
         }
 
@@ -31,14 +33,13 @@ public class Task01 {
 
         for (int j = 0, itemSelected = 0; j < horizontalSizeOfMatrix; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
-                    && j % 2 == 0) {
+                    && isOddColumn(j)) {
                 indexesOfColumnsWhereFirstItemGreaterThenLast[itemSelected] = j;
                 itemSelected++;
             }
         }
 
-        int[][] matrixWhereFirstItemGreaterThenLast;
-        matrixWhereFirstItemGreaterThenLast
+        int[][] matrixWhereFirstItemGreaterThenLast
                 = new int[matrix.length][quantityOfColumnsWhereFirstItemGreaterThenLast];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -49,6 +50,10 @@ public class Task01 {
         }
 
         return matrixWhereFirstItemGreaterThenLast;
+    }
+
+    private static boolean isOddColumn(int value) {
+        return value % 2 == 0;
     }
 
     /**
@@ -63,6 +68,7 @@ public class Task01 {
             System.out.println("Matrix hasn't odd column, where first item more greater than last ");
             return;
         }
+
         System.out.println("Transformed matrix:\n" + StringHelper.matrixToString(resultOfTask01));
     }
 }
