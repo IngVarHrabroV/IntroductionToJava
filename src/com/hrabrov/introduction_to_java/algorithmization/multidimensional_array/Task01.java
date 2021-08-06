@@ -14,12 +14,12 @@ public class Task01 {
         int[] numbersFromFirstRowOfMatrix = matrix[0];
         int[] numbersFromLastRowOfMatrix = matrix[matrix.length - 1];
 
-        int horizontalSizeOfMatrix = matrix[0].length;
+        final int HORIZONTAL_SIZE_OF_MATRIX = matrix[0].length;
 
         int quantityOfColumnsWhereFirstItemGreaterThenLast = 0;
-        for (int j = 0; j < horizontalSizeOfMatrix; j++) {
+        for (int j = 0; j < HORIZONTAL_SIZE_OF_MATRIX; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
-                    && isOddColumn(j)) {
+                    && isEvenIndex(j)) {
                 quantityOfColumnsWhereFirstItemGreaterThenLast++;
             }
         }
@@ -31,9 +31,9 @@ public class Task01 {
         int[] indexesOfColumnsWhereFirstItemGreaterThenLast
                 = new int[quantityOfColumnsWhereFirstItemGreaterThenLast];
 
-        for (int j = 0, itemSelected = 0; j < horizontalSizeOfMatrix; j++) {
+        for (int j = 0, itemSelected = 0; j < HORIZONTAL_SIZE_OF_MATRIX; j++) {
             if (numbersFromFirstRowOfMatrix[j] > numbersFromLastRowOfMatrix[j]
-                    && isOddColumn(j)) {
+                    && isEvenIndex(j)) {
                 indexesOfColumnsWhereFirstItemGreaterThenLast[itemSelected] = j;
                 itemSelected++;
             }
@@ -52,7 +52,7 @@ public class Task01 {
         return matrixWhereFirstItemGreaterThenLast;
     }
 
-    private static boolean isOddColumn(int value) {
+    private static boolean isEvenIndex(int value) {
         return value % 2 == 0;
     }
 
