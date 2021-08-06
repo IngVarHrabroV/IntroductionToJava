@@ -8,8 +8,8 @@ public class Task02 {
      * @return array with diagonal elements
      */
 
-    private static arrayOfDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
-        arrayOfDiagonalElements arrayOfDiagonalElements = new arrayOfDiagonalElements();
+    private static ArrayOfDiagonalElements chooseDiagonalElement(int[][] originalMatrix) {
+        ArrayOfDiagonalElements arrayOfDiagonalElements = new ArrayOfDiagonalElements();
 
         int sizeOfMatrix = originalMatrix.length;
 
@@ -31,7 +31,7 @@ public class Task02 {
      * See {@link #chooseDiagonalElement(int[][])} docs for more details
      */
     public static void run(int[][] originalMatrix) {
-        Task02.arrayOfDiagonalElements resultOfTask02 = Task02.chooseDiagonalElement(originalMatrix);
+        ArrayOfDiagonalElements resultOfTask02 = Task02.chooseDiagonalElement(originalMatrix);
         System.out.println("Result of task 02:");
         System.out.println("Original matrix:\n" + StringHelper.matrixToString(originalMatrix));
         System.out.println("Elements of left-right diagonal: "
@@ -40,7 +40,7 @@ public class Task02 {
                 + StringHelper.arrayToString(resultOfTask02.secondDiagonal));
     }
 
-    static class arrayOfDiagonalElements {
+    static class ArrayOfDiagonalElements {
         int[] firstDiagonal;
         int[] secondDiagonal;
     }
