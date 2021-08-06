@@ -9,13 +9,13 @@ public class Task10 {
      */
 
     private static int[] findPositiveElementOfTheMainDiagonal(int[][] matrix) {
-        int horizontalSizeOfMatrix = matrix.length;
-        int[] elementsFromMainDiagonals = new int[horizontalSizeOfMatrix * 2];
+        final int HORIZONTAL_SIZE_OF_MATRIX = matrix.length;
+        int[] elementsFromMainDiagonals = new int[HORIZONTAL_SIZE_OF_MATRIX * 2];
 
-        for (int i = 0, tempIndex = 0; i < horizontalSizeOfMatrix; i++) {
+        for (int i = 0, tempIndex = 0; i < HORIZONTAL_SIZE_OF_MATRIX; i++) {
             elementsFromMainDiagonals[tempIndex] = matrix[i][i];
             tempIndex++;
-            elementsFromMainDiagonals[tempIndex] = matrix[i][horizontalSizeOfMatrix - i - 1];
+            elementsFromMainDiagonals[tempIndex] = matrix[i][HORIZONTAL_SIZE_OF_MATRIX - i - 1];
             tempIndex++;
         }
 
@@ -37,11 +37,19 @@ public class Task10 {
     }
 
     public static void run(int[][] matrix) {
+        final int MIN_NECESSARY_QUANTITY_POSITIVE_ELEMENTS = 1;
+
         System.out.println("Result of task 10:");
         System.out.println("Original matrix:");
         System.out.println(StringHelper.matrixToString(matrix));
 
         int[] resultOfTask10 = Task10.findPositiveElementOfTheMainDiagonal(matrix);
+
+        if (resultOfTask10.length < MIN_NECESSARY_QUANTITY_POSITIVE_ELEMENTS) {
+            System.out.println("Matrix hasn't positive elements in main diagonals");
+            return;
+        }
+
         System.out.println("Positive elements of the main diagonal: "
                 + StringHelper.arrayToString(resultOfTask10));
     }
