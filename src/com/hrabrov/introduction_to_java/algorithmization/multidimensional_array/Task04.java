@@ -24,7 +24,7 @@ public class Task04 {
 
             for (int i = 0; i < sizeOfMatrix; i++) {
                 for (int j = 0; j < sizeOfMatrix; j++) {
-                    matrix[i][j] = i % 2 == 0 ? j + 1 : sizeOfMatrix - j;
+                    matrix[i][j] = isEvenIndex(i) ? j + 1 : sizeOfMatrix - j;
                 }
             }
 
@@ -34,15 +34,21 @@ public class Task04 {
         return null;
     }
 
+    private static boolean isEvenIndex(int value) {
+        return value% 2 == 0;
+    }
+
     /**
      * See {@link #createMatrixForTask04(int)} docs for more details
      */
     public static void run(int sizeOfMatrix) {
         System.out.println("Result of task 04: ");
         int[][] resultOfTask04 = createMatrixForTask04(sizeOfMatrix);
+
         if (resultOfTask04 == null) {
             return;
         }
+
         System.out.println(StringHelper.matrixToString(resultOfTask04));
     }
 }
