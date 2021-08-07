@@ -22,6 +22,12 @@ public class Task16 {
 
     public static void run(int sizeOfMatrix) {
         System.out.println("Result of task 16:");
+
+        if (sizeOfMatrix < 3) {
+            System.out.println("You can't create magic square with side less then 3");
+            return;
+        }
+
         int[][] resultOfTask16 = Task16.generateMagicSquare(sizeOfMatrix);
         System.out.println(StringHelper.matrixToString(resultOfTask16));
     }

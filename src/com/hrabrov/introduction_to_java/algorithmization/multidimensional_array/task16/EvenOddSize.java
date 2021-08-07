@@ -5,11 +5,9 @@ public class EvenOddSize {
     public static int[][] generateMagicSquare(int n) {
         int[][] magicSquare = new int[n][n];
 
-        int sizeOfSubMatrix;
-        sizeOfSubMatrix = MiddleOfSideOfMatrix.find(n);
+        final int sizeOfSubMatrix = MiddleOfSideOfMatrix.find(n);
 
-        int[][] numbersForFillSubMatrices;
-        numbersForFillSubMatrices = OddSize.generateMagicSquare(sizeOfSubMatrix);
+        int[][] numbersForFillSubMatrices = OddSize.generateMagicSquare(sizeOfSubMatrix);
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -17,8 +15,7 @@ public class EvenOddSize {
                     magicSquare[i][j] = numbersForFillSubMatrices[i][j];
                 }
 
-                int areaOfSubMatrix;
-                areaOfSubMatrix = (int) Math.pow(sizeOfSubMatrix, 2);
+                int areaOfSubMatrix = (int) Math.pow(sizeOfSubMatrix, 2);
 
                 if (i < sizeOfSubMatrix && j >= sizeOfSubMatrix) {
                     magicSquare[i][j] = numbersForFillSubMatrices[i][j - sizeOfSubMatrix]
@@ -49,13 +46,12 @@ public class EvenOddSize {
             }
         }
 
-        int halfOfQuantityColumnsForReplace = (sizeOfSubMatrix - 3) / 2;
+        final int halfOfQuantityColumnsForReplace = (sizeOfSubMatrix - 3) / 2;
 
         for (int k = halfOfQuantityColumnsForReplace * (-1); k < halfOfQuantityColumnsForReplace; k++) {
             for (int i = 0; i < sizeOfSubMatrix; i++) {
                 tempStorageForRearrangingNumber = magicSquare[i][sizeOfSubMatrix + k];
-                magicSquare[i][sizeOfSubMatrix + k] =
-                        magicSquare[i + sizeOfSubMatrix][sizeOfSubMatrix + k];
+                magicSquare[i][sizeOfSubMatrix + k] = magicSquare[i + sizeOfSubMatrix][sizeOfSubMatrix + k];
                 magicSquare[i + sizeOfSubMatrix][sizeOfSubMatrix + k] = tempStorageForRearrangingNumber;
             }
         }

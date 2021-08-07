@@ -3,17 +3,13 @@ package com.hrabrov.introduction_to_java.algorithmization.multidimensional_array
 public class OddSize {
     //n = 2k + 1, k = 1, 2, 3, ...
     public static int[][] generateMagicSquare(int n) {
-        int middleOfSideOfMagicSquare;
-        middleOfSideOfMagicSquare = MiddleOfSideOfMatrix.find(n);
+        final int middleOfSideOfMagicSquare = MiddleOfSideOfMatrix.find(n);
 
         //create auxiliary matrix (bigMatrix)
-        int howManyCellToAdd;
-        howManyCellToAdd = (n - middleOfSideOfMagicSquare) * 2;
+        final int howManyCellToAdd = (n - middleOfSideOfMagicSquare) * 2;
 
-        int[][] auxiliaryBigMatrix;
-        int sizeOfAuxiliaryBigMatrix;
-        sizeOfAuxiliaryBigMatrix = n + howManyCellToAdd;
-        auxiliaryBigMatrix = new int[sizeOfAuxiliaryBigMatrix][sizeOfAuxiliaryBigMatrix];
+        final int sizeOfAuxiliaryBigMatrix = n + howManyCellToAdd;
+        int[][] auxiliaryBigMatrix = new int[sizeOfAuxiliaryBigMatrix][sizeOfAuxiliaryBigMatrix];
 
         for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
             for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
@@ -25,20 +21,15 @@ public class OddSize {
         int middleOfSideOfAuxiliaryBigMatrix;
         middleOfSideOfAuxiliaryBigMatrix = MiddleOfSideOfMatrix.find(sizeOfAuxiliaryBigMatrix);
         int numberForFillAuxiliaryBigMatrix = 1;
-        int tempJ = 0;
-        for (int i = middleOfSideOfAuxiliaryBigMatrix - 1; i < sizeOfAuxiliaryBigMatrix; i++) {
-            int tempI = i;
-            for (int j = tempJ; j <= i; j++) {
+        for (int i = middleOfSideOfAuxiliaryBigMatrix - 1, tempJ = 0; i < sizeOfAuxiliaryBigMatrix; i++, tempJ++) {
+            for (int j = tempJ, tempI = i; j <= i; j++, tempI--) {
                 auxiliaryBigMatrix[tempI][j] = numberForFillAuxiliaryBigMatrix;
                 numberForFillAuxiliaryBigMatrix++;
-                tempI -= 1;
             }
-            tempJ++;
         }
 
         //transfer number from the terrace to the magic square
-        int halfOfAddedCells;
-        halfOfAddedCells = howManyCellToAdd / 2;
+        int halfOfAddedCells = howManyCellToAdd / 2;
         for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
             for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
                 if (auxiliaryBigMatrix[i][j] != 0) {
