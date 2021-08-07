@@ -12,17 +12,16 @@ public class Task01 {
      * @return concatenated array
      */
 
-    public static int[] concatenatingArrays(int[] firstArray, int[] secondArray, int k) {
-        int sizeOfFirstArray = firstArray.length;
+    private static int[] concatenatingArrays(int[] firstArray, int[] secondArray, int k) {
+        final int sizeOfFirstArray = firstArray.length;
+        final int sizeOfSecondArray = secondArray.length;
 
         if (checkValidityOfTheInsertionPosition(sizeOfFirstArray, k)) {
             return firstArray;
         }
 
-        int insertionIndex = k - 1;
-        int[] concatenatedArray;
-        int sizeOfSecondArray = secondArray.length;
-        concatenatedArray = new int[sizeOfFirstArray + sizeOfSecondArray];
+        final int insertionIndex = k - 1;
+        int[] concatenatedArray = new int[sizeOfFirstArray + sizeOfSecondArray];
 
         for (int i = 0; i < concatenatedArray.length; i++) {
             if (i <= insertionIndex) {
@@ -37,12 +36,29 @@ public class Task01 {
         return concatenatedArray;
     }
 
-    private static boolean checkValidityOfTheInsertionPosition(int sizeOfArray, int checkedValue) {
-        if (checkedValue < 0 || checkedValue >= sizeOfArray) {
+    private static boolean checkValidityOfTheInsertionPosition(int sizeOfArray, int checkingValue) {
+        if (checkingValue < 0 || checkingValue >= sizeOfArray) {
             System.out.println("Incorrect insert position");
             return true;
         }
 
         return false;
+    }
+
+    /**
+     * See {@link #concatenatingArrays(int[], int[], int)} docs for more details
+     */
+    public static void run(int[] firstArray, int[] secondArray, int k) {
+        System.out.println("Result of task 01: ");
+        System.out.println("First array: " + Helper.arrayToString(firstArray));
+        System.out.println("Second array: " + Helper.arrayToString(secondArray));
+
+        int[] resultOfTask01 = Task01.concatenatingArrays(firstArray, secondArray, k);
+
+        if (resultOfTask01.length == firstArray.length) {
+            return;
+        }
+
+        System.out.println("United array: " +  Helper.arrayToString(resultOfTask01));
     }
 }
