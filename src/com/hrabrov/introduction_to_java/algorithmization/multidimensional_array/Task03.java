@@ -47,7 +47,7 @@ public class Task03 {
         System.out.println("Result of task 03:");
         System.out.println("Original matrix:\n" + StringHelper.matrixToString(originalMatrix));
 
-        int[][] resultOfTask03 = Task03.displaySelectedLineAndColumn(
+        int[][] resultOfTask03 = displaySelectedLineAndColumn(
                 originalMatrix,
                 rowNumberForDisplaying,
                 columnNumberForDisplaying);

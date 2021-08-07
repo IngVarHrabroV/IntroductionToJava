@@ -47,11 +47,11 @@ public class Task12 {
         System.out.println("Original matrix:");
         System.out.println(StringHelper.matrixToString(originalMatrix));
 
-        int[][] resultOfTask12WithAscendingSort = Task12.ascendingSortMatrix(originalMatrix);
+        int[][] resultOfTask12WithAscendingSort = ascendingSortMatrix(originalMatrix);
         System.out.println("Rows with ascending sort:");
         System.out.println(StringHelper.matrixToString(resultOfTask12WithAscendingSort));
 
-        int[][] resultOfTask12WithDescendingSort = Task12.descendingSortMatrix(originalMatrix);
+        int[][] resultOfTask12WithDescendingSort = descendingSortMatrix(originalMatrix);
         System.out.println("Rows with descending sort:");
         System.out.println(StringHelper.matrixToString(resultOfTask12WithDescendingSort));
     }

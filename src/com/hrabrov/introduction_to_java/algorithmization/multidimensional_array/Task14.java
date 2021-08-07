@@ -63,7 +63,7 @@ public class Task14 {
 
     public static void run(int verticalSizeOfMatrix, int horizontalSizeOfMatrix) {
         System.out.println("Result of task 14:");
-        int[][] resultOfTask14 = Task14.generateMatrixForTask14(verticalSizeOfMatrix, horizontalSizeOfMatrix);
+        int[][] resultOfTask14 = generateMatrixForTask14(verticalSizeOfMatrix, horizontalSizeOfMatrix);
 
         if (resultOfTask14 == null) {
             return;

@@ -44,7 +44,7 @@ public class Task05 {
      */
     public static void run(int sizeOfMatrix) {
         System.out.println("Result of task 05: ");
-        int[][] resultOfTask05 = Task05.createMatrixForTask05(sizeOfMatrix);
+        int[][] resultOfTask05 = createMatrixForTask05(sizeOfMatrix);
 
         if (resultOfTask05 == null) {
             return;

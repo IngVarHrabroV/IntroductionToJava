@@ -72,7 +72,7 @@ public class Task09 {
         System.out.println("Original matrix:");
         System.out.println(StringHelper.matrixToString(matrix));
 
-        SumOfColumnElementsAndNumberColumnWithTheGreatestSum resultOfTask09 = Task09.findSumAndColumn(matrix);
+        SumOfColumnElementsAndNumberColumnWithTheGreatestSum resultOfTask09 = findSumAndColumn(matrix);
 
         if (resultOfTask09 == null) {
             return;

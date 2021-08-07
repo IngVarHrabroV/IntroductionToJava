@@ -43,7 +43,7 @@ public class Task10 {
         System.out.println("Original matrix:");
         System.out.println(StringHelper.matrixToString(matrix));
 
-        int[] resultOfTask10 = Task10.findPositiveElementOfTheMainDiagonal(matrix);
+        int[] resultOfTask10 = findPositiveElementOfTheMainDiagonal(matrix);
 
         if (resultOfTask10.length < MIN_NECESSARY_QUANTITY_POSITIVE_ELEMENTS) {
             System.out.println("Matrix hasn't positive elements in main diagonals");

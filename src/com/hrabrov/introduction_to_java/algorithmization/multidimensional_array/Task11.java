@@ -75,7 +75,7 @@ public class Task11 {
 
     public static void run() {
         System.out.println("Result of task 11:");
-        MatrixAndRowsNumbers resultOfTask11 = Task11.createMatrixForTask11();
+        MatrixAndRowsNumbers resultOfTask11 = createMatrixForTask11();
         System.out.println(StringHelper.matrixToString(resultOfTask11.createdMatrix));
 
         if (resultOfTask11.rowsNumbersWithFive.length == 0) {

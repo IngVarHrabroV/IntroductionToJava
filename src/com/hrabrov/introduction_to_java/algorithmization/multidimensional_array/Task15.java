@@ -38,7 +38,7 @@ public class Task15 {
         System.out.println(StringHelper.matrixToString(originalMatrix));
 
         System.out.println("Matrix with replaced elements:");
-        int[][] resultOfTask15 = Task15.replacedElementsOfMatrix(originalMatrix);
+        int[][] resultOfTask15 = replacedElementsOfMatrix(originalMatrix);
         System.out.println(StringHelper.matrixToString(resultOfTask15));
     }
 }

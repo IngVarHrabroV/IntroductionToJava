@@ -45,7 +45,8 @@ public class Task07 {
      */
     public static void run(int matrixOfSize) {
         System.out.println("Result of task 07: ");
-        MatrixAndHerPositiveElements resultOfTask07 = Task07.createMatrixForTask07(matrixOfSize);
+        MatrixAndHerPositiveElements resultOfTask07 = createMatrixForTask07(matrixOfSize);
+
         System.out.println(StringHelper.matrixToString(resultOfTask07.matrix));
         System.out.println("Quantity positive elements = " + resultOfTask07.quantityPositiveElements);
     }

@@ -28,7 +28,7 @@ public class Task16 {
             return;
         }
 
-        int[][] resultOfTask16 = Task16.generateMagicSquare(sizeOfMatrix);
+        int[][] resultOfTask16 = generateMagicSquare(sizeOfMatrix);
         System.out.println(StringHelper.matrixToString(resultOfTask16));
     }
 }

@@ -59,7 +59,7 @@ public class Task08 {
         System.out.println(StringHelper.matrixToString(originalMatrix));
 
         System.out.println("Starting replace column");
-        int[][] resultOfTask08 = Task08.replaceTwoColumn(originalMatrix);
+        int[][] resultOfTask08 = replaceTwoColumn(originalMatrix);
 
         if (resultOfTask08 == null) {
             return;
