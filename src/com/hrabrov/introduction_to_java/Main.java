@@ -38,6 +38,6 @@ public class Main {
         System.out.println("End 1th block: one-dimensional arrays\n");
 
         MultidimensionalArrayRunner.run();
-        System.out.println("\n");
+        System.out.println();
     }
 }
