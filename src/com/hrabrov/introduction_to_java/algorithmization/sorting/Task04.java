@@ -9,8 +9,7 @@ public class Task04 {
      * @return sorted sequence
      */
 
-    public static SortedArrayAndQuantityPermutation exchangeSort(int[] sequence) {
-
+    private static SortedArrayAndQuantityPermutation exchangeSort(int[] sequence) {
         SortedArrayAndQuantityPermutation returnedObject = new SortedArrayAndQuantityPermutation();
 
         boolean isSorted = false;
@@ -19,9 +18,8 @@ public class Task04 {
         while (!isSorted) {
             isSorted = true;
             for (int i = 0; i < sequence.length - 1; i++) {
-                int temp;
                 if (sequence[i] > sequence[i + 1]) {
-                    temp = sequence[i];
+                    int temp = sequence[i];
                     sequence[i] = sequence[i + 1];
                     sequence[i + 1] = temp;
                     countPermutation++;
@@ -39,5 +37,19 @@ public class Task04 {
     static class SortedArrayAndQuantityPermutation {
         int[] sortedArray;
         int quantityPermutation;
+    }
+
+    /**
+     * See {@link #exchangeSort(int[])} docs for more details
+     */
+
+    public static void run(int[] sequence) {
+        System.out.println("Result of task 04:");
+        System.out.println("Original array: " + Helper.arrayToString(sequence));
+
+        SortedArrayAndQuantityPermutation resultOfTask04 = exchangeSort(sequence);
+
+        System.out.println("Sorted array: " + Helper.arrayToString(resultOfTask04.sortedArray));
+        System.out.println("Quantity permutation: " + resultOfTask04.quantityPermutation);
     }
 }

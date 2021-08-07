@@ -1,12 +1,14 @@
 package com.hrabrov.introduction_to_java.algorithmization.sorting.task08;
 
+import com.hrabrov.introduction_to_java.algorithmization.sorting.Helper;
+
 public class Task08 {
     /**
      * Given fractions p1/q1, p2/q2, ..., pn/qn, where numerator and denominator are natural numbers.
      * Bring fractions to a common denominator and arrange in ascending order
      */
 
-    public static Fraction[] arrangeFractions(Fraction[] array) {
+    private static Fraction[] arrangeFractions(Fraction[] array) {
         int commonDenominator = findLCM(array);
         castingOfNumerator(array, commonDenominator);
         sortedFractions(array);
@@ -33,11 +35,8 @@ public class Task08 {
     }
 
     private static int findLCM(Fraction[] array) {
-
-        int lcm = array[0].denominator * array[1].denominator
-                / findGCD(array[0].denominator, array[1].denominator);
-
-        for (int i = 2; i < array.length; i++) {
+        int lcm = 1;
+        for (int i = 0; i < array.length; i++) {
             lcm = lcm * array[i].denominator / findGCD(lcm, array[i].denominator);
         }
 
@@ -58,5 +57,16 @@ public class Task08 {
         }
 
         return a + b;
+    }
+
+    /**
+     * See {@link #arrangeFractions(Fraction[])} docs for more details
+     */
+    public static void run(Fraction[] array) {
+        System.out.println("Result of task 08:");
+        System.out.println("Original fractions: " + Helper.fractionsToString(array));
+
+        Fraction[] resultOfTask08 = arrangeFractions(array);
+        System.out.println("Sorted fractions: " + Helper.fractionsToString(resultOfTask08));
     }
 }

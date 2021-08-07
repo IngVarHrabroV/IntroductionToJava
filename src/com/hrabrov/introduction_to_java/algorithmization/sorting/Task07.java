@@ -11,9 +11,9 @@ public class Task07 {
      * @return array with indexes in new sequence for insert
      */
 
-    public static int[] indexesForInsert(int[] mainArray, int[] insertArray) {
-        if (isSorted(mainArray) && isSorted(insertArray)) {
-            int sizeOfInsertArray = insertArray.length;
+    private static int[] indexesForInsert(int[] mainArray, int[] insertArray) {
+        if (Helper.isSorted(mainArray) && Helper.isSorted(insertArray)) {
+            final int sizeOfInsertArray = insertArray.length;
             int[] indexesForEntering = new int[sizeOfInsertArray];
 
             for (int i = 0; i < sizeOfInsertArray; i++) {
@@ -22,6 +22,7 @@ public class Task07 {
 
             return indexesForEntering;
         }
+
         return null;
     }
 
@@ -49,13 +50,21 @@ public class Task07 {
         return startIndex;
     }
 
-    private static boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
+    /**
+     * See {@link #indexesForInsert(int[], int[])} docs for more details
+     */
+    public static void run(int[] mainArray, int[] insertArray) {
+        System.out.println("Result of task 07: ");
+        System.out.println("Main sequence: " + Helper.arrayToString(mainArray));
+        System.out.println("Insert sequence: " + Helper.arrayToString(insertArray));
+
+        int[] resultOfTask07 = indexesForInsert(mainArray, insertArray);
+
+        if (resultOfTask07 == null) {
+            System.out.println("Sequences aren't ascending");
+            return;
         }
 
-        return true;
+        System.out.println("Indexes in new sequence for insertion: " + Helper.arrayToString(resultOfTask07));
     }
 }

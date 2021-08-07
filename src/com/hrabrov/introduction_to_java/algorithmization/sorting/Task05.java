@@ -9,7 +9,7 @@ public class Task05 {
      * @return sorted sequence
      */
 
-    public static int[] insertionSort(int[] sequence) {
+    private static int[] insertionSort(int[] sequence) {
         if (sequence[0] > sequence[1]) {
             int temp = sequence[0];
             sequence[0] = sequence[1];
@@ -51,5 +51,14 @@ public class Task05 {
         }
 
         return startIndex;
+    }
+
+    /**
+     * See {@link #insertionSort(int[])} docs for more details
+     */
+    public static void run(int[] sequence) {
+        int[] resultOfTask05 = insertionSort(sequence);
+
+        System.out.println("Result of task 05: " + Helper.arrayToString(resultOfTask05));
     }
 }

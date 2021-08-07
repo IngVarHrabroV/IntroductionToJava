@@ -11,11 +11,29 @@ public class RandomArray {
         return array;
     }
 
-    private static int randomIntNumber() {
-        final int maxValueVariable = 99;
-        final double borderPositiveAndNegativeNumber = 0.5;
-        int signNumber = Math.random() > borderPositiveAndNegativeNumber ? 1 : -1;
+    public static int[] create(int sizeOfArray, boolean isAscending) {
+        int[] array = new int[sizeOfArray];
 
-        return (int) (Math.random() * (maxValueVariable + 1) * signNumber);
+        for (int i = 0; i < sizeOfArray; i++) {
+            if (isAscending) {
+                array[i] = randomIntNumber();
+                while (i != 0 && array[i] < array[i - 1]) {
+                  array[i] = randomIntNumber();
+              }
+            } else {
+                array[i] = randomIntNumber();
+            }
+        }
+
+        return array;
+    }
+
+    private static int randomIntNumber() {
+        final int maxAbsValueVariable = 99;
+        final double borderForChosenPositiveAndNegativeNumber = 0.5;
+        double signNumber = Math.random();
+        signNumber = signNumber < borderForChosenPositiveAndNegativeNumber ? 1 : -1;
+
+        return (int) (Math.random() * (maxAbsValueVariable + 1) * signNumber);
     }
 }

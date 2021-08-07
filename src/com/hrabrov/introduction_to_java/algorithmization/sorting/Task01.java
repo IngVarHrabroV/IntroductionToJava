@@ -53,7 +53,7 @@ public class Task01 {
         System.out.println("First array: " + Helper.arrayToString(firstArray));
         System.out.println("Second array: " + Helper.arrayToString(secondArray));
 
-        int[] resultOfTask01 = Task01.concatenatingArrays(firstArray, secondArray, k);
+        int[] resultOfTask01 = concatenatingArrays(firstArray, secondArray, k);
 
         if (resultOfTask01.length == firstArray.length) {
             return;

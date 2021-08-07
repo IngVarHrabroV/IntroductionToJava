@@ -10,10 +10,14 @@ public class Task02 {
      * @return new non-decreasing sequence
      */
 
-    public static int[] createNonDecreasingSequenceFromTwo(int[] firstSequence, int[] secondSequence) {
-        int sizeOfFirstSequence = firstSequence.length;
-        int sizeOfSecondSequence = secondSequence.length;
-        int sizeOfNewSequence = sizeOfFirstSequence + sizeOfSecondSequence;
+    private static int[] createNonDecreasingSequenceFromTwo(int[] firstSequence, int[] secondSequence) {
+        if(!Helper.isSorted(firstSequence) || !Helper.isSorted(secondSequence)) {
+            return null;
+        }
+
+        final int sizeOfFirstSequence = firstSequence.length;
+        final int sizeOfSecondSequence = secondSequence.length;
+        final int sizeOfNewSequence = sizeOfFirstSequence + sizeOfSecondSequence;
         int[] newSequence = new int[sizeOfNewSequence];
 
         for (int i = 0; i < sizeOfFirstSequence; i++) {
@@ -35,5 +39,23 @@ public class Task02 {
         }
 
         return newSequence;
+    }
+
+    /**
+     * See {@link #createNonDecreasingSequenceFromTwo(int[], int[])} docs for more details
+     */
+    public static void run(int[] firstSequence, int[] secondSequence){
+        System.out.println("Result of task 02: ");
+        System.out.println("First sequence: " + Helper.arrayToString(firstSequence));
+        System.out.println("Second sequence: " + Helper.arrayToString(secondSequence));
+
+        int[] resultOfTask02 = createNonDecreasingSequenceFromTwo(firstSequence, secondSequence);
+
+        if (resultOfTask02 == null) {
+            System.out.println("Sequences aren't ascending");
+            return;
+        }
+
+        System.out.println("United sequence: " + Helper.arrayToString(resultOfTask02));
     }
 }
