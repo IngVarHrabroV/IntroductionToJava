@@ -18,8 +18,7 @@ public class OddSize {
         }
 
         //fill in diagonal rows
-        int middleOfSideOfAuxiliaryBigMatrix;
-        middleOfSideOfAuxiliaryBigMatrix = MiddleOfSideOfMatrix.find(sizeOfAuxiliaryBigMatrix);
+        final int middleOfSideOfAuxiliaryBigMatrix = MiddleOfSideOfMatrix.find(sizeOfAuxiliaryBigMatrix);
         int numberForFillAuxiliaryBigMatrix = 1;
         for (int i = middleOfSideOfAuxiliaryBigMatrix - 1, tempJ = 0; i < sizeOfAuxiliaryBigMatrix; i++, tempJ++) {
             for (int j = tempJ, tempI = i; j <= i; j++, tempI--) {
@@ -29,7 +28,7 @@ public class OddSize {
         }
 
         //transfer number from the terrace to the magic square
-        int halfOfAddedCells = howManyCellToAdd / 2;
+        final int halfOfAddedCells = howManyCellToAdd / 2;
         for (int i = 0; i < sizeOfAuxiliaryBigMatrix; i++) {
             for (int j = 0; j < sizeOfAuxiliaryBigMatrix; j++) {
                 if (auxiliaryBigMatrix[i][j] != 0) {
