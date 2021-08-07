@@ -24,7 +24,7 @@ public class Task05 {
         return returnValue;
     }
 
-    public static double adsNumberN(int n) {
+    private static double adsNumberN(int n) {
         double numberN;
 
         numberN = 1 / Math.pow(2, n) + 1 / Math.pow(3, n);

@@ -5,4 +5,3 @@ There are contained tasks on Algorithmization:
 - multidimensional arrays;
 - sorting of one-dimensional array;
 - decomposition.
-
