@@ -5,15 +5,15 @@ public class Fraction {
     public int denominator;
 
     public static Fraction[] getFractions(int amountFraction) {
-        final int MAX_NUMERATOR = 9;
-        final int MAX_DENOMINATOR = 10;
+        final int maxNumerator = 9;
+        final int maxDenominator = 10;
 
         Fraction[] fractions = new Fraction[amountFraction];
 
         for (int i = 0; i < amountFraction; i++) {
             fractions[i] = new Fraction();
-            fractions[i].numerator = randomNumber(MAX_NUMERATOR);
-            fractions[i].denominator = randomNumber(MAX_DENOMINATOR);
+            fractions[i].numerator = randomNumber(maxNumerator);
+            fractions[i].denominator = randomNumber(maxDenominator);
         }
 
         return  fractions;
