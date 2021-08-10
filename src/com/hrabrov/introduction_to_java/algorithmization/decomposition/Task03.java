@@ -17,7 +17,7 @@ public class Task03 {
     }
 
     /**
-     * See {@link #calculateHexagonArea(int)} docs
+     * See {@link #calculateHexagonArea(int)} docs for more details
      */
     public static void run(int sizeOfSide) {
         System.out.println("Result of task 03: " + String.format("%.3f", calculateHexagonArea(sizeOfSide)));

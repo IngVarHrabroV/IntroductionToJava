@@ -57,6 +57,9 @@ public class Task04 {
         return dots;
     }
 
+    /**
+     * See {@link #calculateDistance(Dot, Dot)} docs for more details
+     */
     public static void run(int[] coordinates) {
         System.out.println("Result of task 04:");
         Dot[] resultOfTask04 = findMaxDistance(coordinates);
