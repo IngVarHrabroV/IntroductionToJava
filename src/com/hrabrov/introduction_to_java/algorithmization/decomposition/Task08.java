@@ -53,16 +53,6 @@ public class Task08 {
             return;
         }
 
-        System.out.println(arrayToString(sumsAllThreeConsecutiveElements(array, startElement, finishElement)));
-    }
-
-    private static String arrayToString(int[] array) {
-        String arrayToString = "";
-
-        for (int i = 0; i < array.length; i++) {
-            arrayToString += array[i] + " ";
-        }
-
-        return arrayToString;
+        System.out.println(Helper.arrayToString(sumsAllThreeConsecutiveElements(array, startElement, finishElement)));
     }
 }

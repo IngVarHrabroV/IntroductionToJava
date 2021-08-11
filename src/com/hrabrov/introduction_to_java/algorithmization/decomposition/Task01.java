@@ -43,8 +43,7 @@ public class Task01 {
     public static void run(int firstNumber, int secondNumber) {
         System.out.println("Result of task 01: ");
 
-        if (firstNumber < 1 || secondNumber < 1) {
-            System.out.println("You can't enter non-natural number");
+        if (!Helper.isNatural(firstNumber) || !Helper.isNatural(secondNumber)) {
             return;
         }
 
