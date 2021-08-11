@@ -9,8 +9,8 @@ public class Task10 {
      */
 
     private static int[] numberToArray(int n) {
-        final int digitOfNumber = foundDigitOfNumber(n);
-        int[] array = new int[digitOfNumber];
+        final int quantityOfDigits = quantityOfDigitsOf(n);
+        int[] array = new int[quantityOfDigits];
 
         return feelArray(array, n);
     }
@@ -24,7 +24,7 @@ public class Task10 {
         return array;
     }
 
-    private static int foundDigitOfNumber(int n) {
+    private static int quantityOfDigitsOf(int n) {
         int digit = 1;
         while (n / (int) Math.pow(10, digit) != 0) {
             digit++;
