@@ -4,26 +4,26 @@ public class Task13 {
     /**
      * Given number n, which more than 2. Find numbers-twins between n and 2 * n.
      *
-     * @param numberOfStartSegment input number
+     * @param startOfSegment input number
      * @return array with numbers-twins
      */
 
-    private static int[] findNumbersTwins(int numberOfStartSegment) {
-        final int endSegment = numberOfStartSegment * 2;
+    private static int[] findNumbersTwins(int startOfSegment) {
+        final int endOfSegment = startOfSegment * 2;
 
-        int[] numbersTwins = createArrayForTwins(numberOfStartSegment);
-        fillArray(numberOfStartSegment, endSegment, numbersTwins);
+        int[] numbersTwins = createArrayForTwins(startOfSegment);
+        fillArray(startOfSegment, endOfSegment, numbersTwins);
 
         return numbersTwins;
     }
 
-    private static int[] createArrayForTwins(int numberOfStartSegment) {
-        final int sizeOfArray = (numberOfStartSegment - 1) * 2;
+    private static int[] createArrayForTwins(int startOfSegment) {
+        final int sizeOfArray = (startOfSegment - 1) * 2;
         return new int[sizeOfArray];
     }
 
-    private static void fillArray(int startSegment, int endSegment, int[] arrayForFill) {
-        for (int i = startSegment; i <= endSegment - 2; i++) {
+    private static void fillArray(int startOfSegment, int endOfSegment, int[] arrayForFill) {
+        for (int i = startOfSegment; i <= endOfSegment - 2; i++) {
             addNumberToArray(i, arrayForFill);
             addNumberToArray(i + 2, arrayForFill);
         }
@@ -41,14 +41,14 @@ public class Task13 {
     /**
      * See {@link #findNumbersTwins(int)} docs for more details
      */
-    public static void run(int startSegment) {
+    public static void run(int startOfSegment) {
         System.out.println("Result of task 13: ");
 
-        if (!checkArgument(startSegment)) {
+        if (!checkArgument(startOfSegment)) {
             System.out.println("N have to more, than 2.");
         }
 
-        int[] resultOfTask13 = findNumbersTwins(startSegment);
+        int[] resultOfTask13 = findNumbersTwins(startOfSegment);
         System.out.println(Helper.arrayToString(resultOfTask13));
     }
 
