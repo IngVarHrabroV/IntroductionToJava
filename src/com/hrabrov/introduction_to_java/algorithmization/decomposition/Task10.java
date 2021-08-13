@@ -8,7 +8,7 @@ public class Task10 {
      * @return array are the digits of the number n
      */
 
-    private static int[] numberToArray(int n) {
+    public static int[] takeDigitsFromNumber(int n) {
         final int quantityOfDigits = quantityOfDigitsOf(n);
         int[] array = new int[quantityOfDigits];
 
@@ -38,7 +38,7 @@ public class Task10 {
             return;
         }
 
-        int[] resultOfTask10 = numberToArray(n);
+        int[] resultOfTask10 = takeDigitsFromNumber(n);
         System.out.println("Result of task 10: " + Helper.arrayToString(resultOfTask10));
     }
 }
