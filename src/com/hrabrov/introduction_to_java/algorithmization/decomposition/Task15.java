@@ -39,7 +39,7 @@ public class Task15 {
     }
 
     private static boolean isStrictlyAscendingSequence(int currentNumber) {
-        int[] digitsOfNumber = Task10.takeDigitsFromNumber(currentNumber);
+        int[] digitsOfNumber = DigitsFromNumber.takeDigits(currentNumber);
 
         boolean isStrictlyAscendingSequence = true;
         for (int i = 0; i < digitsOfNumber.length - 1; i++) {
