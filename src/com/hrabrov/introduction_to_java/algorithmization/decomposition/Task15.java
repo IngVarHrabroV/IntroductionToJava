@@ -41,15 +41,13 @@ public class Task15 {
     private static boolean isStrictlyAscendingSequence(int currentNumber) {
         int[] digitsOfNumber = DigitsFromNumber.takeDigits(currentNumber);
 
-        boolean isStrictlyAscendingSequence = true;
         for (int i = 0; i < digitsOfNumber.length - 1; i++) {
            if (digitsOfNumber[i] + 1 != digitsOfNumber[i + 1]) {
-           isStrictlyAscendingSequence = false;
-           break;
+           return false;
            }
         }
 
-        return isStrictlyAscendingSequence;
+        return true;
     }
 
     public static void run(int digitCapacity){
