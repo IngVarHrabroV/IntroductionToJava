@@ -53,8 +53,11 @@ public class Task15 {
         return true;
     }
 
+    /**
+     * See {@link #findNumbersWithRequiredDigitCapacity(int)} for more details
+     */
     public static void run(int digitCapacity){
-        System.out.println("Result of task15: ");
+        System.out.println("Result of task 15: ");
         int[] resultOfTask15 = findNumbersWithRequiredDigitCapacity(digitCapacity);
         System.out.println(Helper.arrayToString(resultOfTask15));
 

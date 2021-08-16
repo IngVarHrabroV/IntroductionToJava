@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition.task04;
 
+import com.hrabrov.introduction_to_java.algorithmization.sorting.Helper;
+
 public class Task04 {
     /**
      * Given n dots on plane. Find, which dots have max distance
@@ -62,10 +64,21 @@ public class Task04 {
      */
     public static void run(int[] coordinates) {
         System.out.println("Result of task 04:");
+        System.out.println("Created array: " + Helper.arrayToString(coordinates));
+
+        if (!isEven(coordinates.length)) {
+            System.out.println("You have to enter pairs of numbers, for creating coordinates");
+            return;
+        }
+
         Dot[] resultOfTask04 = findMaxDistance(coordinates);
         System.out.println("Max distance between dots with coordinate ("
                 + resultOfTask04[0].x + ";" + resultOfTask04[0].y + ") and ("
                 + resultOfTask04[1].x + ";" + resultOfTask04[1].y + ") and equals = "
                 + String.format("%.3f", calculateDistance(resultOfTask04[0], resultOfTask04[1])));
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }

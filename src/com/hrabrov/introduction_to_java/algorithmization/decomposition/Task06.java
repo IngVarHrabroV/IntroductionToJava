@@ -47,9 +47,9 @@ public class Task06 {
         boolean resultOfTask06 = isMutuallySimple(a, b, c);
         System.out.print("Result of task 06: ");
         if (resultOfTask06) {
-            System.out.println("these three number are mutually simple");
+            System.out.println("these three numbers are mutually simple");
         } else {
-            System.out.println("these three number AREN'T mutually simple");
+            System.out.println("these three numbers AREN'T mutually simple");
         }
     }
 }

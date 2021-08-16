@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.sorting.Helper;
+
 public class Task05 {
     /**
      * Find number, which less than only the largest number
@@ -33,7 +35,9 @@ public class Task05 {
      * See {@link #findNumber(int[])} docs for more details
      */
     public static void run(int[] array) {
+        System.out.println("Result of task 05:");
+        System.out.println("Created array: " + Helper.arrayToString(array));
         int resultOfTask05 = findNumber(array);
-        System.out.println("Result of task 05: " + resultOfTask05);
+        System.out.println("Number, which less than only the largest number: " + resultOfTask05);
     }
 }

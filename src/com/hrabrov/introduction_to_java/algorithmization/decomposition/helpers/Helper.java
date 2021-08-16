@@ -19,4 +19,8 @@ public class Helper {
 
         return true;
     }
+
+    public static int[] takeIntArray(int sizeOfArray) {
+        return new int[]{1, 1, 4, 1, 1, 5, 8, 8, 5, 5, 12, 3, 17, 5};
+    }
 }

@@ -2,7 +2,7 @@ package com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers;
 
 public class DigitsFromNumber {
     /**
-     * Given a natural number n. Create array, elements of which are the digits of the number n.
+     * Creating array, elements of which are the digits of the number n.
      *
      * @param n input a natural number
      * @return array are the digits of the number n

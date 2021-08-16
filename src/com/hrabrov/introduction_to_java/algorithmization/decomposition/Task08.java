@@ -43,7 +43,8 @@ public class Task08 {
      * See {@link #sumsAllThreeConsecutiveElements(int[], int, int)} docs for more details
      */
     public static void run(int[] array, int startElement, int finishElement) {
-        System.out.print("Result of task 08: ");
+        System.out.println("Result of task 08: ");
+        System.out.println("Created array: " + Helper.arrayToString(array));
 
         if (startElement < 1 || finishElement > array.length) {
             System.out.println("Entered incorrect value start or finish elements");
@@ -55,6 +56,8 @@ public class Task08 {
             return;
         }
 
-        System.out.println(Helper.arrayToString(sumsAllThreeConsecutiveElements(array, startElement, finishElement)));
+        int[] resultOfTask08 = sumsAllThreeConsecutiveElements(array, startElement, finishElement);
+
+        System.out.println("Sums: " + Helper.arrayToString(resultOfTask08));
     }
 }
