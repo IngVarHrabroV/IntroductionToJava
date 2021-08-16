@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task12 {
     /**
      * Given numbers k and n. Find all numbers that aren't more than n and whose sum of digits is k.

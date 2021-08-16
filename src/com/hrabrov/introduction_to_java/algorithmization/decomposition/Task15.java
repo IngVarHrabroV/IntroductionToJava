@@ -1,5 +1,8 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.DigitsFromNumber;
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task15 {
     final static int EMPTY_ARRAY = 0;
 

@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.DigitsFromNumber;
+
 public class Task16 {
     /**
      * Find sum n-digits numbers, which have only odd digits and find how many even digits in number of sum.

@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task08 {
     /**
      * Given array. Find sums all three consecutive elements start k element  and  end m element

@@ -1,4 +1,4 @@
-package com.hrabrov.introduction_to_java.algorithmization.decomposition;
+package com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers;
 
 public class DigitsFromNumber {
     /**

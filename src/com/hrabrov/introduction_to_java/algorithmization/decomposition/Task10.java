@@ -1,5 +1,8 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.DigitsFromNumber;
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task10 {
     public static void run(int n) {
         if (!Helper.isNatural(n)) {

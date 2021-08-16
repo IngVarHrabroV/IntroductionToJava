@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task01 {
     /**
      * Find the greatest common divisor (gcd) for two natural numbers
