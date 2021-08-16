@@ -24,12 +24,23 @@ public class DigitsFromNumber {
         return array;
     }
 
-    private static int quantityOfDigitsOf(int n) {
+    public static int quantityOfDigitsOf(int n) {
         int digit = 1;
         while (n / (int) Math.pow(10, digit) != 0) {
             digit++;
         }
 
         return digit;
+    }
+
+    public static int findSumOfDigit(int number) {
+        int sumOfDigits = 0;
+        int[] digits = DigitsFromNumber.takeDigits(number);
+
+        for (int i = 0; i < digits.length; i++) {
+            sumOfDigits += digits[i];
+        }
+
+        return sumOfDigits;
     }
 }

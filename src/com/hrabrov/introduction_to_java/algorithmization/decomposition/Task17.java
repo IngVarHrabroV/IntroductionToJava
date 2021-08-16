@@ -42,7 +42,6 @@ public class Task17 {
         int resultOfTask17 = subtractSumDigitsFromNumber(number);
 
         if (!Helper.isNatural(number)) {
-            System.out.println("You have to enter natural number");
             return;
         }
 

@@ -4,10 +4,7 @@ import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.*
 
 public class Task10 {
     /**
-     * Given a natural number n. Create array, elements of which are the digits of the number n.
-     *
-     * @param n input a natural number
-     * @display array are the digits of the number n
+     * See {@link DigitsFromNumber#takeDigits(int)} docs for more details
      */
 
     public static void run(int n) {

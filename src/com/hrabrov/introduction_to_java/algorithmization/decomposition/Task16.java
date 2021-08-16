@@ -58,6 +58,7 @@ public class Task16 {
     /**
      * See {@link #findSumAndQuantityHerEvenDigits(int)} for more details
      */
+
     public static void run(int digitCapacity) {
         System.out.println("Result of task 16: ");
         SumAndQuantityHerEvenDigits resultOfTask16 = findSumAndQuantityHerEvenDigits(digitCapacity);

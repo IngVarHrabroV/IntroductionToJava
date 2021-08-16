@@ -1,5 +1,7 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+
 public class Task02 {
     /**
      * Find the greatest common divisor (gcd) for four natural numbers
@@ -21,26 +23,10 @@ public class Task02 {
         int gcd = firstNumber;
 
         for (int i = 1; i < numbers.length; i++) {
-            gcd = findGCD(gcd, numbers[i]);
+            gcd = Helper.findGCD(gcd, numbers[i]);
         }
 
         return gcd;
-    }
-
-    private static int findGCD(int a, int b) {
-        if (a == b) {
-            return a;
-        }
-
-        while (a != 0 && b != 0) {
-            if (a > b) {
-                a %= b;
-            } else {
-                b %= a;
-            }
-        }
-
-        return a + b;
     }
 
     /**

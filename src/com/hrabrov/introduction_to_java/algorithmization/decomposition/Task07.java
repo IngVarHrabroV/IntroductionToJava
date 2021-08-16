@@ -10,6 +10,7 @@ public class Task07 {
     private static int sumOfFactorial() {
         final int lastValue = 9;
         int sumOfFactorialOfOddNumber = 0;
+
         for (int i = 1; i <= lastValue; i += 2) {
             sumOfFactorialOfOddNumber += findFactorial(i);
         }
@@ -29,6 +30,7 @@ public class Task07 {
     /**
      * See {@link #findFactorial(int)} docs for more details
      */
+
     public static void run() {
         System.out.println("Result of task 07: " + sumOfFactorial());
     }

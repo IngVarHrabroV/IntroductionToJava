@@ -14,7 +14,7 @@ public class Task09 {
      */
 
     private static double findAreaOfQuadrangle(int x, int y, int z, int t, boolean isConvex) {
-        final double hypotenuseBetweenXAndY = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+        final double hypotenuseBetweenXAndY = findHypotenuse(x ,y);
 
         final double areaOfRightTriangle = findAreaOfRightTriangle(x, y);
         final double areaOfSecondTriangle = findAreaOfAnyTriangle(hypotenuseBetweenXAndY, z, t);
@@ -30,9 +30,9 @@ public class Task09 {
         return (a * b) / 2.0;
     }
 
-    private static double findAreaOfAnyTriangle(double theLargestSide, int a, int b) {
-        final double perimeter = (a + b + theLargestSide) / 2;
-        final double rootValue = perimeter * (perimeter - theLargestSide) * (perimeter - a) * (perimeter - b);
+    private static double findAreaOfAnyTriangle(double hypotenuseBetweenXAndY, int a, int b) {
+        final double perimeter = (a + b + hypotenuseBetweenXAndY) / 2;
+        final double rootValue = perimeter * (perimeter - hypotenuseBetweenXAndY) * (perimeter - a) * (perimeter - b);
 
         return Math.sqrt(rootValue);
     }
@@ -57,8 +57,13 @@ public class Task09 {
         System.out.println("Result of task 09: " + String.format("%.3f", resultOfTask09));
     }
 
+    private static double findHypotenuse(int firstLeg, int secondLeg) {
+        return Math.sqrt(Math.pow(firstLeg, 2) + Math.pow(secondLeg, 2));
+    }
+
+
     private static boolean checkOnExist(int x, int y, int z, int t) {
-        final double hypotenuse = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+        final double hypotenuse = findHypotenuse(x ,y);
 
         return z + t > hypotenuse;
     }

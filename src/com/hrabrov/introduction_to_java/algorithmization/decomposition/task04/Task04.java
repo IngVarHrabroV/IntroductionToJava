@@ -42,10 +42,10 @@ public class Task04 {
     }
 
     private static double calculateByTheorem(Dot a, Dot b) {
-        final double firstLegSquared = Math.pow((a.x - b.x), 2);
-        final double secondLegSquared = Math.pow((a.y - b.y), 2);
+        final double firstLegInSquared = Math.pow((a.x - b.x), 2);
+        final double secondLegInSquared = Math.pow((a.y - b.y), 2);
 
-        return Math.sqrt(firstLegSquared + secondLegSquared);
+        return Math.sqrt(firstLegInSquared + secondLegInSquared);
     }
 
     private static Dot[] createDots(int[] coordinates) {
@@ -64,7 +64,7 @@ public class Task04 {
      */
     public static void run(int[] coordinates) {
         System.out.println("Result of task 04:");
-        System.out.println("Created array: " + Helper.arrayToString(coordinates));
+        System.out.println("Created array with coordinates: " + Helper.arrayToString(coordinates));
 
         if (!isEven(coordinates.length)) {
             System.out.println("You have to enter pairs of numbers, for creating coordinates");

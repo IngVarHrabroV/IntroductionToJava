@@ -1,5 +1,6 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.DigitsFromNumber;
 import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
 
 public class Task14 {
@@ -16,49 +17,14 @@ public class Task14 {
         int[] armstrongsNumbers = new int[]{EMPTY_ARRAY};
 
         for (int i = 1; i <= endOfSegment; i++) {
-            final int digitCapacity = findDigitCapacity(i);
-            final int sumOfDigit = findSumOfDigit(i, digitCapacity);
+            final int digitCapacity = DigitsFromNumber.quantityOfDigitsOf(i);
+            final int sumOfDigit = DigitsFromNumber.findSumOfDigit(i);
             final int sumOfDigitToPowerOfDigitCapacity = (int) Math.pow(sumOfDigit, digitCapacity);
             if (sumOfDigitToPowerOfDigitCapacity == i) {
-                armstrongsNumbers = addToArray(i, armstrongsNumbers);
+                armstrongsNumbers = Helper.addToArray(i, armstrongsNumbers);
             }
         }
         return armstrongsNumbers;
-    }
-
-    private static int[] addToArray(int number, int[] array) {
-        if (array[0] == EMPTY_ARRAY) {
-            array[0] = number;
-            return array;
-        }
-
-        int[] newArray = new int[array.length + 1];
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
-        }
-        newArray[array.length] = number;
-
-        return newArray;
-    }
-
-    private static int findSumOfDigit(int number, int digitCapacity) {
-        int sumOfDigit = 0;
-
-        for (int i = 0; i < digitCapacity; i++) {
-            sumOfDigit += number % 10;
-            number /= 10;
-
-        }
-        return sumOfDigit;
-    }
-
-    private static int findDigitCapacity(int number) {
-        int digit = 1;
-        while (number / (int) Math.pow(10, digit) != 0) {
-            digit++;
-        }
-
-        return digit;
     }
 
     /**

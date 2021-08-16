@@ -18,7 +18,7 @@ public class DecompositionRunner {
         Task10.run(86436713);
         Task11.run(121, 111);
         Task12.run(6, 30);
-        Task13.run(13);
+        Task13.run(3);
         Task14.run(2000);
         Task15.run(4);
         Task16.run(4);

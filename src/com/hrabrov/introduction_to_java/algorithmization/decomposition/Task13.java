@@ -12,33 +12,23 @@ public class Task13 {
 
     private static int[] findNumbersTwins(int startOfSegment) {
         final int endOfSegment = startOfSegment * 2;
+        final int EMPTY_ARRAY = 0;
 
-        int[] numbersTwins = createArrayForTwins(startOfSegment);
-        fillArray(startOfSegment, endOfSegment, numbersTwins);
+        int[] numbersOfTwins = new int[]{EMPTY_ARRAY};
+        numbersOfTwins = fillArray(startOfSegment, endOfSegment, numbersOfTwins);
 
-        return numbersTwins;
+        return numbersOfTwins;
     }
 
-    private static int[] createArrayForTwins(int startOfSegment) {
-        final int sizeOfArray = (startOfSegment - 1) * 2;
-        return new int[sizeOfArray];
-    }
-
-    private static void fillArray(int startOfSegment, int endOfSegment, int[] arrayForFill) {
+    private static int[] fillArray(int startOfSegment, int endOfSegment, int[] arrayForFill) {
         for (int i = startOfSegment; i <= endOfSegment - 2; i++) {
-            addNumberToArray(i, arrayForFill);
-            addNumberToArray(i + 2, arrayForFill);
+            arrayForFill = Helper.addToArray(i, arrayForFill);
+            arrayForFill = Helper.addToArray(i + 2, arrayForFill);
         }
+
+        return arrayForFill;
     }
 
-    private static void addNumberToArray(int number, int[] originalArray) {
-        for (int i = 0; i < originalArray.length; i++) {
-            if (originalArray[i] == 0) {
-                originalArray[i] = number;
-                return;
-            }
-        }
-    }
 
     /**
      * See {@link #findNumbersTwins(int)} docs for more details
@@ -46,8 +36,9 @@ public class Task13 {
     public static void run(int startOfSegment) {
         System.out.println("Result of task 13: ");
 
-        if (!checkArgument(startOfSegment)) {
+        if (checkArgument(startOfSegment)) {
             System.out.println("N have to more, than 2.");
+            return;
         }
 
         int[] resultOfTask13 = findNumbersTwins(startOfSegment);
@@ -55,6 +46,6 @@ public class Task13 {
     }
 
     private static boolean checkArgument(int checkingNumber) {
-        return checkingNumber > 2;
+        return checkingNumber <= 2;
     }
 }

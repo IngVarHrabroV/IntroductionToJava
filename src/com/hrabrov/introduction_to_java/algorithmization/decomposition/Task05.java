@@ -34,6 +34,7 @@ public class Task05 {
     /**
      * See {@link #findNumber(int[])} docs for more details
      */
+
     public static void run(int[] array) {
         System.out.println("Result of task 05:");
         System.out.println("Created array: " + Helper.arrayToString(array));

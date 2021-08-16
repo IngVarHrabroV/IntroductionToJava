@@ -1,8 +1,10 @@
 package com.hrabrov.introduction_to_java.algorithmization.decomposition;
 
-import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.Helper;
+import com.hrabrov.introduction_to_java.algorithmization.decomposition.helpers.*;
 
 public class Task12 {
+    final static int EMPTY_ARRAY = 0;
+
     /**
      * Given numbers k and n. Find all numbers that aren't more than n and whose sum of digits is k.
      * Place these numbers into array.
@@ -13,31 +15,15 @@ public class Task12 {
      */
 
     private static int[] createArray(int k, int n) {
-        int sizeOfArray = 0;
-        for (int i = 1; i <= n; i++) {
-            if (sumOfDigitOfNumber(i) == k) {
-                sizeOfArray++;
-            }
-        }
+        int[] array = new int[]{EMPTY_ARRAY};
 
-        int[] array = new int[sizeOfArray];
-        for (int i = 1, tempIndex = 0; i <= n; i++) {
-            if (sumOfDigitOfNumber(i) == k) {
-                array[tempIndex] = i;
-                tempIndex++;
+        for (int i = 1; i <= n; i++) {
+            if (DigitsFromNumber.findSumOfDigit(i) == k) {
+                array = Helper.addToArray(i, array);
             }
         }
 
         return array;
-    }
-
-    private static int sumOfDigitOfNumber(int currentNumber) {
-        int sumOfDigitOfNumber = 0;
-        while (currentNumber / 10 > 0) {
-            sumOfDigitOfNumber += currentNumber % 10;
-            currentNumber /= 10;
-        }
-        return sumOfDigitOfNumber + currentNumber;
     }
 
     private static boolean checkArguments(int k, int n) {
