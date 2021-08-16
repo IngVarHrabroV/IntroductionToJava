@@ -9,11 +9,11 @@ public class DecompositionRunner {
         Task01.run(9, 12);
         Task02.run(9, 9, 12, 15);
         Task03.run(3);
-        Task04.run(Helper.takeIntArray(4));
-        Task05.run(Helper.takeIntArray(3));
+        Task04.run(Helper.takeIntArray(6));
+        Task05.run(Helper.takeIntArray(6));
         Task06.run(9, 5, 11);
         Task07.run();
-        Task08.run(Helper.takeIntArray(3), 1, 5);
+        Task08.run(Helper.takeIntArray(10), 3, 9);
         Task09.run(2, 3, 10, 10, true);
         Task10.run(86436713);
         Task11.run(121, 111);

@@ -21,6 +21,13 @@ public class Helper {
     }
 
     public static int[] takeIntArray(int sizeOfArray) {
-        return new int[]{1, 1, 4, 1, 1, 5, 8, 8, 5, 5, 12, 3, 17, 5};
+        final int maxValueOfNumbers = 100;
+        int[] array = new int[sizeOfArray];
+
+        for (int i = 0; i < sizeOfArray; i++) {
+            array[i] = (int) (Math.random() * (maxValueOfNumbers + 1));
+        }
+
+        return array;
     }
 }
