@@ -11,7 +11,7 @@ import com.hrabrov.introduction_to_java.basic_of_software_code_development.linea
 public class Main {
     public static void main(String[] args) {
         System.out.println("*****    Start basic of software code development module     *****");
-        //basicOFSoftwareCodeDevelopmentRunner();
+        basicOFSoftwareCodeDevelopmentRunner();
         System.out.println("*****    End basic of software code development module    *****\n");
 
         System.out.println("*****    Start Algorithmization module     *****");
@@ -34,16 +34,16 @@ public class Main {
     }
 
     private static void algorithmizationRunner() {
-        /*System.out.println("Start 1th block: one-dimensional arrays");
-        //OneDimensionalArray.run();
+        System.out.println("Start 1th block: one-dimensional arrays");
+        OneDimensionalArray.run();
         System.out.println("End 1th block: one-dimensional arrays\n");
 
         System.out.println("Start 2th block: multidimensional arrays");
-        //MultidimensionalArray.run();
-        System.out.println("End 2th block: multidimensional arrays\n");*/
+        MultidimensionalArray.run();
+        System.out.println("End 2th block: multidimensional arrays\n");
 
 
-        //SortingRunner.run();
+        SortingRunner.run();
         DecompositionRunner.run();
 
     }
