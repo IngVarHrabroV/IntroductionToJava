@@ -30,6 +30,4 @@ public class Helper {
 
         return true;
     }
-
-
 }

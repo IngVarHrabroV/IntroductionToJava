@@ -34,15 +34,13 @@ public class Main {
 
     private static void algorithmizationRunner() {
         System.out.println("Start 1th block: one-dimensional arrays");
-        //OneDimensionalArray.run();
+        OneDimensionalArray.run();
         System.out.println("End 1th block: one-dimensional arrays\n");
 
         System.out.println("Start 2th block: multidimensional arrays");
-        //MultidimensionalArray.run();
+        MultidimensionalArray.run();
         System.out.println("End 2th block: multidimensional arrays\n");
 
-
         SortingRunner.run();
-
     }
 }
